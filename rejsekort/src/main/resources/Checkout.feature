@@ -25,18 +25,14 @@ Background:
 	 And check-in status is true
 	 
 Scenario: Successful check-out 
-	And a check-in traautomaton at "Sydhavn St"
+	And a check-in automaton at "Sydhavn St"
 	And a check-out automaton at "Norreport St"
 	When a check-out
 	Then automaton displays a message that the card is checked-out
 	And travel card has a new balance 75
 
 
-#fare = 50
-Scenario: Travelling with different means of transportation
-    And check-in on a bus
-    When a check-out
-    Then travel card has a new balance 50
+
 
     
 Scenario: Not Checked-in

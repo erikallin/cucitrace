@@ -22,7 +22,7 @@ Feature: Reload travel card
   @tag1
   Scenario: Successful reload
     Given a travel card with a balance of 50
-    And a credit card number 12345678
+    And a credit card number 12345678 with sufficient balance is true #this could be a different credit from the one stored in the database. 
     And kiosk in service is true
     When a user reloads with 100
     Then travel card has a new balance 160
@@ -31,7 +31,7 @@ Feature: Reload travel card
   @tag2
   Scenario: UnSuccessful reload
     Given a travel card with a balance of 50
-    And a credit card number 12345678
+    And a credit card number 12345678 with sufficient balance is true
     And kiosk in service is false
     When a user reloads with 100
     Then travel card has a new balance 50
@@ -40,7 +40,7 @@ Feature: Reload travel card
       @tag2
   Scenario: UnSuccessful reload
     Given a travel card with a balance of 50
-    And a credit card number 1111111
+    And a credit card number 12345678  with sufficient balance is false
     And kiosk in service is true
     When a user reloads with 100
     Then travel card has a new balance 50

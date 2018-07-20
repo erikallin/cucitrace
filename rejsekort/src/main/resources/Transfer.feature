@@ -17,18 +17,14 @@
 ## (Comments)
 #Sample Feature Definition Template
 @tag
-Feature: Create a new anonymous travel card for users without a Danish CPR number
+Feature: Travelling with different means of transportation
 
-Background:
-    Given a credit card number 12345678
+  @tag1
 
-  Scenario: Create Anonymous Travel Card Unsuccessfully
-    Given a credit card number 555444561
-    When issue 
-    Then the kiosk displays a message is shown that travel card not created
-
-   
-      @tag1
-  Scenario: Create Anonymous Travel Card Successfully
-    When issue 
-    Then the kiosk issues an anonymous travel card
+Scenario: Transfer from a train to a bus
+		Given a travel card with a balance of 100 
+		And a check-in automaton at "Sydhavn St"
+	 	And check-in status is false
+    When a check-in on a bus  "1A"
+    Then automaton displays a message that the card is on transfer
+    And travel card has a new balance 50

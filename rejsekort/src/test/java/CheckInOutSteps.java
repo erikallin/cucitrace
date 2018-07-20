@@ -9,9 +9,7 @@ public class CheckInOutSteps extends General {
 
 	@Given("^a travel card with a balance of (\\d+)$")
 	public void a_travel_card_with_a_balance_of(int balance) {
-
 		card.setBalance(balance);
-
 	}
 
 	@Given("^check-in status is (true|false)$")
@@ -59,13 +57,13 @@ public class CheckInOutSteps extends General {
 		response = outStation.checkOut(card);
 	}
 
-	@Then("^automaton displays message that the card is checked-out$")
-	public void automaton_displays_message_that_the_card_is_checked_out() {
+	@Then("^automaton displays a message that the card is checked-out$")
+	public void automaton_displays_a_message_that_the_card_is_checked_out() {
 		assertEquals(response.getErrorMessage(), "checked-out");
 	}
 
-	@Then("^automaton displays message that the card is not checked-in$")
-	public void automaton_displays_message_that_the_card_is_not_checked_in() {
+	@Then("^automaton displays a message that the card is not checked-in$")
+	public void automaton_displays_a_message_that_the_card_is_not_checked_in() {
 		assertEquals(response.getErrorMessage(), "Not checked-in");
 	}
 
@@ -76,7 +74,7 @@ public class CheckInOutSteps extends General {
 
 @Given("^check-in on a bus$")
 public void check_in_on_a_bus() {
-	response = inStation.checkIn(card,true );
+	response = inStation.checkIn(card,true);
 	
 }
 

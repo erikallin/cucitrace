@@ -1,7 +1,8 @@
 
 public class Automaton {
-	private boolean isInService;
+	private boolean isInService; //Barbara thinks this is not so nicely named. Perhaps change to serviceStatus
 	ResponseObject response;
+	
 
 	
 	public Automaton(boolean isInService) {
