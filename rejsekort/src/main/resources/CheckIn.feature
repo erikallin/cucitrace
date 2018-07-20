@@ -25,19 +25,18 @@ Feature: Checking In with travel card
     And a check-in automaton at "Norreport St"   
     And check-in status is false
 
-  @tag1
   Scenario: Successful check-in
     When Check-in
-    Then the automaton displays message that the card is checked-in
+    Then the automaton displays a message that the card is checked-in
 
   Scenario: Already checked-in
     Given check-in status is true
     When Check-in
-    Then the automaton displays message that the card is already checked-in
+    Then the automaton displays a message that the card is already checked-in
 
   Scenario: Card has not enough balance
     Given a travel card with a balance of 15
     When Check-in
-    Then the automaton displays message that the balance is too low
+    Then the automaton displays a message that the balance is too low
 
   

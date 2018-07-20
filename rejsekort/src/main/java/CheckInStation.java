@@ -12,7 +12,7 @@ public class CheckInStation extends Station{
 		if(!card.isCheckedIn()) {
 			if (hasEnoughBalance(card)){
 				if (bus){
-					charge(card);
+					charge(card,bus);
 				}
 				card.setCheckedIn(true);
 				response = new ResponseObject(200, "Checked In");

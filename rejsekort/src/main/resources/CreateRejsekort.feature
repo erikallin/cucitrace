@@ -21,22 +21,22 @@ Feature: Create a new Travel Card
 
 
 Background:
-    Given a cpr-number "1012921234"
+    Given a cpr number "1012921234"
     And a credit card number 12345678
-  @tag1
+    
   Scenario: Create Personal Travel Card Successfully
     When issue
     Then a new User is registered
-    And a new personal Travel Card is issued
+    And the kiosk issues a new personal travel card
 
   Scenario: Create Personal Travel Card Unsuccessfully
     Given a credit card number 555444561
     When issue
-    Then an error message is shown that travel card not created
+    Then the kiosk displays a message is shown that travel card not created
 
   Scenario: Create Personal Travel Card Unsuccessfully
-    Given a cpr-number "1111111111"
+    Given a cpr number "1111111111"
     When issue
-    Then  an error message is shown that travel card not created
+    Then  the kiosk displays a message is shown that travel card not created
 
 

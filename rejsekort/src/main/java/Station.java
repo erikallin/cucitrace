@@ -1,8 +1,9 @@
 
 public class Station {
 
+	private final int FARE_TRAIN = 25;
 
-	private final int FARE = 25;
+	private final int FARE_BUS = 50;
 
 	String name;
 	ResponseObject response;
@@ -16,7 +17,9 @@ public class Station {
 		return card.getBalance()>=80;
 	}
 	
-	protected void charge(TravelCard card) {
-		card.setBalance(card.getBalance() - FARE);
+	protected void charge(TravelCard card, boolean busOrTrain) {
+		if (busOrTrain){
+		card.setBalance(card.getBalance() - FARE_BUS);
+		}
 	}
 }

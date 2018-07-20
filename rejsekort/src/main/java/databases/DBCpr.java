@@ -5,14 +5,19 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class dbCpr extends DBConn {
-
-	public dbCpr() throws Exception {
-		super();
-		connectCPR();
-	}
+public class DBCpr extends DBConn {
 
 	private List<CPR> dbCPR;
+	public DBCpr()  {
+		super();
+		try {
+			connectCPR();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
 
 	private void connectCPR() throws Exception {
 		try {

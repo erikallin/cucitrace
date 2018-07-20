@@ -13,7 +13,7 @@ public class CheckOutStation extends Station {
 	public ResponseObject checkOut(TravelCard card) {
 
 		if (card.isCheckedIn()) {
-			charge(card);
+			charge(card,false);
 			card.setCheckedIn(false);
 			response = new ResponseObject(780, "checked-out");
 		} else {

@@ -19,26 +19,29 @@
 @tag
 Feature: Checking out with travel card
 
-
-Scenario: Successful check-out
+Background: 
+	
 	Given a travel card with a balance of 100 
-	And check-in status is true
-	And a check-in automaton at "Sydhavn St"
+	 And check-in status is true
+	 
+Scenario: Successful check-out 
+	And a check-in traautomaton at "Sydhavn St"
 	And a check-out automaton at "Norreport St"
 	When a check-out
-	Then automaton displays message that the card is checked-out
+	Then automaton displays a message that the card is checked-out
 	And travel card has a new balance 75
 
+
+#fare = 50
+Scenario: Travelling with different means of transportation
+    And check-in on a bus
+    When a check-out
+    Then travel card has a new balance 50
+
+    
 Scenario: Not Checked-in
-	Given a travel card with a balance of 100 
 	And check-in status is false
 	And a check-out automaton at "Norreport St"
 	When a check-out
-	Then automaton displays message that the card is not checked-in
+	Then automaton displays a message that the card is not checked-in
 	And travel card has a new balance 100
-
-Scenario: Travelling with different means of transportation
-    Given check-in status is true
-    And check-in on a bus
-    When a check-out
-    Then travel card has a new balance 75

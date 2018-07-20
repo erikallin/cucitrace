@@ -26,10 +26,10 @@ Background:
   Scenario: Create Anonymous Travel Card Unsuccessfully
     Given a credit card number 555444561
     When issue 
-    Then  an error message is shown that travel card not created
+    Then the kiosk displays a message is shown that travel card not created
 
    
       @tag1
   Scenario: Create Anonymous Travel Card Successfully
     When issue 
-    Then a new anonymous Travel Card is issued
+    Then the kiosk issues an anonymous travel card

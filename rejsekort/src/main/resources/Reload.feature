@@ -23,25 +23,25 @@ Feature: Reload travel card
   Scenario: Successful reload
     Given a travel card with a balance of 50
     And a credit card number 12345678
-    And automaton in service is true
+    And kiosk in service is true
     When a user reloads with 100
     Then travel card has a new balance 160
-    And the automaton displays message that reload succeeded
+    And the kiosk displays message that reload succeeded
 
   @tag2
   Scenario: UnSuccessful reload
     Given a travel card with a balance of 50
     And a credit card number 12345678
-    And automaton in service is false
+    And kiosk in service is false
     When a user reloads with 100
     Then travel card has a new balance 50
-    And the automaton displays message that reload failed
+    And the kiosk displays message that reload failed
 
       @tag2
   Scenario: UnSuccessful reload
     Given a travel card with a balance of 50
     And a credit card number 1111111
-    And automaton in service is true
+    And kiosk in service is true
     When a user reloads with 100
     Then travel card has a new balance 50
-    And the automaton displays message that reload failed
+    And the kiosk displays message that reload failed
