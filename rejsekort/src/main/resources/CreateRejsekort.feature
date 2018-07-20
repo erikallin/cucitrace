@@ -37,6 +37,6 @@ Background:
   Scenario: Create Personal Travel Card Unsuccessfully
     Given a cpr number "1111111111"
     When issue
-    Then  the kiosk displays a message is shown that travel card not created
+    Then the kiosk displays a message is shown that travel card not created
 
 

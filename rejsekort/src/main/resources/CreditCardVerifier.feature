@@ -16,20 +16,19 @@
 #""
 ## (Comments)
 #Sample Feature Definition Template
-@tag 
-Feature: Create a new anonymous travel card for users without a Danish CPR number 
+@tag
+Feature: Validate the credit card number and password entered.
 
-Background: 
-	Given a credit card number 12345678 
-	
-Scenario: Create Anonymous Travel Card Successfully 
-	When issue 
-	Then the kiosk issues an anonymous travel card 
-	
-Scenario: Create Anonymous Travel Card Unsuccessfully 
-	Given a credit card number 555444561 
-	When issue 
-	Then the kiosk displays a message is shown that travel card not created 
-	
-	
-  
+Background:
+    Given a credit card number 12345678
+    And a password 1234
+    
+  Scenario: Charge a credit card successfully
+    When cheksum credit card
+    Then the kiosk sets verified credit card status to true
+    
+  Scenario: Charge a credit card unsuccessfully
+    Given a credit card number 555444561
+    And a password 1234
+    When checksum credit card
+    Then the kiosk sets verified credit card status to false
