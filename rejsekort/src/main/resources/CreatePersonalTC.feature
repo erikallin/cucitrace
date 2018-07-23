@@ -22,20 +22,22 @@ Feature: Create a new Travel Card
 
 Background:
     Given a cpr number "1012921234"
-    And a credit card number 12345678
+    And a verified credit card
     
   Scenario: Create Personal Travel Card Successfully
+ 	 Given credit card verified status is true
     When issue
     Then a new User is registered
     And the kiosk issues a new personal travel card
 
   Scenario: Create Personal Travel Card Unsuccessfully
-    Given a credit card number 555444561
+    Given credit card verified status is false
     When issue
     Then the kiosk displays a message is shown that travel card not created
 
   Scenario: Create Personal Travel Card Unsuccessfully
     Given a cpr number "1111111111"
+    And credit card verified status is true
     When issue
     Then the kiosk displays a message is shown that travel card not created
 

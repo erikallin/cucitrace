@@ -27,4 +27,3 @@ Scenario: Transfer from a train to a bus
 	 	And check-in status is false
     When a check-in on a bus  "1A"
     Then automaton displays a message that the card is on transfer
-    And travel card has a new balance 50

@@ -20,17 +20,16 @@
 Feature: Create a new anonymous travel card for users without a Danish CPR number 
 
 Background: 
-	Given a verified credit card
+	Given a credit card number 12345678 
 	
 Scenario: Create Anonymous Travel Card Successfully 
-	And credit card verified status is true
 	When issue 
 	Then the kiosk issues an anonymous travel card 
 	
 Scenario: Create Anonymous Travel Card Unsuccessfully 
-	And credit card verified status is false
+	Given a credit card number 555444561 
 	When issue 
-	Then the kiosk displays a message that travel card was not created 
+	Then the kiosk displays a message is shown that travel card not created 
 	
 	
   

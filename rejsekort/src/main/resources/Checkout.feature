@@ -41,3 +41,10 @@ Scenario: Not Checked-in
 	When a check-out
 	Then automaton displays a message that the card is not checked-in
 	And travel card has a new balance 100
+
+Scenario: Successful Transfer Checkout
+
+	Given a travel card is on transfer
+	When a check-out
+	Then automaton displays a message that the card is checked-out
+	And travel card has a new balance 50
