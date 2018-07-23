@@ -26,19 +26,19 @@ Background:
     
   Scenario: Create Personal Travel Card Successfully
  	 Given credit card verified status is true
-    When issue
+    When issue a personal travel card
     Then a new User is registered
     And the kiosk issues a new personal travel card
 
   Scenario: Create Personal Travel Card Unsuccessfully
     Given credit card verified status is false
-    When issue
+    When issue a personal travel card
     Then the kiosk displays a message is shown that travel card not created
 
   Scenario: Create Personal Travel Card Unsuccessfully
     Given a cpr number "1111111111"
     And credit card verified status is true
-    When issue
+    When issue a personal travel card
     Then the kiosk displays a message is shown that travel card not created
 
 

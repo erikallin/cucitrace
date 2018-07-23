@@ -24,12 +24,12 @@ Background:
 	
 Scenario: Create Anonymous Travel Card Successfully 
 	Given credit card verified status is true
-	When issue 
+	When issue an anonymous travel card 
 	Then the kiosk issues an anonymous travel card 
 	
 Scenario: Create Anonymous Travel Card Unsuccessfully 
 	And credit card verified status is false
-	When issue 
+	When issue an anonymous travel card
 	Then the kiosk displays a message that travel card was not created 
 	
 	
