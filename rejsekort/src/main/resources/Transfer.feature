@@ -16,13 +16,13 @@
 #""
 ## (Comments)
 #Sample Feature Definition Template
-@tag 
-Feature: Travelling with different means of transportation 
-
-
-Scenario: Transfer from a train to a bus 
-Given  a travel card with a balance of 100 
-And  a check-in automaton at "Sydhavn St" 
-And  check-in status is false 
-When  a check-in on a bus "1A" 
-Then  automaton displays a message that the card is on transfer
+#@tag 
+#Feature: Travelling with different means of transportation 
+#
+#
+#Scenario: Transfer from a train to a bus 
+#Given  a travel card with a balance of 100 
+#And  a check-in automaton at "Sydhavn St" 
+#And  check-in status is false 
+#When  a check-in on a bus "1A" 
+#Then  automaton displays a message that the card is on transfer

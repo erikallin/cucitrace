@@ -17,18 +17,16 @@
 ## (Comments)
 #Sample Feature Definition Template
 @tag
-Feature: Validate the credit card number and password entered.
+Feature: A customer enters a credit card to the kiosk located in a station. The kiosk reads the credit card number and it checks if the credit card is valid.
 
-Background:
-    Given a credit card number 12345678
-    And a password 1234
-    
-  Scenario: Charge a credit card successfully
-    When cheksum credit card
-    Then the kiosk sets verified credit card status to true
-    
-  Scenario: Charge a credit card unsuccessfully
-    Given a credit card number 555444561
-    And a password 1234
-    When checksum credit card
-    Then the kiosk sets verified credit card status to false
+  Scenario: Customer places a valid credit card to the kiosks
+    Given a kiosk at station "Norreport St"
+    And a customer inserts a credit card to the kiosk with number "378282246310005"
+    When the kiosk verifies the credit card
+    Then the kiosk informs the customer that the provided credit card is valid
+
+  Scenario: Customer places an invalid credit card to the kiosks
+    Given a kiosk at station "Norreport St"
+    And a customer inserts a credit card to the kiosk with number "55544a561"
+    When the kiosk verifies the credit card
+    Then the kiosk informs the customer that the provided credit card is invalid

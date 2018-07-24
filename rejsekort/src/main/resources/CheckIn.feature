@@ -16,27 +16,27 @@
 #""
 ## (Comments)
 #Sample Feature Definition Template
-@tag
-Feature: Checking In with travel card
-  A travel card user can check in at any station and use any kind of transportation (bus,train)
-
-  Background: 
-    Given a travel card with a balance of 100
-    And a check-in automaton at "Norreport St"   
-    And check-in status is false
-
-  Scenario: Successful check-in
-    When Check-in
-    Then the automaton displays a message that the card is checked-in
-
-  Scenario: Already checked-in
-    Given check-in status is true
-    When Check-in
-    Then the automaton displays a message that the card is already checked-in
-
-  Scenario: Card has not enough balance
-    Given a travel card with a balance of 15
-    When Check-in
-    Then the automaton displays a message that the balance is too low
-
+#@tag
+#Feature: Checking In with travel card
+  #A travel card user can check in at any station and use any kind of transportation (bus,train)
+#
+  #Background: 
+    #Given a travel card with a balance of 100
+    #And a check-in automaton at "Norreport St"   
+    #And check-in status is false
+#
+  #Scenario: Successful check-in
+    #When Check-in
+    #Then the automaton displays a message that the card is checked-in
+#
+  #Scenario: Already checked-in
+    #Given check-in status is true
+    #When Check-in
+    #Then the automaton displays a message that the card is already checked-in
+#
+  #Scenario: Card has not enough balance
+    #Given a travel card with a balance of 15
+    #When Check-in
+    #Then the automaton displays a message that the balance is too low
+#
   

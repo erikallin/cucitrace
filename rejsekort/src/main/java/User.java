@@ -1,9 +1,8 @@
+import databases.CPR;
 
 public class User {
 
-	private String name;
-	private String lname;
-	private String cpr;
+	private CPR cpr;
 	private int ccNumber;
 
 	private TravelCard tc;
@@ -16,42 +15,16 @@ public class User {
 		this.tc = tc;
 	}
 
-	public User(String name, String lname, String cpr) {
-		this.name = name;
-		this.lname = lname;
-		this.cpr = cpr;
-		// TODO Auto-generated constructor stub
-	}
-
-	public User(String cpr) {
+	public User(CPR cpr) {
+		super();
 		this.cpr = cpr;
 	}
 
-	public User() {
-		// TODO Auto-generated constructor stub
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getLname() {
-		return lname;
-	}
-
-	public void setLname(String lname) {
-		this.lname = lname;
-	}
-
-	public String getCpr() {
+	public CPR getCpr() {
 		return cpr;
 	}
 
-	public void setCpr(String cpr) {
+	public void setCpr(CPR cpr) {
 		this.cpr = cpr;
 	}
 

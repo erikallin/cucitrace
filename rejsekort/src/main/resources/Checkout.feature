@@ -16,35 +16,35 @@
 #""
 ## (Comments)
 #Sample Feature Definition Template
-@tag
-Feature: Checking out with travel card
-
-Background: 
-	
-	Given a travel card with a balance of 100 
-	 And check-in status is true
-	 
-Scenario: Successful check-out 
-	And a check-in automaton at "Sydhavn St"
-	And a check-out automaton at "Norreport St"
-	When a check-out
-	Then automaton displays a message that the card is checked-out
-	And travel card has a new balance 75
-
-
-
-
-    
-Scenario: Not Checked-in
-	And check-in status is false
-	And a check-out automaton at "Norreport St"
-	When a check-out
-	Then automaton displays a message that the card is not checked-in
-	And travel card has a new balance 100
-
-Scenario: Successful Transfer Checkout
-
-	Given a travel card is on transfer
-	When a check-out
-	Then automaton displays a message that the card is checked-out
-	And travel card has a new balance 50
+#@tag
+#Feature: Checking out with travel card
+#
+#Background: 
+#	
+#	Given a travel card with a balance of 100 
+#	 And check-in status is true
+#	 
+#Scenario: Successful check-out 
+#	And a check-in automaton at "Sydhavn St"
+#	And a check-out automaton at "Norreport St"
+#	When a check-out
+#	Then automaton displays a message that the card is checked-out
+#	And travel card has a new balance 75
+#
+#
+#
+#
+    #
+#Scenario: Not Checked-in
+#	And check-in status is false
+#	And a check-out automaton at "Norreport St"
+#	When a check-out
+#	Then automaton displays a message that the card is not checked-in
+#	And travel card has a new balance 100
+#
+#Scenario: Successful Transfer Checkout
+#
+#	Given a travel card is on transfer
+#	When a check-out
+#	Then automaton displays a message that the card is checked-out
+#	And travel card has a new balance 50

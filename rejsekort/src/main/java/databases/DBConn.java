@@ -13,10 +13,8 @@ public class DBConn {
 	protected PreparedStatement preparedStatement = null;
 	protected ResultSet resultSet = null;
 
-	protected final String DB_TABLE_CPR = "dbmyprj.dbcpr";
 
 	protected final String DB_TABLE_TC_USERS = "dbmyprj.dbtcusers";
-	protected final String DB_TABLE_CC_BANK = "dbmyprj.dbccbank";
 	
 	public final String url = "jdbc:mysql://localhost/dbmyprj?user=sqluser&password=sqluserpw";
 
@@ -34,11 +32,11 @@ public class DBConn {
 		// This will load the MySQL driver, each DB has its own driver
 		Class.forName("com.mysql.jdbc.Driver");
 
-		// Setup the connection with the DB
-		connect = DriverManager.getConnection(url);
-
-		// Statements allow to issue SQL queries to the database
-		statement = connect.createStatement();
+//		// Setup the connection with the DB
+//		connect = DriverManager.getConnection(url);
+//
+//		// Statements allow to issue SQL queries to the database
+//		statement = connect.createStatement();
 
 	}
 

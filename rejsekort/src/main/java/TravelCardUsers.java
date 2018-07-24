@@ -3,8 +3,7 @@ import java.util.List;
 
 public class TravelCardUsers {
 
-	private List<User> users; 
-	
+	private List<User> users;
 
 	ResponseObject response;
 
@@ -20,24 +19,30 @@ public class TravelCardUsers {
 		users = new ArrayList<>();
 		RandomUsers rru = new RandomUsers();
 		users = rru.generate(10);
-		
-	}
-	
-	public void exist(String name, String surname){
-		
+
 	}
 
-	public ResponseObject addUsers(User test) {
-		users.add(test);
-		response = new ResponseObject(399, "card is issued"); 
+	private boolean existingUser(User newUser) {
+		if (!users.isEmpty()) {
+			if (users.contains(newUser)) {
+				return true;
+			}
+		}
+		return false;
+
+	}
+
+	public ResponseObject addUser(User newUser) {
+		if (existingUser(newUser)) {
+			response = new ResponseObject(100, "New User Not Okay");
+		} else {
+			users.add(newUser);
+			response = new ResponseObject(110, "New User Okay");
+		}
+
 		return response;
 		// TODO Auto-generated method stub
-		
+
 	}
 
-	
-
-
-
-	
 }

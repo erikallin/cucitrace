@@ -16,21 +16,21 @@
 #""
 ## (Comments)
 #Sample Feature Definition Template
-@tag 
-Feature: Create a new anonymous travel card for users without a Danish CPR number 
-
-Background: 
-	Given a verified credit card
-	
-Scenario: Create Anonymous Travel Card Successfully 
-	Given credit card verified status is true
-	When issue an anonymous travel card 
-	Then the kiosk issues an anonymous travel card 
-	
-Scenario: Create Anonymous Travel Card Unsuccessfully 
-	And credit card verified status is false
-	When issue an anonymous travel card
-	Then the kiosk displays a message that travel card was not created 
-	
-	
+#@tag 
+#Feature: Create a new anonymous travel card for users without a Danish CPR number 
+#
+#Background: 
+#	Given a verified credit card
+#	
+#Scenario: Create Anonymous Travel Card Successfully 
+#	Given credit card verified status is true
+#	When issue an anonymous travel card 
+#	Then the kiosk issues an anonymous travel card 
+#	
+#Scenario: Create Anonymous Travel Card Unsuccessfully 
+#	And credit card verified status is false
+#	When issue an anonymous travel card
+#	Then the kiosk displays a message that travel card was not created 
+#	
+#	
   

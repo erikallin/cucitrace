@@ -47,4 +47,12 @@ public class CPR {
 
 	}
 
+	public CPR(String cpr) {
+		this.cpr = cpr;
+		this.age = -1;
+		this.name = null;
+		this.surname = null;
+
+	}
+
 }

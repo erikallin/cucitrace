@@ -37,7 +37,7 @@ public class RandomUsers {
 		String lname = randomLastName();
 		String cpr = randomCPR();
 
-		return new User(name, lname, cpr);
+		return null; //new User();//name, lname, cpr);
 	}
 	//
 

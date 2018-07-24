@@ -2,6 +2,7 @@
 public class TravelCard {
 	ResponseObject response;
 	int balance;
+	
 	boolean isCheckedIn;
 
 	public boolean isCheckedIn() {
