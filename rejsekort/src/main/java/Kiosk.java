@@ -1,5 +1,6 @@
 import ccvalidation.CreditCard;
 import ccvalidation.CreditCardCompany;
+import databases.CPR;
 
 public class Kiosk {
 
@@ -84,5 +85,11 @@ public class Kiosk {
 
 	public void printOnScreen() {
 		System.out.println("The" + textOnScreen);
+	}
+
+	public void verifyCpr(CPR cpr) {
+		//access database with users 
+		// check if user exist or not
+//		users.contains(cpr)
 	}
 }

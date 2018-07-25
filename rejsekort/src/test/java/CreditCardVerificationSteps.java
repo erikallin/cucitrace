@@ -6,7 +6,7 @@ import static org.junit.Assert.*;
 
 import ccvalidation.CreditCard;
 
-public class CreditCardVerifierSteps {
+public class CreditCardVerificationSteps {
 
 	CreditCard creditCard;
 	Kiosk kiosk;
@@ -17,8 +17,8 @@ public class CreditCardVerifierSteps {
 
 	}
 
-	@Given("^a customer inserts a credit card to the kiosk with number \"([^\"]*)\"$")
-	public void a_customer_inserts_a_credit_card_to_the_kiosk_with_number(String ccnumber) {
+	@Given("^a credit card with number \"([^\"]*)\"$")
+	public void a_credit_card_with_number(String ccnumber) {
 		creditCard = new CreditCard(ccnumber);
 	}
 
