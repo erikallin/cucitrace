@@ -17,7 +17,9 @@
 ## (Comments)
 #Sample Feature Definition Template
 @tag
-Feature: A customer inserts a credit card to the kiosk located in a station. The kiosk reads the credit card number and it verifies if the credit card is valid. 
+Feature: Using credit card to pay
+ A kiosk located in a station. The customer inserts the credit card and the kiosk reads the credit card number 
+ and it verifies if the credit card is valid. 
 
 To verify the credit card the following checks are executed:
 * lengthCheck: check the length of the credit card number is between the limits
@@ -36,3 +38,5 @@ Background:
     Given a credit card with number "55544a561"
     When the kiosk verifies the credit card
     Then the kiosk informs the customer that the provided credit card is invalid
+    
+    #need to have all the scenarios for all the combinations of checks for a credit card.

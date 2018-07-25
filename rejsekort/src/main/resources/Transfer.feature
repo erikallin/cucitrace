@@ -18,7 +18,9 @@
 #Sample Feature Definition Template
 #@tag 
 #Feature: Travelling with different means of transportation 
-#
+#Reload the balance in a travel card
+  #A travel card user can reload the balance of a travel card in a kiosk
+  #using a verified credit card.
 #
 #Scenario: Transfer from a train to a bus 
 #Given  a travel card with a balance of 100 

@@ -17,28 +17,29 @@
 ## (Comments)
 #Sample Feature Definition Template
 #@tag
-#Feature: Create a new Travel Card
-#
-#
-#Background:
-    #Given a cpr number "cprOK"
-    #And a verified credit card
-    #
-  #Scenario: Create Personal Travel Card Successfully
- #	 Given credit card verified status is true
-    #When issue a personal travel card
-    #Then a new User is registered
-    #And the kiosk issues a new personal travel card
-#
-  #Scenario: Create Personal Travel Card Unsuccessfully
-    #Given credit card verified status is false
-    #When issue a personal travel card
-    #Then the kiosk displays a message is shown that travel card not created
-#
+Feature: Create a new Travel Card 
+					A customer wants to purchase a travel card and provides a cpr number.
+					The cpr number is evaluated if it exists in the system. 
+
+
+Background:
+    Given a kiosk at station "Norreport St"
+    And a verified credit card
+    
+  Scenario: Successfully create new Travel Card user 
+    Given  a cpr number "123456-7890" is not registered in the system  
+    When issue a travel card
+    Then a travel card user is registered
+    And the kiosk displays a message that a travel card is issued
+
+  Scenario: Create Personal Travel Card Unsuccessfully
+    Given  a cpr number "123456-7890" is registered in the system  
+    When issue a travel card
+    Then the kiosk displays a message that a travel card not issued
+
   #Scenario: Create Personal Travel Card Unsuccessfully
     #Given a cpr number "cprNotOK"
-    #And credit card verified status is true
     #When issue a personal travel card
     #Then the kiosk displays a message is shown that travel card not created
-#
-#
+
+

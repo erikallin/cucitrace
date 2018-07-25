@@ -1,4 +1,4 @@
-package databases;
+package core;
 
 public class CPR {
 

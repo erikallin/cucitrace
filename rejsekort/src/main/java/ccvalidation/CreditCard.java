@@ -35,6 +35,11 @@ public class CreditCard {
 	public void setValid(boolean valid) {
 		this.valid = valid;
 	}
+
+	public void charge(int amount) {
+		//service to charge amount
+		// add a scenario if there is not enough amount 
+	}
 	
 	
 

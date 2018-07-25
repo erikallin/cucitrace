@@ -17,33 +17,27 @@
 ## (Comments)
 #Sample Feature Definition Template
 #@tag
-Feature: Reload travel card
+Feature: Reload the balance in a travel card
+  A travel card user can reload the balance of a travel card in a kiosk
+  using a verified credit card.
 
-Background: 
-
-    Given a valid credit card 
+  Background: 
+    Given a kiosk at station "Norreport St"
     And a travel card with a balance of 50
-    
-  @tag1
-  Scenario: Successful reload of a travel card 
-    And the kiosk is functioning 
-    When the customer reloads the travel card with 100
-    Then travel card has a new balance 150 #no bonus
-    And the credit card is charged with 50 
-    And the kiosk displays a message that the travel card was reload successfully
+    And a verified credit card
 
-  #@tag2
-  #Scenario: UnSuccessful reload
-    #Given credit card verified status is false
-    #And kiosk service status is false
-    #When a user reloads with 100
-    #Then travel card has a new balance 50
-    #And the kiosk displays message that reload failed
-#
-      #@tag2
-  #Scenario: UnSuccessful reload
-    #Given credit card verified status is false
-    #And kiosk service status is true
-    #When a user reloads with 100
-    #Then travel card has a new balance 50
-    #And the kiosk displays message that reload failed
+  @tag1
+  Scenario: Successfully reload travel card balance
+    Given the kiosk is in working order
+    When the travel card user reloads the travel card with 100
+    Then the travel card after reload has a new balance 150
+    And the verified credit card is charged with 100
+    And the kiosk displays a message that the travel card was reloaded successfully
+
+  @tag2
+  Scenario: UnSuccessful reload  travel card balance: the kiosk is out of order
+    And the kiosk is out of order
+    When the travel card user reloads the travel card with 100
+    Then the travel card after reload has a new balance 50
+    And the kiosk displays a message that the travel card failed to reload
+    

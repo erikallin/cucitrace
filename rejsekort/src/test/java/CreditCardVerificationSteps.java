@@ -5,6 +5,8 @@ import cucumber.api.java.en.When;
 import static org.junit.Assert.*;
 
 import ccvalidation.CreditCard;
+import core.Constants;
+import core.Kiosk;
 
 public class CreditCardVerificationSteps {
 
@@ -30,13 +32,13 @@ public class CreditCardVerificationSteps {
 
 	@Then("^the kiosk informs the customer that the provided credit card is valid$")
 	public void the_kiosk_informs_the_customer_that_the_provided_credit_card_is_valid() {
-		assertEquals(kiosk.getTextOnScreen(), "credit card is valid");
+		assertEquals(kiosk.getTextOnScreen(), Constants.VALID_CC);
 
 	}
 
 	@Then("^the kiosk informs the customer that the provided credit card is invalid$")
 	public void the_kiosk_informs_the_customer_that_the_provided_credit_card_is_invalid() {
-		assertEquals(kiosk.getTextOnScreen(), "credit card is invalid");
+		assertEquals(kiosk.getTextOnScreen(), Constants.VALID_CC);
 	}
 
 }

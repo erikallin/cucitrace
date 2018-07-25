@@ -20,16 +20,16 @@
 #Feature: A customer tries create a travel card. 
 #
 ##
-Background: 
-	Given a cpr number "cprOK" 
-	And a verified credit card 
-	
-Scenario: Create Personal Travel Card Successfully 
-	Given credit card verified status is true 
-	When issue travel card 
-	Then a new User is registered 
-	And the kiosk issues a new personal travel card 
-	
+#Background: 
+#	Given a cpr number "cprOK" 
+#	And a verified credit card 
+#	
+#Scenario: Create Personal Travel Card Successfully 
+#	Given credit card verified status is true 
+#	When issue travel card 
+#	Then a new User is registered 
+#	And the kiosk issues a new personal travel card 
+#	
 ##Scenario: Create Personal Travel Card Unsuccessfully 
 ##	Given credit card verified status is false 
 ##	When issue travel card 
