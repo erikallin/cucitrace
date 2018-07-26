@@ -37,14 +37,20 @@ public class ReloadSteps {
 		reloadKiosk.setInsertedCC(ccInUse);
 	}
 
-	@Given("^the kiosk at the station is in working order$")
-	public void the_kiosk_at_the_station_is_in_working_order() {
+
+@Given("^his credit card has enough balance to charge (\\d+)$")
+public void his_credit_card_has_enough_balance_to_charge(int amount){
+	ccInUse.setBalance(amount);
+}
+
+	@Given("^the reload kiosk at the station is in working order$")
+	public void the_reload_kiosk_at_the_station_is_in_working_order() {
 		reloadKiosk.setOrderStatus(true);
 	}
 
 	@When("^the travel card user reloads the travel card with (\\d+)$")
 	public void the_travel_card_user_reloads_the_travel_card_with(int amount) {
-		response = reloadKiosk.addBalance(tcInUse, amount);		
+		response = reloadKiosk.addBalance(tcInUse, amount);
 	}
 
 	@Then("^the travel card after reload has a new balance (\\d+)$")
@@ -60,21 +66,21 @@ public class ReloadSteps {
 	@Then("^the credit card is charged with (\\d+)$")
 	public void the_credit_card_is_charged_with(int chargedAmount) {
 		// check the charge amount
-		assertEquals(ccInUse.getChargedAmount(), chargedAmount);
+		assertEquals(ccInUse.isSuccessfullyCharged(),true);
 	}
 
-	@Then("^the kiosk displays a message that the travel card was reloaded successfully$")
-	public void the_kiosk_displays_a_message_that_the_travel_card_was_reloaded_successfully() {
+	@Then("^the reload kiosk displays a message that the travel card was reloaded successfully$")
+	public void the_reload_kiosk_displays_a_message_that_the_travel_card_was_reloaded_successfully() {
 		assertEquals(response.getMessage(), Constants.RELOAD_SUCCESS);
 	}
 
-	@Given("^the kiosk at the station is out of order$")
-	public void the_kiosk_at_the_station_is_out_of_order() {
+	@Given("^the reload kiosk at the station is out of order$")
+	public void the_reload_kiosk_at_the_station_is_out_of_order() {
 		reloadKiosk.setOrderStatus(false);
 	}
 
-	@Then("^the kiosk displays a message that the travel card failed to reload$")
-	public void the_kiosk_displays_a_message_that_the_travel_card_failed_to_reload() {
+	@Then("^the reload kiosk displays a message that the travel card failed to reload$")
+	public void the_reload_kiosk_displays_a_message_that_the_travel_card_failed_to_reload() {
 		assertEquals(response.getMessage(), Constants.RELOAD_FAILURE);
 	}
 

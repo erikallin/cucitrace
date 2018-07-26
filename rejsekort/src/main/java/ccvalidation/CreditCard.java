@@ -1,5 +1,7 @@
 package ccvalidation;
 
+import core.ResponseObject;
+
 public class CreditCard {
 
 	private String creditCardNumber;
@@ -7,6 +9,8 @@ public class CreditCard {
 
 	private CreditCardCompany cardType;
 	private int chargedAmount;
+	private int balance;
+	private boolean successfullyCharged;
 
 	public CreditCard(String ccNumber) {
 		this.creditCardNumber = ccNumber;
@@ -38,6 +42,10 @@ public class CreditCard {
 
 	public void charge(int amount) {
 		this.setChargedAmount(amount);
+		if (balance - amount>=0){
+			setSuccessfullyCharged(true);
+		}else
+			setSuccessfullyCharged(false);
 		// service to charge amount
 		// add a scenario if there is not enough amount
 	}
@@ -49,6 +57,26 @@ public class CreditCard {
 
 	public void setChargedAmount(int chargedAmount) {
 		this.chargedAmount = chargedAmount;
+	}
+
+	public void setBalance(int amount) {
+		this.balance = amount;
+		// TODO Auto-generated method stub
+
+	}
+
+	public int getBalance() {
+		return this.balance;
+		// TODO Auto-generated method stub
+
+	}
+
+	public boolean isSuccessfullyCharged() {
+		return successfullyCharged;
+	}
+
+	public void setSuccessfullyCharged(boolean successfullyCharged) {
+		this.successfullyCharged = successfullyCharged;
 	}
 
 }

@@ -17,23 +17,28 @@
 ## (Comments)
 #Sample Feature Definition Template
 #@tag
-Feature: Create a new Travel Card 
-					A customer wants to purchase a travel card and provides a cpr number.
-					The cpr number is evaluated if it exists in the system. 
+Feature: Create a new Travel Card
+  			A customer wants to purchase a travel card and provides a userID number.
+  			The userID number is evaluated if it exists in the system.
 
-
-Background:
+  Background: 
     Given a customer at a registration kiosk at station "Norreport St"
     And his credit card "378282246310005" was successfully verified by the registration kiosk
-    
-  Scenario: Successfully create new Travel Card user 
-    Given  a userID number "123456-7890" is not registered in the system  
+
+  Scenario: Successfully create a Travel Card user
+    Given a userID number "123456-7890" is not registered in the system
+    And his credit card has enough balance to charge the amount of 100
     When issue a travel card
     Then a travel card user is registered
-    And the kiosk displays a message that a travel card is issued
+    And the registration kiosk displays a message that a travel card is issued
 
-  Scenario: Create Personal Travel Card Unsuccessfully
-    Given  a userID number "123456-7890" is registered in the system  
+  Scenario: Unsuccessfully create a Travel Card user - credit card does not have enough balance
+    Given a userID number "123456-7890" is not registered in the system
+    But his credit card does not have enough balance to charge the amount of 100
     When issue a travel card
-    Then the kiosk displays a message that a travel card not issued
+    Then the registration kiosk displays a message that a travel card not issued because credit card does not have enough balance
 
+  Scenario: Unsuccessfully create a Travel Card user - user already registered in the system
+    Given a userID number "123456-7890" is registered in the system
+    When issue a travel card
+    Then the registration kiosk displays a message that a travel card not issued because user already registered in the system

@@ -11,7 +11,6 @@ public class Kiosk {
 	private String stationName;
 	private String textOnScreen;
 
-
 	private final int FARE_TRAVEL_CARD_CREATION = 100;
 	private ResponseObject response;
 	private boolean orderStatus;
@@ -36,23 +35,23 @@ public class Kiosk {
 		String card = creditCard.getCreditCardNumber().replaceAll("[^0-9]+", "");
 		if ((card == null) || (card.length() < 13) || (card.length() > 19)) {
 			this.textOnScreen = Constants.INVALID_CC_LENGTH;
-			
-			return new ResponseObject(500,  Constants.INVALID_CC_LENGTH);
+
+			return new ResponseObject(500, Constants.INVALID_CC_LENGTH);
 		}
 
 		if (!luhnCheck(card)) {
 			this.textOnScreen = Constants.INVALID_CC_LETTERS;
-			return new ResponseObject(510,  Constants.INVALID_CC_LETTERS);
+			return new ResponseObject(510, Constants.INVALID_CC_LETTERS);
 		}
 
 		CreditCardCompany cc = CreditCardCompany.gleanCompany(card);
 		if (cc == null) {
 			this.textOnScreen = Constants.INVALID_CC_COMPANY;
-			return new ResponseObject(520,  Constants.INVALID_CC_COMPANY);
+			return new ResponseObject(520, Constants.INVALID_CC_COMPANY);
 		}
 		this.textOnScreen = Constants.VALID_CC;
 		setInsertedCC(creditCard);
-		return new ResponseObject(530,  Constants.VALID_CC);
+		return new ResponseObject(530, Constants.VALID_CC);
 
 	}
 
@@ -110,9 +109,14 @@ public class Kiosk {
 
 	public ResponseObject addBalance(TravelCard tc, int amount) {
 		if (orderStatus) {
-			response = new ResponseObject(300, Constants.RELOAD_SUCCESS);
-			tc.addBalance(amount);
 			insertedCC.charge(amount);
+			if (insertedCC.isSuccessfullyCharged()) {
+				response = new ResponseObject(300, Constants.RELOAD_SUCCESS);
+				tc.addBalance(amount);
+
+			} else {
+				response = new ResponseObject(320, Constants.INVALID_CC_LOW_BALANCE);
+			}
 		} else {
 			response = new ResponseObject(310, Constants.RELOAD_FAILURE);
 		}
@@ -132,9 +136,15 @@ public class Kiosk {
 	public ResponseObject issueTravelCard(User user, CreditCard cc) {
 
 		if (!tcUsers.contains(user)) {
-			tcUsers.add(user);
 			cc.charge(FARE_TRAVEL_CARD_CREATION);
-			response = new ResponseObject(400, Constants.TRAVEL_CARD_CREATION_SUCCESS);
+			if (insertedCC.isSuccessfullyCharged()) {
+
+				tcUsers.add(user);
+				response = new ResponseObject(400, Constants.TRAVEL_CARD_CREATION_SUCCESS);
+			} else {
+				response = new ResponseObject(420, Constants.INVALID_CC_LOW_BALANCE);
+			}
+
 		} else
 			response = new ResponseObject(410, Constants.TRAVEL_CARD_CREATION_FAILURE);
 
