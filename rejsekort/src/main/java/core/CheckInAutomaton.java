@@ -4,22 +4,13 @@ public class CheckInAutomaton {
 
 	private final int MINIMUM_CHECKIN_BALANCE = 25;
 
-
 	private ResponseObject response;
+
+	private String stationName;
 
 	public CheckInAutomaton(String stationName) {
 		this.stationName = stationName;
 	}
-
-	public String getStationName() {
-		return stationName;
-	}
-
-	public void setStationName(String stationName) {
-		this.stationName = stationName;
-	}
-
-	private String stationName;
 
 	public ResponseObject checkIn(TravelCard card) {
 		if (!card.isCheckedInStatus()) {
@@ -39,4 +30,13 @@ public class CheckInAutomaton {
 		// TODO Auto-generated method stub
 		return card.getBalance() > MINIMUM_CHECKIN_BALANCE;
 	}
+
+	public String getStationName() {
+		return stationName;
+	}
+
+	public void setStationName(String stationName) {
+		this.stationName = stationName;
+	}
+
 }

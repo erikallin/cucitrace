@@ -15,20 +15,13 @@ public class Kiosk {
 	private ResponseObject response;
 	private boolean orderStatus;
 	private CreditCard insertedCC;
-	private List<User> tcUsers = new ArrayList<User>();
+	private List<User> tcUsers;
 
 	public Kiosk(String stationName) {
 		this.setStationName(stationName);
+		tcUsers = new ArrayList<User>();
 		TravelCardUsers tcu = new TravelCardUsers();
 		tcUsers = tcu.getUserIDs();
-	}
-
-	public String getStationName() {
-		return stationName;
-	}
-
-	public void setStationName(String stationName) {
-		this.stationName = stationName;
 	}
 
 	public ResponseObject verify(CreditCard creditCard) {
@@ -157,6 +150,14 @@ public class Kiosk {
 
 	public void setTcUsers(List<User> tcUsers) {
 		this.tcUsers = tcUsers;
+	}
+
+	public String getStationName() {
+		return stationName;
+	}
+
+	public void setStationName(String stationName) {
+		this.stationName = stationName;
 	}
 
 }

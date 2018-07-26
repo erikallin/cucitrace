@@ -42,7 +42,7 @@ public class CreditCard {
 
 	public void charge(int amount) {
 		this.setChargedAmount(amount);
-		if (balance - amount>=0){
+		if (getServiceCreditCardBalance() - amount>=0){
 			setSuccessfullyCharged(true);
 		}else
 			setSuccessfullyCharged(false);
@@ -67,7 +67,6 @@ public class CreditCard {
 
 	public int getBalance() {
 		return this.balance;
-		// TODO Auto-generated method stub
 
 	}
 
@@ -77,6 +76,11 @@ public class CreditCard {
 
 	public void setSuccessfullyCharged(boolean successfullyCharged) {
 		this.successfullyCharged = successfullyCharged;
+	}
+	
+	private int getServiceCreditCardBalance(){
+		//communication with Bank to get credit card balance
+		return this.balance;
 	}
 
 }

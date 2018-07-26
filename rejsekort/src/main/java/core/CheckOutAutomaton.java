@@ -1,25 +1,15 @@
 package core;
 
 public class CheckOutAutomaton {
-	
+
 	private String stationName;
 	private ResponseObject response;
 
-	
 	private final int FARE = 25;
 
-	
 	public CheckOutAutomaton(String stationName) {
 		this.setStationName(stationName);
 		// TODO Auto-generated constructor stub
-	}
-
-	public String getStationName() {
-		return stationName;
-	}
-
-	public void setStationName(String stationName) {
-		this.stationName = stationName;
 	}
 
 	public ResponseObject checkOut(TravelCard card) {
@@ -35,10 +25,17 @@ public class CheckOutAutomaton {
 	}
 
 	private void charge(TravelCard card) {
-		
+
 		card.setBalance(card.getBalance() - FARE);
-		
-		
+
+	}
+
+	public String getStationName() {
+		return stationName;
+	}
+
+	public void setStationName(String stationName) {
+		this.stationName = stationName;
 	}
 
 }

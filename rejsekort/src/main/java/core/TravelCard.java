@@ -1,18 +1,16 @@
 package core;
 
 public class TravelCard {
-	ResponseObject response;
-	int balance;
+	private int balance;
 
 	private boolean isCheckedInStatus;
 
 	public TravelCard() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public TravelCard(int tcBalance) {
-		this.balance =tcBalance;
+		this.balance = tcBalance;
 	}
 
 	public int getBalance() {
@@ -23,7 +21,6 @@ public class TravelCard {
 		this.balance = balance;
 	}
 
-
 	public boolean isCheckedInStatus() {
 		return isCheckedInStatus;
 	}
@@ -33,7 +30,7 @@ public class TravelCard {
 	}
 
 	public void addBalance(int amount) {
-		this.balance+=amount;
+		this.balance += amount;
 	}
 
 }

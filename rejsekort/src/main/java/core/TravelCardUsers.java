@@ -24,16 +24,6 @@ public class TravelCardUsers {
 
 	}
 
-	private boolean existingUserID(User newUserID) {
-		if (!users.isEmpty()) {
-			if (users.contains(newUserID)) {
-				return true;
-			}
-		}
-		return false;
-
-	}
-
 	public void addUserID(User newUserID) {
 		users.add(newUserID);
 
