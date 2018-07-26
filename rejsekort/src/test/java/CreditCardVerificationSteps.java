@@ -38,7 +38,7 @@ public class CreditCardVerificationSteps {
 
 	@Then("^the kiosk informs the customer that the provided credit card is invalid$")
 	public void the_kiosk_informs_the_customer_that_the_provided_credit_card_is_invalid() {
-		assertEquals(kiosk.getTextOnScreen(), Constants.VALID_CC);
+		assertEquals(kiosk.getTextOnScreen(), Constants.INVALID_CC);
 	}
 
 }

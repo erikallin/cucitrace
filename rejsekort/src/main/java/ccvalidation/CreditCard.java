@@ -2,12 +2,12 @@ package ccvalidation;
 
 public class CreditCard {
 
-	
 	private String creditCardNumber;
 	private boolean valid;
 
 	private CreditCardCompany cardType;
-	
+	private int chargedAmount;
+
 	public CreditCard(String ccNumber) {
 		this.creditCardNumber = ccNumber;
 	}
@@ -37,10 +37,18 @@ public class CreditCard {
 	}
 
 	public void charge(int amount) {
-		//service to charge amount
-		// add a scenario if there is not enough amount 
+		this.setChargedAmount(amount);
+		// service to charge amount
+		// add a scenario if there is not enough amount
 	}
-	
-	
+
+	public int getChargedAmount() {
+		// TODO Auto-generated method stub
+		return this.chargedAmount;
+	}
+
+	public void setChargedAmount(int chargedAmount) {
+		this.chargedAmount = chargedAmount;
+	}
 
 }

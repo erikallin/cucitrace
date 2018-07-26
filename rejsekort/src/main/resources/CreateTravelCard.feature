@@ -23,17 +23,17 @@ Feature: Create a new Travel Card
 
 
 Background:
-    Given a kiosk at station "Norreport St"
-    And a verified credit card
+    Given a customer at a registration kiosk at station "Norreport St"
+    And his credit card "378282246310005" was successfully verified by the registration kiosk
     
   Scenario: Successfully create new Travel Card user 
-    Given  a cpr number "123456-7890" is not registered in the system  
+    Given  a userID number "123456-7890" is not registered in the system  
     When issue a travel card
     Then a travel card user is registered
     And the kiosk displays a message that a travel card is issued
 
   Scenario: Create Personal Travel Card Unsuccessfully
-    Given  a cpr number "123456-7890" is registered in the system  
+    Given  a userID number "123456-7890" is registered in the system  
     When issue a travel card
     Then the kiosk displays a message that a travel card not issued
 

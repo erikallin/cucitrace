@@ -13,37 +13,43 @@ import cucumber.api.java.en.When;
 public class ReloadSteps {
 	private final String RELOAD_SUCCESS = "Travel card was reloaded successfully";
 	private final String RELOAD_FAILURE = "Travel card failed to reload";
-	private final String verifiedccNumber = "378282246310005";
-
-	private final int tcBalance = 50;
 
 	private CreditCard ccInUse;
 
-	private Kiosk kiosk = new Kiosk("Norreport Station");
+	private Kiosk reloadKiosk;
 	private ResponseObject response;
-	TravelCard tc = new TravelCard(tcBalance);
+	TravelCard tcInUse;
 
-	@Given("^a verified credit card$")
-	public void a_verified_credit_card() {
-		ccInUse = new CreditCard(verifiedccNumber);
-		ccInUse.setValid(true);
-		kiosk.setInsertedCC(ccInUse);
+	@Given("^a travel card user at a reload kiosk at station \"([^\"]*)\"$")
+	public void a_travel_card_user_at_a_reload_kiosk_at_station(String stationName) {
+		reloadKiosk = new Kiosk(stationName);
 	}
 
-	@Given("^the kiosk is in working order$")
-	public void the_kiosk_is_in_working_order() throws Throwable {
-		kiosk.setOrderStatus(true);
+	@Given("^his travel card has a balance of (\\d+)$")
+	public void his_travel_card_has_a_balance_of(int tcBalance) {
+		tcInUse = new TravelCard(tcBalance);
+	}
+
+	@Given("^his credit card \"([^\"]*)\" was successfully verified by the reload kiosk$")
+	public void his_credit_card_was_successfully_verified_by_the_reload_kiosk(String ccNumber) {
+		ccInUse = new CreditCard(ccNumber);
+		ccInUse.setValid(true);
+		reloadKiosk.setInsertedCC(ccInUse);
+	}
+
+	@Given("^the kiosk at the station is in working order$")
+	public void the_kiosk_at_the_station_is_in_working_order() {
+		reloadKiosk.setOrderStatus(true);
 	}
 
 	@When("^the travel card user reloads the travel card with (\\d+)$")
 	public void the_travel_card_user_reloads_the_travel_card_with(int amount) {
-		response = kiosk.addBalance(tc, amount);
-
+		response = reloadKiosk.addBalance(tcInUse, amount);		
 	}
 
 	@Then("^the travel card after reload has a new balance (\\d+)$")
 	public void the_travel_card_after_reload_has_a_new_balance(int newBalance) {
-		assertEquals(tc.getBalance(), newBalance);
+		assertEquals(tcInUse.getBalance(), newBalance);
 	}
 
 	@Then("^the verified credit card is charged with (\\d+)$")
@@ -51,14 +57,20 @@ public class ReloadSteps {
 		assertEquals(response.getMessage(), Constants.RELOAD_SUCCESS);
 	}
 
+	@Then("^the credit card is charged with (\\d+)$")
+	public void the_credit_card_is_charged_with(int chargedAmount) {
+		// check the charge amount
+		assertEquals(ccInUse.getChargedAmount(), chargedAmount);
+	}
+
 	@Then("^the kiosk displays a message that the travel card was reloaded successfully$")
 	public void the_kiosk_displays_a_message_that_the_travel_card_was_reloaded_successfully() {
 		assertEquals(response.getMessage(), Constants.RELOAD_SUCCESS);
 	}
 
-	@Given("^the kiosk is out of order$")
-	public void the_kiosk_is_out_of_order() {
-		kiosk.setOrderStatus(false);
+	@Given("^the kiosk at the station is out of order$")
+	public void the_kiosk_at_the_station_is_out_of_order() {
+		reloadKiosk.setOrderStatus(false);
 	}
 
 	@Then("^the kiosk displays a message that the travel card failed to reload$")

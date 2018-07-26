@@ -7,13 +7,13 @@ import Utils.RandomTravelCardUsers;
 
 public class TravelCardUsers {
 
-	private List<CPR> users;
+	private List<User> users;
 
-	public List<CPR> getCPRs() {
+	public List<User> getUserIDs() {
 		return users;
 	}
 
-	public void setCPRs(List<CPR> users) {
+	public void setuserIDs(List<User> users) {
 		this.users = users;
 	}
 
@@ -24,9 +24,9 @@ public class TravelCardUsers {
 
 	}
 
-	private boolean existingCPR(CPR newCPR) {
+	private boolean existingUserID(User newUserID) {
 		if (!users.isEmpty()) {
-			if (users.contains(newCPR)) {
+			if (users.contains(newUserID)) {
 				return true;
 			}
 		}
@@ -34,8 +34,8 @@ public class TravelCardUsers {
 
 	}
 
-	public void addCPR(CPR newCPR) {
-		users.add(newCPR);
+	public void addUserID(User newUserID) {
+		users.add(newUserID);
 
 	}
 

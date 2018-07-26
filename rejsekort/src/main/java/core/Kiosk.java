@@ -16,12 +16,12 @@ public class Kiosk {
 	private ResponseObject response;
 	private boolean orderStatus;
 	private CreditCard insertedCC;
-	private List<CPR> tcUsers = new ArrayList<CPR>();
+	private List<User> tcUsers = new ArrayList<User>();
 
 	public Kiosk(String stationName) {
 		this.setStationName(stationName);
 		TravelCardUsers tcu = new TravelCardUsers();
-		tcUsers = tcu.getCPRs();
+		tcUsers = tcu.getUserIDs();
 	}
 
 	public String getStationName() {
@@ -127,10 +127,10 @@ public class Kiosk {
 		this.insertedCC = insertedCC;
 	}
 
-	public ResponseObject issueTravelCard(CPR cpr, CreditCard cc) {
+	public ResponseObject issueTravelCard(User user, CreditCard cc) {
 
-		if (!tcUsers.contains(cpr)) {
-			tcUsers.add(cpr);
+		if (!tcUsers.contains(user)) {
+			tcUsers.add(user);
 			cc.charge(FARE_TRAVEL_CARD_CREATION);
 			response = new ResponseObject(400, Constants.TRAVEL_CARD_CREATION_SUCCESS);
 		} else
@@ -139,11 +139,11 @@ public class Kiosk {
 		return response;
 	}
 
-	public List<CPR> getTcUsers() {
+	public List<User> getTcUsers() {
 		return tcUsers;
 	}
 
-	public void setTcUsers(List<CPR> tcUsers) {
+	public void setTcUsers(List<User> tcUsers) {
 		this.tcUsers = tcUsers;
 	}
 

@@ -22,21 +22,21 @@ Feature: Reload the balance in a travel card
   using a verified credit card.
 
   Background: 
-    Given a kiosk at station "Norreport St"
-    And a travel card with a balance of 50
-    And a verified credit card
+    Given a travel card user at a reload kiosk at station "Norreport St"
+    And his travel card has a balance of 50
+    And his credit card "378282246310005" was successfully verified by the reload kiosk
 
   @tag1
   Scenario: Successfully reload travel card balance
-    Given the kiosk is in working order
+    Given the kiosk at the station is in working order
     When the travel card user reloads the travel card with 100
     Then the travel card after reload has a new balance 150
-    And the verified credit card is charged with 100
+    And the credit card is charged with 100
     And the kiosk displays a message that the travel card was reloaded successfully
 
   @tag2
   Scenario: UnSuccessful reload  travel card balance: the kiosk is out of order
-    And the kiosk is out of order
+    And the kiosk at the station is out of order
     When the travel card user reloads the travel card with 100
     Then the travel card after reload has a new balance 50
     And the kiosk displays a message that the travel card failed to reload
