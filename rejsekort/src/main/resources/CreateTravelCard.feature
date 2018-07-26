@@ -37,9 +37,3 @@ Background:
     When issue a travel card
     Then the kiosk displays a message that a travel card not issued
 
-  #Scenario: Create Personal Travel Card Unsuccessfully
-    #Given a cpr number "cprNotOK"
-    #When issue a personal travel card
-    #Then the kiosk displays a message is shown that travel card not created
-
-

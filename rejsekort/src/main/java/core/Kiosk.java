@@ -32,25 +32,27 @@ public class Kiosk {
 		this.stationName = stationName;
 	}
 
-	public void verify(CreditCard creditCard) {
+	public ResponseObject verify(CreditCard creditCard) {
 		String card = creditCard.getCreditCardNumber().replaceAll("[^0-9]+", "");
 		if ((card == null) || (card.length() < 13) || (card.length() > 19)) {
-			this.textOnScreen = Constants.INVALID_CC;
-			return;
+			this.textOnScreen = Constants.INVALID_CC_LENGTH;
+			
+			return new ResponseObject(500,  Constants.INVALID_CC_LENGTH);
 		}
 
 		if (!luhnCheck(card)) {
-			this.textOnScreen = Constants.INVALID_CC;
-			return;
+			this.textOnScreen = Constants.INVALID_CC_LETTERS;
+			return new ResponseObject(510,  Constants.INVALID_CC_LETTERS);
 		}
 
 		CreditCardCompany cc = CreditCardCompany.gleanCompany(card);
 		if (cc == null) {
-			this.textOnScreen = Constants.INVALID_CC;
-			return;
+			this.textOnScreen = Constants.INVALID_CC_COMPANY;
+			return new ResponseObject(520,  Constants.INVALID_CC_COMPANY);
 		}
 		this.textOnScreen = Constants.VALID_CC;
 		setInsertedCC(creditCard);
+		return new ResponseObject(530,  Constants.VALID_CC);
 
 	}
 
