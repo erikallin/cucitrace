@@ -27,7 +27,7 @@ Feature: Checking In with travel card
   Scenario: Successfull check-in
     Given a travel card with check-in status is false
     When Check-in
-    Then the automaton displays a message that the travel card is checked-in
+    Then the automaton displays a message that "the travel card is checked-in"
 
   Scenario: Unsuccessfull check-in : the travel card is already checked-in
     Given a travel card with check-in status is true

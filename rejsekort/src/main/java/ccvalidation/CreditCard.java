@@ -1,6 +1,5 @@
 package ccvalidation;
 
-import core.ResponseObject;
 
 public class CreditCard {
 
