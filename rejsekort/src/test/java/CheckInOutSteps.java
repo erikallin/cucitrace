@@ -1,10 +1,11 @@
 import static org.junit.Assert.assertEquals;
 
-import core.CheckInAutomaton;
-import core.CheckOutAutomaton;
-import core.Constants;
-import core.ResponseObject;
-import core.TravelCard;
+import com.travelcard.core.CheckInAutomaton;
+import com.travelcard.core.CheckOutAutomaton;
+import com.travelcard.core.Constants;
+import com.travelcard.core.ResponseObject;
+import com.travelcard.core.TravelCard;
+
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;

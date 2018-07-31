@@ -4,10 +4,10 @@ import cucumber.api.java.en.When;
 
 import static org.junit.Assert.*;
 
-import ccvalidation.CreditCard;
-import core.Constants;
-import core.Kiosk;
-import core.ResponseObject;
+import com.creditcard.validation.CreditCard;
+import com.travelcard.core.Constants;
+import com.travelcard.core.Kiosk;
+import com.travelcard.core.ResponseObject;
 
 public class CreditCardVerificationSteps {
 

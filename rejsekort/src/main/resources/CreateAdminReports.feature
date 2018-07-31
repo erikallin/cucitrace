@@ -23,10 +23,9 @@ Feature: Reports generation
 
   @tag1
   Scenario: Successfull Report Generation
-    Given an administrator of the system 
-   	And he wants to see the amount of "checked in" travel cards for the month "July " 
-   	When he presses generate reports
-   	Then the system generates and prints out a "pdf" report
+    Given the manager wants to see the number of "checked in" travel cards for the month "July" 
+   	When he generates a new report
+   	Then the system produces a "CHECK IN MONTH JULY" report
    	
    	
    	

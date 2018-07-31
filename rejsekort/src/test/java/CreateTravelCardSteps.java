@@ -1,11 +1,12 @@
 import static org.junit.Assert.assertEquals;
 
-import ccvalidation.CreditCard;
-import core.User;
-import core.Constants;
-import core.Kiosk;
-import core.ResponseObject;
-import core.TravelCardUsers;
+import com.creditcard.validation.CreditCard;
+import com.travelcard.core.Constants;
+import com.travelcard.core.Kiosk;
+import com.travelcard.core.ResponseObject;
+import com.travelcard.core.TravelCardUserList;
+import com.travelcard.core.User;
+
 import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
