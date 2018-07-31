@@ -2,12 +2,12 @@ package core;
 
 public class Constants {
 
-	public static final String CHECKED_OUT_SUCCESS = "Success: Travel card is checked-out";
-	public static final String CHECKED_OUT_FAILURE = "Failure: Travel card is not checked-in";
+	public static final String CHECKED_OUT_SUCCESS = "the travel card is successfully checked out";
+	public static final String CHECKED_OUT_FAILURE = "the travel card is not checked in";
 
-	public static final String CHECKED_IN_SUCCESS = "Travel card is checked in";
-	public static final String CHECKED_IN_FAILURE_LOW_BALANCE = "Travel card balance is too low";
-	public static final String CHECKED_IN_FAILURE_ALREADY = "Travel card is already checked in";
+	public static final String CHECKED_IN_SUCCESS = "the travel card is checked in";
+	public static final String CHECKED_IN_FAILURE_LOW_BALANCE = "the travel card balance is too low";
+	public static final String CHECKED_IN_FAILURE_ALREADY = "the travel card is already checked in";
 
 	public static final String VALID_CC = "credit card is valid";
 	public static final String INVALID_CC_LETTERS = "credit card is invalid because it contains characters";

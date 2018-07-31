@@ -6,8 +6,16 @@ import java.util.List;
 import ccvalidation.CreditCard;
 import ccvalidation.CreditCardCompany;
 
+import java.util.logging.Level;
+import java.util.logging.LogManager;
+import java.util.logging.Logger;
+
+import LogUtil.RejsekortLogger;
+
 public class Kiosk {
 
+	// assumes the current class is called MyLogger
+	private final static Logger LOGGER = Logger.getLogger(RejsekortLogger.class.getName());
 	private String stationName;
 	private String textOnScreen;
 
@@ -22,6 +30,7 @@ public class Kiosk {
 		tcUsers = new ArrayList<User>();
 		TravelCardUsers tcu = new TravelCardUsers();
 		tcUsers = tcu.getUserIDs();
+		LogManager.getLogManager().getLogger(Logger.GLOBAL_LOGGER_NAME).setLevel(Level.FINE);
 	}
 
 	public ResponseObject verify(CreditCard creditCard) {
@@ -48,7 +57,6 @@ public class Kiosk {
 
 	}
 
-	
 	/**
 	 * Checks for a valid credit card number.
 	 * 

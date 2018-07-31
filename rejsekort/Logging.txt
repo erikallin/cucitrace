@@ -1,0 +1,8 @@
+Jul 31, 2018 10:26:26 AM LogUtil.TestLogger doSomeThingAndLog
+SEVERE: Info Log
+Jul 31, 2018 10:26:26 AM LogUtil.TestLogger doSomeThingAndLog
+SEVERE: Info Log
+Jul 31, 2018 10:26:26 AM LogUtil.TestLogger doSomeThingAndLog
+WARNING: Info Log
+Jul 31, 2018 10:26:26 AM LogUtil.TestLogger doSomeThingAndLog
+INFO: Info Log

@@ -1,4 +1,4 @@
-package Utils;
+package DataGeneratorUtil;
 
 import java.util.ArrayList;
 import java.util.List;

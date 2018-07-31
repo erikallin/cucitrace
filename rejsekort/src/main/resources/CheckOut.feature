@@ -28,14 +28,14 @@ Feature: Checking out with travel card
     And a check-in automaton at "Sydhavn St"
     And a check-out automaton at "Norreport St"
     When a travel card check-out
-    Then the automaton displays a message that the travel card is successfully checked-out
-    And the travel card after check-out has a new balance 75
-
+    Then the travel card after check-out has a new balance 75
+    And the check out automaton displays a message that "the travel card is successfully checked out"
+  
   Scenario: Unsuccesful check-out: Not Checked-in
     Given a travel card with check-in status is false
     And a check-out automaton at "Norreport St"
     When a travel card check-out
-    Then the automaton displays a message that the travel card is not checked-in
+    Then the check out automaton displays a message that "the travel card is not checked in"
     And the travel card after check-out has a new balance 100
 #
 #Scenario: Successful Transfer Checkout

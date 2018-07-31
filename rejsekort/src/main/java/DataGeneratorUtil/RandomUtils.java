@@ -1,4 +1,4 @@
-package Utils;
+package DataGeneratorUtil;
 
 import java.util.Random;
 public class RandomUtils {
