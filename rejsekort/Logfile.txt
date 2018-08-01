@@ -1,0 +1,12 @@
+Aug 02, 2018 1:34:40 AM com.travelcard.core.CheckOutAutomaton checkOut
+INFO: CHECKOUT: Automaton at Norreport St : the travel card is successfully checked out
+Aug 02, 2018 1:34:40 AM com.travelcard.core.Kiosk issueTravelCard
+INFO: CREDIT CARD :credit card is validTravel card was created
+Aug 02, 2018 1:34:40 AM com.travelcard.core.Kiosk issueTravelCard
+INFO: CREDIT CARD :credit card is validTravel card was created
+Aug 02, 2018 1:34:40 AM com.travelcard.core.Kiosk addBalance
+INFO: CREDIT CARD :credit card is validTravel card was reloaded successfully
+Aug 02, 2018 1:34:40 AM com.travelcard.core.Kiosk addBalance
+INFO: CREDIT CARD :credit card is validTravel card was reloaded successfully
+Aug 02, 2018 1:34:40 AM com.travelcard.core.Kiosk addBalance
+INFO: CREDIT CARD :credit card is validTravel card was reloaded successfully

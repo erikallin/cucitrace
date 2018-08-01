@@ -80,5 +80,11 @@ public void his_credit_card_has_enough_balance_to_charge(int amount){
 	public void the_reload_kiosk_displays_a_message_that_the_travel_card_failed_to_reload() {
 		assertEquals(response.getMessage(), Constants.RELOAD_FAILURE);
 	}
+	@Given("^the reload kiosk posts that message on the system log$")
+	public void the_reload_kiosk_posts_that_message_on_the_system_log(){
+		reloadKiosk.checkReload();
+	}
+
+
 
 }

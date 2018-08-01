@@ -80,5 +80,9 @@ public class CreateTravelCardSteps {
 			throws Throwable {
 		assertEquals(response.getMessage(), Constants.INVALID_CC_LOW_BALANCE);
 	}
+	@Then("^the registration kiosk posts that message on the system log$")
+	public void the_registration_kiosk_posts_that_message_on_the_system_log() {
+		registrationKiosk.checkRegistered();
+	}
 
 }

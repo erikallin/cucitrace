@@ -8,13 +8,9 @@ public class CheckInAutomaton {
 
 	private String stationName;
 
-	TravelCardLoggerReader tclr = new TravelCardLoggerReader();
-
 	public CheckInAutomaton(String stationName) {
 		this.stationName = stationName;
-		tclr.getLogger().info("CHECKIN: ");
-		tclr.printLog();
-		tclr.readlog();
+		
 	}
 
 	public ResponseObject checkIn(TravelCard card) {
@@ -22,8 +18,10 @@ public class CheckInAutomaton {
 			if (hasEnoughBalance(card)) {
 				card.setCheckedInStatus(true);
 				response = new ResponseObject(200, Constants.CHECKED_IN_SUCCESS);
-			//	tclr.getLogger().info("CHECKIN: Automaton at " + stationName + " registers Travel Card " + " is checked in");
-
+				
+				InitSystem.isl.getLogger().info("CHECKIN: Automaton at " + stationName + " : " + Constants.CHECKED_IN_SUCCESS);
+				InitSystem.isl.printLog();
+			//	InitSystem.isl.readlog();
 			} else {
 				response = new ResponseObject(220, Constants.CHECKED_IN_FAILURE_LOW_BALANCE);
 			}
@@ -47,6 +45,8 @@ public class CheckInAutomaton {
 	}
 
 	public void checkInLog() {
+		//InitSystem.isl.readlog();
+		InitSystem.isl.logContains(Constants.CHECKED_IN_SUCCESS);
 	}
 
 }

@@ -54,5 +54,6 @@ public class CreditCardVerificationSteps {
 	public void the_kiosk_informs_the_user_that_the_provided_credit_card_because_it_does_not_belong_to_a_company_provider() {
 		assertEquals(response.getMessage(), Constants.INVALID_CC_COMPANY);
 	}
+	
 
 }
