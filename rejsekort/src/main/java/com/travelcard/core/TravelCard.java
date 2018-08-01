@@ -4,9 +4,18 @@ public class TravelCard {
 	private int balance;
 
 	private boolean isCheckedInStatus;
+	private String tcName;
+	public String getTcName() {
+		return tcName;
+	}
+
+	public void setTcName(String tcName) {
+		this.tcName = tcName;
+	}
 
 	public TravelCard() {
 		super();
+		this.tcName = "Name"; //fix this
 	}
 
 	public TravelCard(int tcBalance) {

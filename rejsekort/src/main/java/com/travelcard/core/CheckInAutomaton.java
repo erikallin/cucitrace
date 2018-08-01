@@ -24,6 +24,8 @@ public class CheckInAutomaton {
 			if (hasEnoughBalance(card)) {
 				card.setCheckedInStatus(true);
 				response = new ResponseObject(200, Constants.CHECKED_IN_SUCCESS);
+
+				TravelCardLogger.getLogger().info("Automaton at " + stationName + " registers Travel Card " + card.getTcName() + "is checked in");
 			} else {
 				response = new ResponseObject(220, Constants.CHECKED_IN_FAILURE_LOW_BALANCE);
 			}

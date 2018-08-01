@@ -33,6 +33,7 @@ Feature: Using credit card to pay
     Given a credit card with number "378282246310005"
     When the kiosk verifies the credit card
     Then the kiosk informs the user that the provided credit card is valid
+#    And the kiosk posts a successful message on the system log 
 
   Scenario: Unsuccesfully verified: Failed lengthCheck - The credit card number contains characters
     Given a credit card with number "3782822463100aa"

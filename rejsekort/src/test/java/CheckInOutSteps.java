@@ -66,5 +66,11 @@ public class CheckInOutSteps {
 		assertEquals(responseCheckOutAutomaton.getMessage(), msg);
 
 	}
+	
+
+@Then("^the check-out automaton posts a successful message on the system log$")
+public void the_check_out_automaton_posts_a_successful_message_on_the_system_log(){
+ //check that the message was posted. (read the file txt and find the message)
+}
 
 }

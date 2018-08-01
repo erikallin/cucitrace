@@ -17,6 +17,7 @@ public class CheckOutAutomaton {
 			charge(card);
 			card.setCheckedInStatus(false);
 			response = new ResponseObject(230, Constants.CHECKED_OUT_SUCCESS);
+			TravelCardLogger.getLogger().info("Automaton at " + stationName + " registers Travel Card " + card.getTcName() + "is checked out");
 		} else {
 
 			response = new ResponseObject(240, Constants.CHECKED_OUT_FAILURE);

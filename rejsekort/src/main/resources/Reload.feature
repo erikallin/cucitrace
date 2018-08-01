@@ -26,6 +26,7 @@ Feature: Reload the balance in a travel card
     And his travel card has a balance of 50
     And his credit card "378282246310005" was successfully verified by the reload kiosk
     And his credit card has enough balance to charge 100
+#        And the check-out automaton posts a successful message on the system log 
   @tag1
   Scenario: Successfully reload travel card balance
     Given the reload kiosk at the station is in working order

@@ -20,12 +20,12 @@
 Feature: Reports generation 
 				The administrator uses the system to generate relevant reports. 
 				system is able to record statistics for the travel cards.
-
-  @tag1
-  Scenario: Successfull Report Generation
-    Given the manager wants to see the number of "checked in" travel cards for the month "July" 
-   	When he generates a new report
-   	Then the system produces a "CHECK IN MONTH JULY" report
+#
+#  @tag1
+#  Scenario: Successfull Report Generation
+#    Given the manager wants to see the number of "checked in" travel cards for the month "July" 
+#   	When he generates a new report
+#   	Then the system produces a "CHECK IN MONTH JULY" report
    	
    	
    	

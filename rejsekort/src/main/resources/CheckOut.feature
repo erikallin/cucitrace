@@ -30,6 +30,7 @@ Feature: Checking out with travel card
     When a travel card check-out
     Then the travel card after check-out has a new balance 75
     And the check out automaton displays a message that "the travel card is successfully checked out"
+#    And the check-out automaton posts a successful message on the system log 
   
   Scenario: Unsuccesful check-out: Not Checked-in
     Given a travel card with check-in status is false
