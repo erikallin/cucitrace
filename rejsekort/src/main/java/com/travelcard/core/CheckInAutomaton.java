@@ -1,24 +1,20 @@
 package com.travelcard.core;
 
-import java.awt.Graphics2D;
-import java.awt.Rectangle;
-
-import com.orsonpdf.PDFDocument;
-import com.orsonpdf.Page;
-
 public class CheckInAutomaton {
 
-	
 	private final int MINIMUM_CHECKIN_BALANCE = 25;
 
 	private ResponseObject response;
 
 	private String stationName;
-	
+
+	TravelCardLoggerReader tclr = new TravelCardLoggerReader();
+
 	public CheckInAutomaton(String stationName) {
 		this.stationName = stationName;
-		TravelCardLogger.getLogger().info("CHECKIN: Automaton initialized");
-		TravelCardLogger.printLog();
+		tclr.getLogger().info("CHECKIN: ");
+		tclr.printLog();
+		tclr.readlog();
 	}
 
 	public ResponseObject checkIn(TravelCard card) {
@@ -26,8 +22,8 @@ public class CheckInAutomaton {
 			if (hasEnoughBalance(card)) {
 				card.setCheckedInStatus(true);
 				response = new ResponseObject(200, Constants.CHECKED_IN_SUCCESS);
+			//	tclr.getLogger().info("CHECKIN: Automaton at " + stationName + " registers Travel Card " + " is checked in");
 
-				//TravelCardLogger.getLogger().info("CHECKIN: Automaton at " + stationName + " registers Travel Card " + card.getTcName() + " is checked in");
 			} else {
 				response = new ResponseObject(220, Constants.CHECKED_IN_FAILURE_LOW_BALANCE);
 			}
@@ -48,6 +44,9 @@ public class CheckInAutomaton {
 
 	public void setStationName(String stationName) {
 		this.stationName = stationName;
+	}
+
+	public void checkInLog() {
 	}
 
 }
