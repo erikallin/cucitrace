@@ -59,10 +59,6 @@ public void his_credit_card_has_enough_balance_to_charge(int amount){
 		assertEquals(tcInUse.getBalance(), newBalance);
 	}
 
-	@Then("^the verified credit card is charged with (\\d+)$")
-	public void the_verified_credit_card_is_charged_with(int amount) {
-		assertEquals(response.getMessage(), Constants.RELOAD_SUCCESS);
-	}
 
 	@Then("^the credit card is charged with (\\d+)$")
 	public void the_credit_card_is_charged_with(int chargedAmount) {

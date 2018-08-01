@@ -24,8 +24,8 @@ public class Kiosk {
 		tcUsers = new ArrayList<User>();
 		TravelCardUserList tcu = new TravelCardUserList();
 		tcUsers = tcu.getUserIDs();
-		TravelCardLogger.getLogger().info("Kiosk initialized");
-		TravelCardLogger.printLog();
+//		TravelCardLogger.getLogger().info("Kiosk initialized");
+//		TravelCardLogger.printLog();
 	}
 
 	public ResponseObject verify(CreditCard creditCard) {
@@ -50,7 +50,7 @@ public class Kiosk {
 		this.textOnScreen = Constants.VALID_CC;
 		setInsertedCC(creditCard);
 
-		TravelCardLogger.log.info("Credit Card " + cardNumber + " is valid");
+		//TravelCardLogger.log.info("Credit Card " + cardNumber + " is valid");
 		return new ResponseObject(530, Constants.VALID_CC);
 
 	}
@@ -113,8 +113,8 @@ public class Kiosk {
 			if (insertedCC.isSuccessfullyCharged()) {
 				response = new ResponseObject(300, Constants.RELOAD_SUCCESS);
 				tc.addBalance(amount);
-				TravelCardLogger.getLogger().info("Credit Card " + insertedCC.getCreditCardNumber() + " was charged with the amount of " + amount );
-				TravelCardLogger.getLogger().info("Travel Card new balance is " + tc.getBalance());
+				//TravelCardLogger.getLogger().info("Credit Card " + insertedCC.getCreditCardNumber() + " was charged with the amount of " + amount );
+				//TravelCardLogger.getLogger().info("Travel Card new balance is " + tc.getBalance());
 
 			} else {
 				response = new ResponseObject(320, Constants.INVALID_CC_LOW_BALANCE);
@@ -143,7 +143,7 @@ public class Kiosk {
 
 				tcUsers.add(user);
 				response = new ResponseObject(400, Constants.TRAVEL_CARD_CREATION_SUCCESS);
-				TravelCardLogger.getLogger().info("Travel Card was created for user " +user.getuserID() );
+				//TravelCardLogger.getLogger().info("Travel Card was created for user " +user.getuserID() );
 				
 			} else {
 				response = new ResponseObject(420, Constants.INVALID_CC_LOW_BALANCE);

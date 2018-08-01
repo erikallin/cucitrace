@@ -27,6 +27,19 @@ Feature: Reports generation
 #   	When he generates a new report
 #   	Then the system produces a "CHECK IN MONTH JULY" report
    	
+   	#
+#  @tag1
+#  Scenario: Successfull Report Generation
+#    Given the manager wants to see the number of "checked out" travel cards for the month "July" 
+#   	When he generates a new report
+#   	Then the system produces a "CHECK IN MONTH JULY" report
    	
    	
-   	 
+   	
+ #
+#  @tag1
+#  Scenario: Successfull Report Generation
+#    Given the manager wants to see the ratio between check in and check out 
+#   	When he generates a new report
+#   	Then the system produces a "CHECK IN MONTH JULY" report
+   	

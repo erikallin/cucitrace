@@ -40,7 +40,7 @@ public class TravelCard {
 
 	public void addBalance(int amount) {
 		this.balance += amount;
-		TravelCardLogger.getLogger().info("new Travel card balance "+ balance);
+		//TravelCardLogger.getLogger().info("new Travel card balance "+ balance);
 	}
 
 }

@@ -26,6 +26,5 @@ public class Constants {
 
 	public static final int notEnoughBalance = 0;
 	
-	public final static Logger LOGGER = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 
 }

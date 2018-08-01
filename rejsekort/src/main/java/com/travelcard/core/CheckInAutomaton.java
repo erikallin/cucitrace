@@ -17,6 +17,8 @@ public class CheckInAutomaton {
 	
 	public CheckInAutomaton(String stationName) {
 		this.stationName = stationName;
+		TravelCardLogger.getLogger().info("CHECKIN: Automaton initialized");
+		TravelCardLogger.printLog();
 	}
 
 	public ResponseObject checkIn(TravelCard card) {
@@ -25,7 +27,7 @@ public class CheckInAutomaton {
 				card.setCheckedInStatus(true);
 				response = new ResponseObject(200, Constants.CHECKED_IN_SUCCESS);
 
-				TravelCardLogger.getLogger().info("Automaton at " + stationName + " registers Travel Card " + card.getTcName() + "is checked in");
+				//TravelCardLogger.getLogger().info("CHECKIN: Automaton at " + stationName + " registers Travel Card " + card.getTcName() + " is checked in");
 			} else {
 				response = new ResponseObject(220, Constants.CHECKED_IN_FAILURE_LOW_BALANCE);
 			}
