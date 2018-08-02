@@ -16,30 +16,19 @@
 #""
 ## (Comments)
 #Sample Feature Definition Template
-@tag
+@tag 
 Feature: Reports generation 
-				The administrator uses the system to generate relevant reports. 
-				system is able to record statistics for the travel cards.
-#
-#  @tag1
-#  Scenario: Successfull Report Generation
-#    Given the manager wants to see the number of "checked in" travel cards for the month "July" 
-#   	When he generates a new report
-#   	Then the system produces a "CHECK IN MONTH JULY" report
-   	
-   	#
-#  @tag1
-#  Scenario: Successfull Report Generation
-#    Given the manager wants to see the number of "checked out" travel cards for the month "July" 
-#   	When he generates a new report
-#   	Then the system produces a "CHECK IN MONTH JULY" report
-   	
-   	
-   	
- #
-#  @tag1
-#  Scenario: Successfull Report Generation
-#    Given the manager wants to see the ratio between check in and check out 
-#   	When he generates a new report
-#   	Then the system produces a "CHECK IN MONTH JULY" report
-   	
+	The manager uses the system to generate relevant reports and statistics. 
+				
+
+@tag1 
+Scenario: The manager generates a report with statistics of checked-in travel cards at a specific station
+	Given the manager wants to see the number of checked-in and checked-out travel cards for all the stations
+	When he generates a station statistics report 
+	Then the system produces a pdf report named as "repStationStatistics.pdf"
+
+@tag1 
+Scenario: The manager generates a report with the names of users registered in the system
+	Given the manager wants to see a list with the names of users registered in the system
+	When he generates a name list 
+	Then the system produces a text file named as "repNameList.txt" which contains the name list

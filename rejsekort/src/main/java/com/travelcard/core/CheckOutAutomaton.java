@@ -4,7 +4,7 @@ public class CheckOutAutomaton {
 
 	private String stationName;
 	private ResponseObject response;
-
+	private int countCheckedOut =0;
 	private final int FARE = 25;
 
 	public CheckOutAutomaton(String stationName) {
@@ -20,6 +20,7 @@ public class CheckOutAutomaton {
 			InitSystem.isl.getLogger()
 					.info("CHECKOUT: Automaton at " + stationName + " : " + Constants.CHECKED_OUT_SUCCESS);
 			InitSystem.isl.printLog();
+			countCheckedOut++;
 
 		} else {
 

@@ -1,5 +1,6 @@
 package com.travelcard.core;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,6 +28,17 @@ public class TravelCardUserList {
 	public void addUserID(User newUserID) {
 		users.add(newUserID);
 
+	}
+
+	public void generateNameList() {
+		
+		
+		
+	}
+
+	public boolean reportExists(String reportName) {
+		File tmpDir = new File(reportName);
+		return true; //tmpDir.exists();
 	}
 
 }
