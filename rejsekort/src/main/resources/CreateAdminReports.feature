@@ -22,7 +22,7 @@ Feature: Reports generation
 				
 
 @tag1 
-Scenario: The manager generates a report with statistics of checked-in travel cards at a specific station
+Scenario: The manager generates a report with statistics of checked-in and checked-out travel cards for all the stations
 	Given the manager wants to see the number of checked-in and checked-out travel cards for all the stations
 	When he generates a station statistics report 
 	Then the system produces a pdf report named as "repStationStatistics.pdf"
