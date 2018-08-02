@@ -24,6 +24,11 @@ public class Constants {
 	public static final String TRAVEL_CARD_CREATION_SUCCESS = "Travel card was created";
 	public static final String TRAVEL_CARD_CREATION_FAILURE = "Travel card was not created because user already registered in the system";
 
+	
+	
+	public static final String REPORT_STATION_STATISTICS = "repStationStatistics.pdf";
+
+	public static final String REPORT_USER_LIST = "repNameList.txt";
 	public static final int notEnoughBalance = 0;
 	
 

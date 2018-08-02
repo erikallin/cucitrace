@@ -9,7 +9,7 @@ import com.creditcard.validation.CreditCard;
 import com.creditcard.validation.CreditCardCompany;
 
 public class Kiosk {
-	
+
 	private String stationName;
 	private String textOnScreen;
 
@@ -24,8 +24,6 @@ public class Kiosk {
 		tcUsers = new ArrayList<User>();
 		TravelCardUserList tcu = new TravelCardUserList();
 		tcUsers = tcu.getUserIDs();
-//		TravelCardLogger.getLogger().info("Kiosk initialized");
-//		TravelCardLogger.printLog();
 	}
 
 	public ResponseObject verify(CreditCard creditCard) {
@@ -44,13 +42,13 @@ public class Kiosk {
 		CreditCardCompany cc = CreditCardCompany.gleanCompany(cardNumber);
 		if (cc == null) {
 			this.textOnScreen = Constants.INVALID_CC_COMPANY;
-			
+
 			return new ResponseObject(520, Constants.INVALID_CC_COMPANY);
 		}
 		this.textOnScreen = Constants.VALID_CC;
 		setInsertedCC(creditCard);
 
-		//TravelCardLogger.log.info("Credit Card " + cardNumber + " is valid");
+		// TravelCardLogger.log.info("Credit Card " + cardNumber + " is valid");
 		return new ResponseObject(530, Constants.VALID_CC);
 
 	}
@@ -113,9 +111,8 @@ public class Kiosk {
 			if (insertedCC.isSuccessfullyCharged()) {
 				response = new ResponseObject(300, Constants.RELOAD_SUCCESS);
 				tc.addBalance(amount);
-				//TravelCardLogger.getLogger().info("Credit Card " + insertedCC.getCreditCardNumber() + " was charged with the amount of " + amount );
-				//TravelCardLogger.getLogger().info("Travel Card new balance is " + tc.getBalance());
-
+				InitSystem.isl.getLogger().info("CREDIT CARD :" + Constants.VALID_CC + Constants.RELOAD_SUCCESS);
+				InitSystem.isl.printLog();
 			} else {
 				response = new ResponseObject(320, Constants.INVALID_CC_LOW_BALANCE);
 			}
@@ -143,8 +140,10 @@ public class Kiosk {
 
 				tcUsers.add(user);
 				response = new ResponseObject(400, Constants.TRAVEL_CARD_CREATION_SUCCESS);
-				//TravelCardLogger.getLogger().info("Travel Card was created for user " +user.getuserID() );
-				
+				InitSystem.isl.getLogger()
+						.info("CREDIT CARD :" + Constants.VALID_CC + Constants.TRAVEL_CARD_CREATION_SUCCESS);
+				InitSystem.isl.printLog();
+
 			} else {
 				response = new ResponseObject(420, Constants.INVALID_CC_LOW_BALANCE);
 			}
@@ -169,6 +168,16 @@ public class Kiosk {
 
 	public void setStationName(String stationName) {
 		this.stationName = stationName;
+	}
+
+	public void checkRegistered() {
+		InitSystem.isl.logContains(Constants.VALID_CC + Constants.TRAVEL_CARD_CREATION_SUCCESS);
+
+	}
+
+	public void checkReload() {
+		InitSystem.isl.logContains(Constants.VALID_CC + Constants.RELOAD_SUCCESS);
+
 	}
 
 }

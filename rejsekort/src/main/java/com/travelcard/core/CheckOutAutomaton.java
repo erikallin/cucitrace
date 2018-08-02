@@ -4,12 +4,11 @@ public class CheckOutAutomaton {
 
 	private String stationName;
 	private ResponseObject response;
-
+	private int countCheckedOut =0;
 	private final int FARE = 25;
 
 	public CheckOutAutomaton(String stationName) {
 		this.setStationName(stationName);
-		// TODO Auto-generated constructor stub
 	}
 
 	public ResponseObject checkOut(TravelCard card) {
@@ -17,7 +16,12 @@ public class CheckOutAutomaton {
 			charge(card);
 			card.setCheckedInStatus(false);
 			response = new ResponseObject(230, Constants.CHECKED_OUT_SUCCESS);
-		//	TravelCardLogger.getLogger().info("Automaton at " + stationName + " registers Travel Card " + card.getTcName() + "is checked out");
+
+			InitSystem.isl.getLogger()
+					.info("CHECKOUT: Automaton at " + stationName + " : " + Constants.CHECKED_OUT_SUCCESS);
+			InitSystem.isl.printLog();
+			countCheckedOut++;
+
 		} else {
 
 			response = new ResponseObject(240, Constants.CHECKED_OUT_FAILURE);
@@ -37,6 +41,12 @@ public class CheckOutAutomaton {
 
 	public void setStationName(String stationName) {
 		this.stationName = stationName;
+	}
+
+	public void checkOutLog() {
+
+		InitSystem.isl.logContains(Constants.CHECKED_OUT_SUCCESS);
+
 	}
 
 }

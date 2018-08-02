@@ -31,6 +31,7 @@ Feature: Create a new Travel Card
     When issue a travel card
     Then a travel card user is registered
     And the registration kiosk displays a message that a travel card is issued
+    And the registration kiosk posts that message on the system log 
 
   Scenario: Unsuccessfully create a Travel Card - credit card does not have enough balance
     Given a userID number "123456-7890" is not registered in the system

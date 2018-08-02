@@ -5,9 +5,6 @@ import com.travelcard.core.CheckOutAutomaton;
 import com.travelcard.core.Constants;
 import com.travelcard.core.ResponseObject;
 import com.travelcard.core.TravelCard;
-//import com.travelcard.core.TravelCardLogger;
-import com.travelcard.core.TravelCardLogger;
-import com.travelcard.core.TravelCardLoggerReader;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -72,8 +69,13 @@ public class CheckInOutSteps {
 
 	@Then("^the check-in automaton posts that message in the system log$")
 	public void the_check_in_automaton_posts_that_message_in_the_system_log() {
-
-	//	TravelCardLoggerReader.readlog();
+		inAutomaton.checkInLog();
 	}
+
+@Then("^the check-out automaton posts a successful message on the system log$")
+public void the_check_out_automaton_posts_a_successful_message_on_the_system_log(){
+	outAutomaton.checkOutLog();
+}
+
 
 }

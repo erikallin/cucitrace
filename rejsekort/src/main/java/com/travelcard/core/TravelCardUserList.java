@@ -1,5 +1,9 @@
 package com.travelcard.core;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,6 +31,31 @@ public class TravelCardUserList {
 	public void addUserID(User newUserID) {
 		users.add(newUserID);
 
+	}
+
+	public void generateNameList() {
+		PrintWriter writer=null;
+		try {
+			writer = new PrintWriter(Constants.REPORT_USER_LIST, "UTF-8");
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		//generate the data
+		writer.println("The first line");
+		writer.println("The second line");
+		writer.close();
+		
+		
+	}
+
+	public boolean reportExists(String reportName) {
+		File tmpDir = new File(reportName);
+		return tmpDir.exists();
 	}
 
 }
