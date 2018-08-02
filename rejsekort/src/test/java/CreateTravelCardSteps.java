@@ -4,10 +4,8 @@ import com.creditcard.validation.CreditCard;
 import com.travelcard.core.Constants;
 import com.travelcard.core.Kiosk;
 import com.travelcard.core.ResponseObject;
-import com.travelcard.core.TravelCardUserList;
 import com.travelcard.core.User;
 
-import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;

@@ -1,6 +1,5 @@
 import static org.junit.Assert.assertEquals;
 
-import com.travelcard.core.InitSystem;
 import com.travelcard.core.SystemLogger;
 
 import cucumber.api.java.en.Given;

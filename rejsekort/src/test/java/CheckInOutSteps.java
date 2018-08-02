@@ -2,7 +2,6 @@ import static org.junit.Assert.assertEquals;
 
 import com.travelcard.core.CheckInAutomaton;
 import com.travelcard.core.CheckOutAutomaton;
-import com.travelcard.core.Constants;
 import com.travelcard.core.ResponseObject;
 import com.travelcard.core.TravelCard;
 

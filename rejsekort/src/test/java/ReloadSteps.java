@@ -6,14 +6,11 @@ import com.travelcard.core.Kiosk;
 import com.travelcard.core.ResponseObject;
 import com.travelcard.core.TravelCard;
 
-import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 public class ReloadSteps {
-	private final String RELOAD_SUCCESS = "Travel card was reloaded successfully";
-	private final String RELOAD_FAILURE = "Travel card failed to reload";
 
 	private CreditCard ccInUse;
 
@@ -38,11 +35,10 @@ public class ReloadSteps {
 		reloadKiosk.setInsertedCC(ccInUse);
 	}
 
-
-@Given("^his credit card has enough balance to charge (\\d+)$")
-public void his_credit_card_has_enough_balance_to_charge(int amount){
-	ccInUse.setBalance(amount);
-}
+	@Given("^his credit card has enough balance to charge (\\d+)$")
+	public void his_credit_card_has_enough_balance_to_charge(int amount) {
+		ccInUse.setBalance(amount);
+	}
 
 	@Given("^the reload kiosk at the station is in working order$")
 	public void the_reload_kiosk_at_the_station_is_in_working_order() {
@@ -59,11 +55,10 @@ public void his_credit_card_has_enough_balance_to_charge(int amount){
 		assertEquals(tcInUse.getBalance(), newBalance);
 	}
 
-
 	@Then("^the credit card is charged with (\\d+)$")
 	public void the_credit_card_is_charged_with(int chargedAmount) {
 		// check the charge amount
-		assertEquals(ccInUse.isSuccessfullyCharged(),true);
+		assertEquals(ccInUse.isSuccessfullyCharged(), true);
 	}
 
 	@Then("^the reload kiosk displays a message that the travel card was reloaded successfully$")
@@ -80,11 +75,10 @@ public void his_credit_card_has_enough_balance_to_charge(int amount){
 	public void the_reload_kiosk_displays_a_message_that_the_travel_card_failed_to_reload() {
 		assertEquals(response.getMessage(), Constants.RELOAD_FAILURE);
 	}
+
 	@Given("^the reload kiosk posts that message on the system log$")
-	public void the_reload_kiosk_posts_that_message_on_the_system_log(){
+	public void the_reload_kiosk_posts_that_message_on_the_system_log() {
 		reloadKiosk.checkReload();
 	}
-
-
 
 }
