@@ -12,7 +12,7 @@ import com.travelcard.datagenerator.util.RandomTravelCardUsers;
 public class TravelCardUserList {
 
 	private List<User> users;
-	
+
 	public List<User> getUserIDs() {
 		return users;
 	}
@@ -34,23 +34,21 @@ public class TravelCardUserList {
 	}
 
 	public void generateNameList() {
-		PrintWriter writer=null;
+		PrintWriter writer = null;
 		try {
 			writer = new PrintWriter(Constants.REPORT_USER_LIST, "UTF-8");
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (UnsupportedEncodingException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		//generate the data
-		writer.println("The first line");
-		writer.println("The second line");
+
+		for (User u : users) {
+			writer.println(u.getuserID());
+
+		}
 		writer.close();
-		
-		
+
 	}
 
 	public boolean reportExists(String reportName) {

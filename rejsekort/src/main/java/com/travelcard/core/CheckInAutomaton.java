@@ -5,7 +5,7 @@ public class CheckInAutomaton {
 	private final int MINIMUM_CHECKIN_BALANCE = 25;
 
 	private ResponseObject response;
-
+	private int countCheckIn =0; 
 	private String stationName;
 
 	public CheckInAutomaton(String stationName) {
@@ -21,7 +21,7 @@ public class CheckInAutomaton {
 				
 				InitSystem.isl.getLogger().info("CHECKIN: Automaton at " + stationName + " : " + Constants.CHECKED_IN_SUCCESS);
 				InitSystem.isl.printLog();
-			//	InitSystem.isl.readlog();
+				countCheckIn++;
 			} else {
 				response = new ResponseObject(220, Constants.CHECKED_IN_FAILURE_LOW_BALANCE);
 			}

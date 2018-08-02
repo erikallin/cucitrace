@@ -1,6 +1,5 @@
 package com.travelcard.core;
 
-import java.util.logging.Logger;
 
 public class Constants {
 

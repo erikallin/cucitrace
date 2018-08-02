@@ -13,8 +13,11 @@ public class CreateAdminReportsSteps {
 	Station testStation;
 	String stName;
 	TravelCardUserList ltcuser;
-	@Given("^the manager wants to see the number of checked-in and checked-out travel cards for all the stations$")
-	public void the_manager_wants_to_see_the_number_of_checked_in_and_checked_out_travel_cards_for_all_the_stations() {
+
+	@Given("^the manager wants to know the number of travel cards being checked-in and checked-out in all stations$")
+	public void the_manager_wants_to_know_the_number_of_travel_cards_being_checked_in_and_checked_out_in_all_stations()
+			throws Throwable {
+		// Write code here that turns the phrase above into concrete actions
 		lstation = new StationList();
 	}
 
@@ -28,22 +31,20 @@ public class CreateAdminReportsSteps {
 	public void the_system_produces_a_pdf_report_named_as(String reportName) {
 		assertEquals(lstation.reportExists(reportName), true);
 	}
-	
-	
 
-@Given("^the manager wants to see a list with the names of users registered in the system$")
-public void the_manager_wants_to_see_a_list_with_the_names_of_users_registered_in_the_system() {
-	 ltcuser = new TravelCardUserList();
-}
+	@Given("^the manager wants to see a list with the names of users registered in the system$")
+	public void the_manager_wants_to_see_a_list_with_the_names_of_users_registered_in_the_system() {
+		ltcuser = new TravelCardUserList();
+	}
 
-@When("^he generates a name list$")
-public void he_generates_a_name_list() {
-	ltcuser.generateNameList();
-}
+	@When("^he generates a name list$")
+	public void he_generates_a_name_list() {
+		ltcuser.generateNameList();
+	}
 
-@Then("^the system produces a text file named as \"([^\"]*)\" which contains the name list$")
-public void the_system_produces_a_text_file_named_as_which_contains_the_name_list(String reportName) {
-	assertEquals(ltcuser.reportExists(reportName), true);
-}
+	@Then("^the system produces a text file named as \"([^\"]*)\" which contains the name list$")
+	public void the_system_produces_a_text_file_named_as_which_contains_the_name_list(String reportName) {
+		assertEquals(ltcuser.reportExists(reportName), true);
+	}
 
 }
