@@ -8,7 +8,7 @@ Mads gets off at Norreport station and checks-out his travel card.
  
 Question 2B:
 ============
-When Mads checks-out his travel card, the check-out automaton presents the message "Success: Travel card is checked-out". 
+When Mads checks-out his travel card, the check-out automaton presents the message "the travel card is successfully checked-out". 
 -
 Can you search the source code and locate what is the internal response code used? 
 ---------------------------------------------------------------------------------------------------------------

@@ -18,7 +18,7 @@ Feature: Reload the balance in a travel card
     And the reload kiosk displays a message that the travel card was reloaded successfully
 
 
-  Scenario: UnSuccessful reload  travel card balance: the kiosk is out of order
+  Scenario: Unsuccessful reload  travel card balance: the kiosk is out of order
     And the reload kiosk at the station is out of order
     When the travel card user reloads the travel card with 100
     Then the travel card after reload has a new balance 50

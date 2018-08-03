@@ -14,7 +14,8 @@ How would you rate the difficulty of this task? Level of Difficulty:
 * Difficult 
 * Very difficult
 
-
+CLOSE this tab
+====================
 
 Continue to Question2A.md
 ==========================

@@ -1,8 +1,8 @@
-QUESTION 2: MADS IS TRAVELING
-=============================
+QUESTION 6: MANAGER JAMES NEEDS A STATISTICAL REPORT 
+===================================================
 
 
-Question 2C:
+Question 6C:
 ============
 Please say out loud your answer to this question:
 -
@@ -15,6 +15,8 @@ How would you rate the difficulty of this task? Level of Difficulty:
 * Difficult 
 * Very difficult
 
+CLOSE this tab
+====================
 
 Continue to Question6D.md
 ==========================

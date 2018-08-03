@@ -1,4 +1,4 @@
-QUESTION 5: MADS IS TRAVELING
+QUESTION 5: KARL CREATES A NEW TRAVEL CARD
 =============================
 
 
@@ -15,7 +15,8 @@ How would you rate the difficulty of this task? Level of Difficulty:
 * Difficult 
 * Very difficult
 
-
+CLOSE this tab
+====================
 
 Continue to Question6A.md
 ==========================

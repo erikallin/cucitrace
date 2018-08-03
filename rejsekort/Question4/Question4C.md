@@ -1,6 +1,5 @@
-QUESTION 4: MADS IS TRAVELING
-=============================
-
+Question 4: JENNIFER USES HER CREDIT CARD AT A KIOSK
+====================================================
 
 Question 4C:
 ============
@@ -15,7 +14,8 @@ How would you rate the difficulty of this task? Level of Difficulty:
 * Difficult 
 * Very difficult
 
-
+CLOSE this tab
+====================
 
 Continue to Question5A.md
 ==========================

@@ -1,4 +1,4 @@
-ANSWER 3B: JOE IS TRAVELLING 
+ANSWER 3B: BILBO IS TRAVELING
 =============================
 
 
@@ -8,7 +8,7 @@ Think out loud: Can you explain in detail how you found your answer?
 When you complete your answer 
 -
 
-CLOSE ALL the files in the explorer 
+CLOSE ALL the tabs in the explorer  
 =========
 
 

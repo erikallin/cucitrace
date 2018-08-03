@@ -7,7 +7,7 @@ Think out loud: Can you explain in detail how you found your answer?
 
 When you complete your answer 
 -
-CLOSE ALL the files in the explorer 
+CLOSE ALL the tabs in the explorer 
 =========
 
 
