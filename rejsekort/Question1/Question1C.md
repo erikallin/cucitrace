@@ -1,13 +1,20 @@
-Please say out loud your answer to this question: How would you rate
-the difficulty of this task?
+QUESTION 1: JOE IS TRAVELLING 
+=============================
 
-Level of difficulty: 
+Question 1C:
+============
+Please say out loud your answer to this question:
+-
+How would you rate the difficulty of this task? Level of Difficulty: 
+-
 
-Very easy 
-Easy
-Neutral
-Difficult
-Very Difficult
+* Very easy 
+* Easy 
+* Neutral 
+* Difficult 
+* Very difficult
 
-When you complete your answer close all the files in the explorer and 
-open Question 2A
+
+
+Continue to Question2A.md
+==========================

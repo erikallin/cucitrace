@@ -51,7 +51,9 @@ public class StationList {
 		PDFDocument pdfDoc = new PDFDocument();
 		pdfDoc.setTitle("Station Statistics Report");
 		pdfDoc.setAuthor("Travel Card System");
+		
 		createDatasetStationStatistics();
+		
 		Page page = pdfDoc.createPage(new Rectangle(612, 468));
 		PDFGraphics2D g2 = page.getGraphics2D();
 		JFreeChart chart = createChart(createDatasetStationStatistics());

@@ -1,4 +1,17 @@
-Think out loud: Can you explain in detail how you found your answer?
+ANSWER 1A: JOE IS TRAVELLING 
+=============================
 
-When you complete your answer close all the files in the explorer and 
-open Question1C
+
+Think out loud: Can you explain in detail how you found your answer?
+-
+
+When you complete your answer 
+-
+
+CLOSE ALL the files in the explorer 
+=========
+
+
+Continue to Question1C.md
+=========================
+

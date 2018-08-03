@@ -1,8 +1,8 @@
-QUESTION 2: MADS IS TRAVELING
+QUESTION 5: MADS IS TRAVELING
 =============================
 
 
-Question 2C:
+Question 5C:
 ============
 Please say out loud your answer to this question:
 -
@@ -17,5 +17,5 @@ How would you rate the difficulty of this task? Level of Difficulty:
 
 
 
-Continue to Question3A.md
+Continue to Question6A.md
 ==========================

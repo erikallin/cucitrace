@@ -32,15 +32,15 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="libjfree/jcommon-1.0.23.jar"/>
-	<classpathentry kind="lib" path="libjfree/jfreechart-1.0.19-experimental.jar"/>
-	<classpathentry kind="lib" path="libjfree/jfreechart-1.0.19-swt.jar"/>
-	<classpathentry kind="lib" path="libjfree/jfreechart-1.0.19.jar"/>
-	<classpathentry kind="lib" path="libjfree/jfreesvg-2.0.jar"/>
-	<classpathentry kind="lib" path="libjfree/junit-4.11.jar"/>
-	<classpathentry kind="lib" path="libjfree/orsoncharts-1.4-eval-nofx.jar"/>
-	<classpathentry kind="lib" path="libjfree/orsonpdf-1.6-eval.jar"/>
-	<classpathentry kind="lib" path="libjfree/servlet.jar"/>
-	<classpathentry kind="lib" path="libjfree/swtgraphics2d.jar"/>
+	<classpathentry kind="lib" path="libraries/jcommon-1.0.23.jar"/>
+	<classpathentry kind="lib" path="libraries/jfreechart-1.0.19-experimental.jar"/>
+	<classpathentry kind="lib" path="libraries/jfreechart-1.0.19-swt.jar"/>
+	<classpathentry kind="lib" path="libraries/jfreechart-1.0.19.jar"/>
+	<classpathentry kind="lib" path="libraries/jfreesvg-2.0.jar"/>
+	<classpathentry kind="lib" path="libraries/junit-4.11.jar"/>
+	<classpathentry kind="lib" path="libraries/orsoncharts-1.4-eval-nofx.jar"/>
+	<classpathentry kind="lib" path="libraries/orsonpdf-1.6-eval.jar"/>
+	<classpathentry kind="lib" path="libraries/servlet.jar"/>
+	<classpathentry kind="lib" path="libraries/swtgraphics2d.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

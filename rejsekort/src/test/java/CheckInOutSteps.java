@@ -54,13 +54,13 @@ public class CheckInOutSteps {
 
 	}
 
-	@Then("^the check in automaton displays a message that \"([^\"]*)\"$")
+	@Then("^the check-in automaton displays a message that \"([^\"]*)\"$")
 	public void the_check_in_automaton_displays_a_message_that(String msg) {
 		assertEquals(responseCheckInAutomaton.getMessage(), msg);
 
 	}
 
-	@Then("^the check out automaton displays a message that \"([^\"]*)\"$")
+	@Then("^the check-out automaton displays a message that \"([^\"]*)\"$")
 	public void the_check_out_automaton_displays_a_message_that(String msg) {
 		assertEquals(responseCheckOutAutomaton.getMessage(), msg);
 
