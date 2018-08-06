@@ -4,14 +4,14 @@ import com.creditcard.validation.CreditCard;
 import com.travelcard.core.Constants;
 import com.travelcard.core.Kiosk;
 import com.travelcard.core.ResponseObject;
-import com.travelcard.core.User;
+import com.travelcard.core.TravelCard;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 public class CreateTravelCardSteps {
-	User user;
+	 TravelCard currentUser_tc;
 	CreditCard ccInUse;
 	Kiosk registrationKiosk;
 
@@ -42,18 +42,18 @@ public class CreateTravelCardSteps {
 
 	@Given("^a userID number \"([^\"]*)\" is not registered in the system$")
 	public void a_userID_number_is_not_registered_in_the_system(String userIDnumber) {
-		user = new User(userIDnumber);
+		currentUser_tc = new TravelCard(userIDnumber);
 	}
 
 	@When("^issue a travel card$")
 	public void issue_a_travel_card() {
-		response = registrationKiosk.issueTravelCard(user);
+		response = registrationKiosk.issueTravelCard(currentUser_tc);
 	}
 
 	@Then("^a travel card user is registered$")
 	public void a_travel_card_user_is_registered() {
 
-		assertEquals(registrationKiosk.getTcUsers().contains(user), true);
+		assertEquals(registrationKiosk.getTcUsers().contains(currentUser_tc), true);
 
 	}
 
@@ -64,8 +64,8 @@ public class CreateTravelCardSteps {
 
 	@Given("^a userID number \"([^\"]*)\" is registered in the system$")
 	public void a_userID_number_is_registered_in_the_system(String userIDnumber) {
-		user = new User(userIDnumber);
-		registrationKiosk.getTcUsers().add(user);
+		currentUser_tc = new TravelCard(userIDnumber);
+		registrationKiosk.getTcUsers().add(currentUser_tc);
 	}
 
 	@Then("^the registration kiosk displays a message that a travel card not issued because user already registered in the system$")

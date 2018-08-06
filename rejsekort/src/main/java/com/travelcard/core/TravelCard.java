@@ -5,9 +5,8 @@ public class TravelCard {
 	private String userID;
 	private boolean isCheckedInStatus;
 
-	public TravelCard() {
-		super();
-
+	public TravelCard(String userIDnumber) {
+		this.userID = userIDnumber;
 	}
 
 	public TravelCard(int tcBalance) {
@@ -18,6 +17,9 @@ public class TravelCard {
 		this.userID = userID;
 		this.balance = balance;
 		this.isCheckedInStatus = isCheckedInStatus;
+	}
+
+	public TravelCard() {
 	}
 
 	public int getBalance() {
