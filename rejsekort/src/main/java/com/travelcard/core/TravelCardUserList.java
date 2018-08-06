@@ -11,13 +11,13 @@ import com.travelcard.datagenerator.util.RandomTravelCardUsers;
 
 public class TravelCardUserList {
 
-	private List<User> users;
+	private List<TravelCard> users;
 
-	public List<User> getUserIDs() {
+	public List<TravelCard> getUserIDs() {
 		return users;
 	}
 
-	public void setuserIDs(List<User> users) {
+	public void setuserIDs(List<TravelCard> users) {
 		this.users = users;
 	}
 
@@ -28,7 +28,7 @@ public class TravelCardUserList {
 
 	}
 
-	public void addUserID(User newUserID) {
+	public void addUserID(TravelCard newUserID) {
 		users.add(newUserID);
 
 	}
@@ -43,8 +43,8 @@ public class TravelCardUserList {
 			e.printStackTrace();
 		}
 
-		for (User u : users) {
-			writer.println(u.getuserID());
+		for (TravelCard u : users) {
+			writer.println(u.getUserID());
 
 		}
 		writer.close();

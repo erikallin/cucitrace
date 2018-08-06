@@ -2,17 +2,22 @@ package com.travelcard.core;
 
 public class TravelCard {
 	private int balance;
-
+	private String userID;
 	private boolean isCheckedInStatus;
-
 
 	public TravelCard() {
 		super();
-	
+
 	}
 
 	public TravelCard(int tcBalance) {
 		this.balance = tcBalance;
+	}
+
+	public TravelCard(String userID, int balance, boolean isCheckedInStatus) {
+		this.userID = userID;
+		this.balance = balance;
+		this.isCheckedInStatus = isCheckedInStatus;
 	}
 
 	public int getBalance() {
@@ -33,7 +38,15 @@ public class TravelCard {
 
 	public void addBalance(int amount) {
 		this.balance += amount;
-		//TravelCardLogger.getLogger().info("new Travel card balance "+ balance);
+		// TravelCardLogger.getLogger().info("new Travel card balance "+ balance);
+	}
+
+	public String getUserID() {
+		return userID;
+	}
+
+	public void setUserID(String userID) {
+		this.userID = userID;
 	}
 
 }
