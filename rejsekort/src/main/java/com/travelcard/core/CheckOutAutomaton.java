@@ -2,10 +2,10 @@ package com.travelcard.core;
 
 public class CheckOutAutomaton {
 
-	private String stationName;
-	private ResponseObject response;
-	private int countCheckedOut =0;
+	private int countCheckedOut = 0;
 	private final int FARE = 25;
+	private ResponseObject response;
+	private String stationName;
 
 	public CheckOutAutomaton(String stationName) {
 		this.setStationName(stationName);
@@ -29,9 +29,9 @@ public class CheckOutAutomaton {
 		return response;
 	}
 
-	private void charge(TravelCard card) {
+	public void checkOutLog() {
 
-		card.setBalance(card.getBalance() - FARE);
+		InitSystem.isl.logContains(Constants.CHECKED_OUT_SUCCESS);
 
 	}
 
@@ -43,9 +43,9 @@ public class CheckOutAutomaton {
 		this.stationName = stationName;
 	}
 
-	public void checkOutLog() {
+	private void charge(TravelCard card) {
 
-		InitSystem.isl.logContains(Constants.CHECKED_OUT_SUCCESS);
+		card.setBalance(card.getBalance() - FARE);
 
 	}
 

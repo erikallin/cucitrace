@@ -3,9 +3,9 @@ package com.travelcard.core;
 public class ResponseObject {
 
 	private int Code;
-	private String message;
-
 	private String issueMessage;
+
+	private String message;
 
 	public ResponseObject(int Code, String message) {
 		super();
@@ -17,20 +17,20 @@ public class ResponseObject {
 		return Code;
 	}
 
-	public void setCode(int Code) {
-		this.Code = Code;
+	public String getIssueMessage() {
+		return issueMessage;
 	}
 
 	public String getMessage() {
 		return message;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setCode(int Code) {
+		this.Code = Code;
 	}
 
-	public String getIssueMessage() {
-		return issueMessage;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 }

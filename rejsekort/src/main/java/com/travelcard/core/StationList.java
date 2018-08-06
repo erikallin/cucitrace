@@ -31,57 +31,6 @@ import org.jfree.chart.plot.PiePlot;
 import org.jfree.chart.title.TextTitle;
 
 public class StationList {
-	private List<Station> availableStations;
-
-	public List<Station> getUserIDs() {
-		return availableStations;
-	}
-
-	public void setStationIDs(List<Station> stations) {
-		this.availableStations = stations;
-	}
-
-	public StationList() {
-		availableStations = new ArrayList<Station>();
-		RandomStations gen = new RandomStations();
-		availableStations = gen.generate(10);
-	}
-
-	public void generateStationStatisticsReport() {
-		PDFDocument pdfDoc = new PDFDocument();
-		pdfDoc.setTitle("Station Statistics Report");
-		pdfDoc.setAuthor("Travel Card System");
-		Page page = pdfDoc.createPage(new Rectangle(612, 468));
-		PDFGraphics2D g2 = page.getGraphics2D();
-		JFreeChart chart = createChart(createDatasetStationStatistics());
-		chart.setPadding(new RectangleInsets(4, 8, 2, 2));
-		ChartPanel panel = new ChartPanel(chart, false);
-		panel.setMouseWheelEnabled(true);
-		panel.setPreferredSize(new Dimension(600, 300));
-		chart.draw(g2, new Rectangle(0, 0, 612, 468));
-		pdfDoc.writeToFile(new File(Constants.REPORT_STATION_STATISTICS));
-
-	}
-
-	private PieDataset createDatasetStationStatistics() {
-		int sumCheckIn = 0;
-		int sumCheckOut = 0;
-		for (Station s : availableStations) {
-			sumCheckIn += s.getCountCheckIn();
-			sumCheckOut += s.getCountCheckOut();
-		}
-		DefaultPieDataset dataset = new DefaultPieDataset();
-		dataset.setValue("checkIn", sumCheckIn);
-		dataset.setValue("checkOut", sumCheckOut);
-
-		return dataset;
-	}
-
-	public boolean reportExists(String reportName) {
-		File tmpDir = new File(reportName);
-		return tmpDir.exists();
-	}
-
 	private static JFreeChart createChart(PieDataset dataset) {
 
 		JFreeChart chart = ChartFactory.createPieChart(Constants.REPORT_STATION_STATISTICS, // chart
@@ -150,5 +99,56 @@ public class StationList {
 		float radius = 200;
 		float[] dist = { 0.0f, 1.0f };
 		return new RadialGradientPaint(center, radius, dist, new Color[] { c1, c2 });
+	}
+
+	private List<Station> availableStations;
+
+	public StationList() {
+		availableStations = new ArrayList<Station>();
+		RandomStations gen = new RandomStations();
+		availableStations = gen.generate(10);
+	}
+
+	public void generateStationStatisticsReport() {
+		PDFDocument pdfDoc = new PDFDocument();
+		pdfDoc.setTitle("Station Statistics Report");
+		pdfDoc.setAuthor("Travel Card System");
+		Page page = pdfDoc.createPage(new Rectangle(612, 468));
+		PDFGraphics2D g2 = page.getGraphics2D();
+		JFreeChart chart = createChart(createDatasetStationStatistics());
+		chart.setPadding(new RectangleInsets(4, 8, 2, 2));
+		ChartPanel panel = new ChartPanel(chart, false);
+		panel.setMouseWheelEnabled(true);
+		panel.setPreferredSize(new Dimension(600, 300));
+		chart.draw(g2, new Rectangle(0, 0, 612, 468));
+		pdfDoc.writeToFile(new File(Constants.REPORT_STATION_STATISTICS));
+
+	}
+
+	public List<Station> getUserIDs() {
+		return availableStations;
+	}
+
+	public boolean reportExists(String reportName) {
+		File tmpDir = new File(reportName);
+		return tmpDir.exists();
+	}
+
+	public void setStationIDs(List<Station> stations) {
+		this.availableStations = stations;
+	}
+
+	private PieDataset createDatasetStationStatistics() {
+		int sumCheckIn = 0;
+		int sumCheckOut = 0;
+		for (Station s : availableStations) {
+			sumCheckIn += s.getCountCheckIn();
+			sumCheckOut += s.getCountCheckOut();
+		}
+		DefaultPieDataset dataset = new DefaultPieDataset();
+		dataset.setValue("checkIn", sumCheckIn);
+		dataset.setValue("checkOut", sumCheckOut);
+
+		return dataset;
 	}
 }

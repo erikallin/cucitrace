@@ -6,14 +6,14 @@ import java.util.List;
 import com.travelcard.core.Station;
 
 public class RandomStations {
-	private static final String[] STATION_NAMES = { "Lyngby", "Virum", "Valby",
-			"Vanlose", "amager", "oresund", "Gentofte", "Buddinge", "Vangede", "Hellerup" };
-	
+	private static final String[] STATION_NAMES = { "Lyngby", "Virum", "Valby", "Vanlose", "amager", "oresund",
+			"Gentofte", "Buddinge", "Vangede", "Hellerup" };
+
 	private static Station randomStation() {
-		
-		Station station= new Station( RandomUtils.randomFromArray(STATION_NAMES));
-		station.setCountCheckIn(RandomUtils.randBetween(0,10));
-		station.setCountCheckOut(RandomUtils.randBetween(0,10));
+
+		Station station = new Station(RandomUtils.randomFromArray(STATION_NAMES));
+		station.setCountCheckIn(RandomUtils.randBetween(0, 10));
+		station.setCountCheckOut(RandomUtils.randBetween(0, 10));
 		return station;
 	}
 
@@ -32,8 +32,5 @@ public class RandomStations {
 
 		return stations;
 	}
-	
-	
-	
-	
+
 }

@@ -13,14 +13,6 @@ public class TravelCardUserList {
 
 	private List<TravelCard> users;
 
-	public List<TravelCard> getUserIDs() {
-		return users;
-	}
-
-	public void setuserIDs(List<TravelCard> users) {
-		this.users = users;
-	}
-
 	public TravelCardUserList() {
 		users = new ArrayList<>();
 		RandomTravelCardUsers rru = new RandomTravelCardUsers();
@@ -51,9 +43,17 @@ public class TravelCardUserList {
 
 	}
 
+	public List<TravelCard> getUserIDs() {
+		return users;
+	}
+
 	public boolean reportExists(String reportName) {
 		File tmpDir = new File(reportName);
 		return tmpDir.exists();
+	}
+
+	public void setuserIDs(List<TravelCard> users) {
+		this.users = users;
 	}
 
 }

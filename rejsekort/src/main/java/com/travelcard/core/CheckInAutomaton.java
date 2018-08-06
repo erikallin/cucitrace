@@ -2,15 +2,14 @@ package com.travelcard.core;
 
 public class CheckInAutomaton {
 
+	private int countCheckIn = 0;
 	private final int MINIMUM_CHECKIN_BALANCE = 25;
-
 	private ResponseObject response;
-	private int countCheckIn =0; 
 	private String stationName;
 
 	public CheckInAutomaton(String stationName) {
 		this.stationName = stationName;
-		
+
 	}
 
 	public ResponseObject checkIn(TravelCard card) {
@@ -18,8 +17,9 @@ public class CheckInAutomaton {
 			if (hasEnoughBalance(card)) {
 				card.setCheckedInStatus(true);
 				response = new ResponseObject(200, Constants.CHECKED_IN_SUCCESS);
-				
-				InitSystem.isl.getLogger().info("CHECKIN: Automaton at " + stationName + " : " + Constants.CHECKED_IN_SUCCESS);
+
+				InitSystem.isl.getLogger()
+						.info("CHECKIN: Automaton at " + stationName + " : " + Constants.CHECKED_IN_SUCCESS);
 				InitSystem.isl.printLog();
 				countCheckIn++;
 			} else {
@@ -31,9 +31,8 @@ public class CheckInAutomaton {
 		return response;
 	}
 
-	private boolean hasEnoughBalance(TravelCard card) {
-		// TODO Auto-generated method stub
-		return card.getBalance() > MINIMUM_CHECKIN_BALANCE;
+	public void checkInLog() {
+		InitSystem.isl.logContains(Constants.CHECKED_IN_SUCCESS);
 	}
 
 	public String getStationName() {
@@ -44,9 +43,8 @@ public class CheckInAutomaton {
 		this.stationName = stationName;
 	}
 
-	public void checkInLog() {
-		//InitSystem.isl.readlog();
-		InitSystem.isl.logContains(Constants.CHECKED_IN_SUCCESS);
+	private boolean hasEnoughBalance(TravelCard card) {
+		return card.getBalance() > MINIMUM_CHECKIN_BALANCE;
 	}
 
 }

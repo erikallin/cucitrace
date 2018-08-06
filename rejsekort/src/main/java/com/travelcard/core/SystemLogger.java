@@ -11,12 +11,12 @@ import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
 public class SystemLogger {
-	private String logfilename = "Logfile.txt";
-	
+	private static Logger log;
+
 	private FileHandler fileTxt;
 	private SimpleFormatter formatterTxt;
 
-	private static Logger log;
+	private String logfilename = "Logfile.txt";
 
 	public SystemLogger() {
 		this.setLogfilename("Logfile.txt");
@@ -24,23 +24,11 @@ public class SystemLogger {
 		log.setLevel(Level.ALL);
 		setup();
 	}
+
 	public SystemLogger(String filename) {
 		this.setLogfilename(filename);
 		log = Logger.getLogger("Travel Card Example Logger");
 		log.setLevel(Level.ALL);
-	}
-
-	public void setup() {
-		printLog();
-
-	}
-
-	public String getLogfilename() {
-		return logfilename;
-	}
-
-	public void setLogfilename(String logfilename) {
-		this.logfilename = logfilename;
 	}
 
 	public boolean exists(String filename) {
@@ -53,6 +41,10 @@ public class SystemLogger {
 		return false;
 	}
 
+	public String getLogfilename() {
+		return logfilename;
+	}
+
 	public Logger getLogger() {
 		if (log == null) {
 			log = Logger.getLogger("Travel Card Example Logger");
@@ -61,9 +53,13 @@ public class SystemLogger {
 		return log;
 	}
 
+	public void logContains(String checkedInSuccess) {
+		readlog(checkedInSuccess);
+
+	}
+
 	public void printLog() {
 		try {
-			
 
 			if (fileTxt == null) {
 				fileTxt = new FileHandler(logfilename);
@@ -77,10 +73,8 @@ public class SystemLogger {
 			}
 
 		} catch (SecurityException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
@@ -92,7 +86,6 @@ public class SystemLogger {
 		try {
 			br = new BufferedReader(new FileReader(logfilename));
 		} catch (FileNotFoundException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 		String strLine;
@@ -105,21 +98,24 @@ public class SystemLogger {
 				}
 			}
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
 		try {
 			br.close();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return false;
 	}
-	public void logContains(String checkedInSuccess) {
-		readlog(checkedInSuccess);
-		
+
+	public void setLogfilename(String logfilename) {
+		this.logfilename = logfilename;
+	}
+
+	public void setup() {
+		printLog();
+
 	}
 
 }
