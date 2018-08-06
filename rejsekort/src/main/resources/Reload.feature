@@ -1,4 +1,3 @@
-
 Feature: Reload the balance in a travel card
   A travel card user can reload the balance of a travel card in a kiosk
   using a verified credit card.

@@ -2,11 +2,6 @@ Feature: Using credit card to pay
   A kiosk located in a station. The user inserts the credit card and the kiosk reads the credit card number 
   and it verifies if the credit card is valid. 
   
-  To verify the credit card the following checks are executed:
-  * lengthCheck: check the length of the credit card number is between the limits
-  * luhnCheck: check the characters of the credit card number are numeric values only
-  * companyCheck: check that the numbers fit a type such as (Visa/Master, ..)
-
   Background: 
     Given a kiosk at station "Norreport St"
 
@@ -16,17 +11,17 @@ Feature: Using credit card to pay
     Then the kiosk informs the user that the provided credit card is valid
 
 
-  Scenario: Unsuccesfully verified: Failed lengthCheck - The credit card number contains characters
+  Scenario: Unsuccesfully verified: The credit card number contains characters
     Given a credit card with number "3782822463100aa"
     When the kiosk verifies the credit card
     Then the kiosk informs the user that the provided credit card is invalid because it contains characters
 
-  Scenario: Unsuccesfully verified: Failed luhnCheck - The credit card number has too few digits
+  Scenario: Unsuccesfully verified: The credit card number has too few digits
     Given a credit card with number "55561"
     When the kiosk verifies the credit card
     Then the kiosk informs the user that the provided credit card is invalid because it has too few digits
 
-  Scenario: Unsuccesfully verified: Failed companyCheck - The credit card number does not belong to a company provider
+  Scenario: Unsuccesfully verified: The credit card number does not belong to a company provider
     Given a credit card with number "13211111111111111"
     When the kiosk verifies the credit card
     Then the kiosk informs the user that the provided credit card because it does not belong to a company provider
