@@ -90,17 +90,17 @@ public class Kiosk {
 		this.textOnScreen = textOnScreen;
 	}
 
-	public void setOrderStatus(boolean orderStatus) {
-		this.orderStatus = orderStatus;
-		// TODO Auto-generated method stub
+//	public void setOrderStatus(boolean orderStatus) {
+//		this.orderStatus = orderStatus;
+//		// TODO Auto-generated method stub
+//
+//	}
+//
+//	public boolean getOrderStatus() {
+//		return this.orderStatus;
+//		// TODO Auto-generated method stub
 
-	}
-
-	public boolean getOrderStatus() {
-		return this.orderStatus;
-		// TODO Auto-generated method stub
-
-	}
+	//}
 
 	public ResponseObject addBalance(TravelCard tc, int amount) {
 		if (orderStatus) {
@@ -129,10 +129,10 @@ public class Kiosk {
 		this.insertedCC = insertedCC;
 	}
 
-	public ResponseObject issueTravelCard(User user, CreditCard cc) {
+	public ResponseObject issueTravelCard(User user) {
 
 		if (!tcUsers.contains(user)) {
-			cc.charge(FARE_TRAVEL_CARD_CREATION);
+			insertedCC.charge(FARE_TRAVEL_CARD_CREATION);
 			if (insertedCC.isSuccessfullyCharged()) {
 
 				tcUsers.add(user);

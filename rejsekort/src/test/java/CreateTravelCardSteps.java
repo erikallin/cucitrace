@@ -47,7 +47,7 @@ public class CreateTravelCardSteps {
 
 	@When("^issue a travel card$")
 	public void issue_a_travel_card() {
-		response = registrationKiosk.issueTravelCard(user, ccInUse);
+		response = registrationKiosk.issueTravelCard(user);
 	}
 
 	@Then("^a travel card user is registered$")

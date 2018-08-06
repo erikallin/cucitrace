@@ -40,10 +40,10 @@ public class ReloadSteps {
 		ccInUse.setBalance(amount);
 	}
 
-	@Given("^the reload kiosk at the station is in working order$")
-	public void the_reload_kiosk_at_the_station_is_in_working_order() {
-		reloadKiosk.setOrderStatus(true);
-	}
+//	@Given("^the reload kiosk at the station is in working order$")
+//	public void the_reload_kiosk_at_the_station_is_in_working_order() {
+//		reloadKiosk.setOrderStatus(true);
+//	}
 
 	@When("^the travel card user reloads the travel card with (\\d+)$")
 	public void the_travel_card_user_reloads_the_travel_card_with(int amount) {
@@ -66,10 +66,10 @@ public class ReloadSteps {
 		assertEquals(response.getMessage(), Constants.RELOAD_SUCCESS);
 	}
 
-	@Given("^the reload kiosk at the station is out of order$")
-	public void the_reload_kiosk_at_the_station_is_out_of_order() {
-		reloadKiosk.setOrderStatus(false);
-	}
+//	@Given("^the reload kiosk at the station is out of order$")
+//	public void the_reload_kiosk_at_the_station_is_out_of_order() {
+//		reloadKiosk.setOrderStatus(false);
+//	}
 
 	@Then("^the reload kiosk displays a message that the travel card failed to reload$")
 	public void the_reload_kiosk_displays_a_message_that_the_travel_card_failed_to_reload() {

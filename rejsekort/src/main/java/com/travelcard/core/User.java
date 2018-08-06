@@ -3,7 +3,7 @@ package com.travelcard.core;
 public class User {
 
 	private String userID; 
-	
+	private TravelCard tc;
 	
 	
 	public User(String userID) {
