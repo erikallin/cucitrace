@@ -13,10 +13,4 @@ Feature: Reload the balance in a travel card
     And the credit card is charged with 100
     And the reload kiosk displays a message that the travel card was reloaded successfully
 
-
-  Scenario: Un
-    And the reload kiosk at the station is out of order
-    When the travel card user reloads the travel card with 100
-    Then the travel card after reload has a new balance 50
-    And the reload kiosk displays a message that the travel card failed to reload
     

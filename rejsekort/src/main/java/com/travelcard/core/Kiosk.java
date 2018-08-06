@@ -12,7 +12,7 @@ public class Kiosk {
 
 	private final int FARE_TRAVEL_CARD_CREATION = 100;
 	private ResponseObject response;
-	private boolean orderStatus;
+	//private boolean orderStatus;
 	private CreditCard insertedCC;
 	private List<TravelCard> tcUsers;
 
@@ -103,7 +103,7 @@ public class Kiosk {
 	//}
 
 	public ResponseObject addBalance(TravelCard tc, int amount) {
-		if (orderStatus) {
+//		if (orderStatus) {
 			insertedCC.charge(amount);
 			if (insertedCC.isSuccessfullyCharged()) {
 				response = new ResponseObject(300, Constants.RELOAD_SUCCESS);
@@ -113,11 +113,12 @@ public class Kiosk {
 			} else {
 				response = new ResponseObject(320, Constants.INVALID_CC_LOW_BALANCE);
 			}
-		} else {
-			response = new ResponseObject(310, Constants.RELOAD_FAILURE);
-		}
-		return response;
-		// TODO Auto-generated method stub
+//		} else {
+//			response = new ResponseObject(310, Constants.RELOAD_FAILURE);
+//		}
+//		return response;
+//		// TODO Auto-generated method stub
+			return response;
 
 	}
 
