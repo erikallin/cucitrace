@@ -11,3 +11,6 @@ Answer Task 4.2.1:
 	5: Very difficult 
 
 When you complete your answer CLOSE ALL the tabs in the explorer 
+
+This is the end of the task. Do not yet look away. Please inform the observer!
+-------------------------------------------------------------------------------
