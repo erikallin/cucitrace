@@ -1,9 +1,9 @@
 Question Task 3.1.0:
 --------------------
 
-Jennifer inserts her credit card at a kiosk at Norreport St. 
-The kiosk reads the credit card number and verifies if the credit card is valid. 
+Carla wants to purchase a travel card. 
+She goes to a kiosk at Norreport St and provides her userID and credit card
 
--> What are the conditions for Jennifer's credit card to be considered as a valid one?
+-> What are the criteria to create a new travel card?
 
 -> Once you have the answer please open "Task 3.1.1.md"

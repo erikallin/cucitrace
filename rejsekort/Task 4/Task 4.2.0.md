@@ -1,12 +1,10 @@
 Question Task 4.2.0:
 --------------------
 
-Carla wants to purchase a travel card. 
-She goes to a kiosk at Norreport St and provides her userID and credit card
+James manages the Travel card system and he wants to see the report of the number 
+of travel cards being checked-in and checked out at all stations.
 
--> The kiosk displays a message "Travel card was not created because 
-	user already registered in the system". 
-	Can you search the source code and locate what is the internal 
-	response code used?  
-
--> Once you have the answer please open "Task 5.2.1.md"
+-> How does the travel card system gets the number of check-ins
+	and check-outs that occur in all stations when creating the report?
+	
+-> Once you have the answer please open "Task 4.2.1.md"

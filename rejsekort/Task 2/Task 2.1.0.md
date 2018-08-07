@@ -1,9 +1,9 @@
 Question Task 2.1.0:
 --------------------
 
-Mads is travelling from Sydhavn station and his travel card has a balance of 100. 
-Mads gets off at Norreport station and checks-out his travel card.
+Jennifer inserts her credit card at a kiosk at Norreport St. 
+The kiosk reads the credit card number and verifies if the credit card is valid. 
 
--> What is the remaining balance in the travel card after Mads checks-out?
+-> What are the conditions for Jennifer's credit card to be considered as a valid one?
 
 -> Once you have the answer please open "Task 2.1.1.md"

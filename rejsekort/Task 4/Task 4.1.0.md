@@ -1,9 +1,9 @@
 Question Task 4.1.0:
 --------------------
 
-Carla wants to purchase a travel card. 
-She goes to a kiosk at Norreport St and provides her userID and credit card
+James manages the Travel card system and he wants to see the report of the number 
+of travel cards being checked-in and checked out at all stations.
 
--> What are the criteria to create a new travel card?
+-> What is the name of the report that the travel card system generates?
 
 -> Once you have the answer please open "Task 4.1.1.md"

@@ -1,12 +1,12 @@
-Question Task 2.1.0:
+Question Task 2.2.0:
 --------------------
 
-Mads is travelling from Sydhavn station and his travel card has a balance of 100. 
-Mads gets off at Norreport station and checks-out his travel card.
+Jennifer inserts her credit card at a kiosk at Norreport St. 
+The kiosk reads the credit card number and verifies if the credit card is valid. 
 
--> When Mads checks-out his travel card, the check-out automaton presents 
-	the message "the travel card is successfully checked-out". 
-	Can you search the source code and locate what is the internal 
-	response code used?
+-> How does the kiosk check that the credit card used has the correct number of digits? 
+	Can you search the code and locate 
+	how the kiosk performs this check?
 
 -> Once you have the answer please open "Task 2.2.1.md"
+ 
