@@ -38,6 +38,7 @@ public class Kiosk {
 
 		return (sum == 0) ? false : (sum % 10 == 0);
 	}
+
 	private final int FARE_TRAVEL_CARD_CREATION = 100;
 
 	private CreditCard insertedCC;
@@ -54,15 +55,17 @@ public class Kiosk {
 		tcUsers = tcu.getUserIDs();
 	}
 
-	public ResponseObject addBalance(TravelCard tc, int amount) {
-		insertedCC.charge(amount);
-		if (insertedCC.isSuccessfullyCharged()) {
-			response = new ResponseObject(300, Constants.RELOAD_SUCCESS);
-			tc.addBalance(amount);
-			InitSystem.isl.getLogger().info("CREDIT CARD :" + Constants.VALID_CC + Constants.RELOAD_SUCCESS);
-			InitSystem.isl.printLog();
-		} else {
-			response = new ResponseObject(320, Constants.INVALID_CC_LOW_BALANCE);
+	public ResponseObject addBalance(TravelCard tcInUse, int amount) {
+		if (verify(insertedCC).getCode() == 530) {
+			insertedCC.charge(amount);
+			if (insertedCC.isSuccessfullyCharged()) {
+				response = new ResponseObject(300, Constants.RELOAD_SUCCESS);
+				tcInUse.addBalance(amount);
+				InitSystem.isl.getLogger().info("CREDIT CARD :" + Constants.VALID_CC + Constants.RELOAD_SUCCESS);
+				InitSystem.isl.printLog();
+			} else {
+				response = new ResponseObject(320, Constants.INVALID_CC_LOW_BALANCE);
+			}
 		}
 		return response;
 
@@ -145,7 +148,7 @@ public class Kiosk {
 			return new ResponseObject(510, Constants.INVALID_CC_LETTERS);
 		}
 
-		CreditCardCompany cc = CreditCardCompany.gleanCompany(cardNumber);
+		CreditCardCompany cc = CreditCardCompany.obtainCompany(cardNumber);
 		if (cc == null) {
 			this.textOnScreen = Constants.INVALID_CC_COMPANY;
 

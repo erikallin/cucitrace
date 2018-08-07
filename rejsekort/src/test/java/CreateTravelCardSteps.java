@@ -11,7 +11,7 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 public class CreateTravelCardSteps {
-	 TravelCard currentUser_tc;
+	TravelCard currentUser_tc;
 	CreditCard ccInUse;
 	Kiosk registrationKiosk;
 
@@ -29,14 +29,14 @@ public class CreateTravelCardSteps {
 		registrationKiosk.setInsertedCC(ccInUse);
 	}
 
-	@Given("^his credit card has enough balance to charge the amount of (\\d+)$")
-	public void his_credit_card_has_enough_balance_to_charge_the_amount_of(int amount) {
+	@Given("^his credit card accepts to charge the amount of (\\d+)$")
+	public void his_credit_card_accepts_to_charge_the_amount_of(int amount) {
 		ccInUse.setBalance(amount);
 
 	}
 
-	@Given("^his credit card does not have enough balance to charge the amount of (\\d+)$")
-	public void his_credit_card_does_not_have_enough_balance_to_charge_the_amount_of(int amount) {
+	@Given("^his credit card declines to charge the amount of (\\d+)$")
+	public void his_credit_card_declines_to_charge_the_amount_of(int amount) {
 		ccInUse.setBalance(Constants.notEnoughBalance - amount);
 	}
 
@@ -73,11 +73,11 @@ public class CreateTravelCardSteps {
 		assertEquals(response.getMessage(), Constants.TRAVEL_CARD_CREATION_FAILURE);
 	}
 
-	@Then("^the registration kiosk displays a message that a travel card not issued because credit card does not have enough balance$")
-	public void the_registration_kiosk_displays_a_message_that_a_travel_card_not_issued_because_credit_card_does_not_have_enough_balance()
-			throws Throwable {
+	@Then("^the registration kiosk displays a message that a travel card not issued because credit card was declined$")
+	public void the_registration_kiosk_displays_a_message_that_a_travel_card_not_issued_because_credit_card_was_declined() {
 		assertEquals(response.getMessage(), Constants.INVALID_CC_LOW_BALANCE);
 	}
+
 	@Then("^the registration kiosk posts that message on the system log$")
 	public void the_registration_kiosk_posts_that_message_on_the_system_log() {
 		registrationKiosk.checkRegistered();

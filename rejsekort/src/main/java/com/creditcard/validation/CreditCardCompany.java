@@ -16,7 +16,7 @@ public enum CreditCardCompany {
 	 * @param card
 	 * @return
 	 */
-	public static CreditCardCompany gleanCompany(String card) {
+	public static CreditCardCompany obtainCompany(String card) {
 		for (CreditCardCompany cc : CreditCardCompany.values()) {
 			if (cc.matches(card)) {
 				return cc;
@@ -31,7 +31,7 @@ public enum CreditCardCompany {
 	 * @param issuerName
 	 * @return
 	 */
-	public static CreditCardCompany gleanCompanyByIssuerName(String issuerName) {
+	public static CreditCardCompany obtainCompanyByIssuerName(String issuerName) {
 		for (CreditCardCompany cc : CreditCardCompany.values()) {
 			if (cc.getIssuerName().equals(issuerName)) {
 				return cc;

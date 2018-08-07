@@ -3,12 +3,12 @@ Feature: Create a new Travel Card
   			The userID number is evaluated if it exists in the system.
 
   Background: 
-    Given a customer at a registration kiosk at station "Norreport St"
+    Given a customer at a registration kiosk at station "Copenhagen Airport St"
     And his credit card "378282246310005" was successfully verified by the registration kiosk
 
   Scenario: Successfully create a Travel Card 
     Given a userID number "123456-7890" is not registered in the system
-    And his credit card has enough balance to charge the amount of 100
+    And his credit card accepts to charge the amount of 100
     When issue a travel card
     Then a travel card user is registered
     And the registration kiosk displays a message that a travel card is issued
@@ -16,9 +16,9 @@ Feature: Create a new Travel Card
 
   Scenario: Unsuccessfully create a Travel Card - credit card does not have enough balance
     Given a userID number "123456-7890" is not registered in the system
-    But his credit card does not have enough balance to charge the amount of 100
+    But his credit card declines to charge the amount of 100
     When issue a travel card
-    Then the registration kiosk displays a message that a travel card not issued because credit card does not have enough balance
+    Then the registration kiosk displays a message that a travel card not issued because credit card was declined
 
   Scenario: Unsuccessfully create a Travel Card - user already registered in the system
     Given a userID number "123456-7890" is registered in the system
