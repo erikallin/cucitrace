@@ -20,8 +20,6 @@ public class CreditCard {
 			setSuccessfullyCharged(true);
 		} else
 			setSuccessfullyCharged(false);
-		// service to charge amount
-		// add a scenario if there is not enough amount
 	}
 
 	public int getBalance() {
@@ -34,7 +32,6 @@ public class CreditCard {
 	}
 
 	public int getChargedAmount() {
-		// TODO Auto-generated method stub
 		return this.chargedAmount;
 	}
 
