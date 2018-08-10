@@ -1,4 +1,4 @@
-Answer Task 1.1:
+Answer Task 1.2:
 ------------------
 
 -> Can you explain verbally and in detail how you found your answer to "Task 1.0.md"?
@@ -11,5 +11,5 @@ Answer Task 1.1:
 	5: Very difficult 
 	
 -> When you complete your answer, you are ready for your original task
--> CLOSE ALL the tabs in the explorer 
--> Continue to "Task 2.0.md"
+-> CLOSE ALL the tabs in the explorer related to warm up question
+-> Continue to "Rejsekort project"

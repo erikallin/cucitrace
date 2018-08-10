@@ -9,6 +9,7 @@ Feature: Checking In with travel card
     And a check-in automaton at "Norreport St"
 
   Scenario: Successfull check-in
+   
     Given a travel card with check-in status is false
     
     When Check-in

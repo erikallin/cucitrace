@@ -17,7 +17,21 @@ Feature: Basic Arithmethic
     
     And I add 5
     
-    Then the result is 9
+    Then the result displayed is 9
+    
+    And reset calculator after five seconds
 
+
+  Scenario: simple multiplication
+   
+    Given a calculator I just turned on
+    
+    When I add 1
+   
+   And I multiply 5
+    
+    Then the result displayed is 5
+    
+    And reset calculator after five seconds
     
     

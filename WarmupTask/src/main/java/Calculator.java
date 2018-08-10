@@ -4,14 +4,14 @@ public class Calculator {
 	private long state = 0;
 	
 	
-	private int turnOnCalculator = 0;
+	private boolean turnOnCalculator = false;
 
 	
 	
 	
 	
 	public Calculator() {
-		this.setTurnOnCalculator(1);
+		this.setTurnOnCalculator(true);
 	}
 
 	
@@ -59,7 +59,7 @@ public class Calculator {
 	
 	
 	
-	public int getTurnOnCalculator() {
+	public boolean getTurnOnCalculator() {
 		return turnOnCalculator;
 	}
 
@@ -67,7 +67,16 @@ public class Calculator {
 	
 	
 	
-	public void setTurnOnCalculator(int turnOnCalculator) {
-		this.turnOnCalculator = turnOnCalculator;
+	public void setTurnOnCalculator(boolean b) {
+		this.turnOnCalculator = b;
+	}
+
+	
+	
+	
+	
+	private void reset(){
+		//state = 0;
 	}
 }
+
