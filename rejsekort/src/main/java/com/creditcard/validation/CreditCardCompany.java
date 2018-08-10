@@ -16,6 +16,10 @@ public enum CreditCardCompany {
 	 * @param card
 	 * @return
 	 */
+
+	
+	
+	
 	public static CreditCardCompany obtainCompany(String card) {
 		for (CreditCardCompany cc : CreditCardCompany.values()) {
 			if (cc.matches(card)) {
@@ -24,6 +28,10 @@ public enum CreditCardCompany {
 		}
 		return null;
 	}
+	
+	
+	
+	
 
 	/**
 	 * get an enum from an issuerName
@@ -31,6 +39,10 @@ public enum CreditCardCompany {
 	 * @param issuerName
 	 * @return
 	 */
+	
+	
+	
+	
 	public static CreditCardCompany obtainCompanyByIssuerName(String issuerName) {
 		for (CreditCardCompany cc : CreditCardCompany.values()) {
 			if (cc.getIssuerName().equals(issuerName)) {
@@ -40,18 +52,32 @@ public enum CreditCardCompany {
 		return null;
 	}
 
+	
+	
+	
+	
 	private String issuerName;
 
+	
 	private String regex;
 
+	
 	CreditCardCompany(String regex, String issuerName) {
 		this.regex = regex;
 		this.issuerName = issuerName;
 	}
+	
+	
+	
+	
 
 	public String getIssuerName() {
 		return this.issuerName;
 	}
+	
+	
+	
+	
 
 	public boolean matches(String card) {
 		return card.matches(this.regex);

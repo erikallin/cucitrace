@@ -11,13 +11,20 @@ import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
 public class SystemLogger {
+	
+	
 	private static Logger log;
 
+	
 	private FileHandler fileTxt;
+	
+	
 	private SimpleFormatter formatterTxt;
 
+	
 	private String logfilename = "Logfile.txt";
 
+	
 	public SystemLogger() {
 		this.setLogfilename("Logfile.txt");
 		log = Logger.getLogger("Travel Card Example Logger");
@@ -25,13 +32,22 @@ public class SystemLogger {
 		setup();
 	}
 
+	
+	
+	
+	
 	public SystemLogger(String filename) {
 		this.setLogfilename(filename);
 		log = Logger.getLogger("Travel Card Example Logger");
 		log.setLevel(Level.ALL);
 	}
 
+	
+	
+	
+	
 	public boolean exists(String filename) {
+	
 		File tmpDir = new File(filename);
 
 		if (tmpDir.exists()) {
@@ -41,10 +57,18 @@ public class SystemLogger {
 		return false;
 	}
 
+	
+	
+	
+	
 	public String getLogfilename() {
 		return logfilename;
 	}
 
+	
+	
+	
+	
 	public Logger getLogger() {
 		if (log == null) {
 			log = Logger.getLogger("Travel Card Example Logger");
@@ -53,11 +77,19 @@ public class SystemLogger {
 		return log;
 	}
 
+	
+	
+	
+	
 	public void logContains(String checkedInSuccess) {
 		readlog(checkedInSuccess);
 
 	}
 
+	
+	
+	
+	
 	public void printLog() {
 		try {
 
@@ -80,6 +112,10 @@ public class SystemLogger {
 
 	}
 
+	
+	
+	
+	
 	public boolean readlog(String msg) {
 
 		BufferedReader br = null;
@@ -109,10 +145,18 @@ public class SystemLogger {
 		return false;
 	}
 
+	
+	
+	
+	
 	public void setLogfilename(String logfilename) {
 		this.logfilename = logfilename;
 	}
 
+	
+	
+	
+	
 	public void setup() {
 		printLog();
 

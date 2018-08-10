@@ -11,8 +11,10 @@ import com.travelcard.datagenerator.util.RandomTravelCardUsers;
 
 public class TravelCardUserList {
 
+	
 	private List<TravelCard> users;
 
+	
 	public TravelCardUserList() {
 		users = new ArrayList<>();
 		RandomTravelCardUsers rru = new RandomTravelCardUsers();
@@ -20,11 +22,19 @@ public class TravelCardUserList {
 
 	}
 
+	
+	
+	
+	
 	public void addUserID(TravelCard newUserID) {
 		users.add(newUserID);
 
 	}
 
+	
+	
+	
+	
 	public void generateNameList() {
 		PrintWriter writer = null;
 		try {
@@ -43,17 +53,33 @@ public class TravelCardUserList {
 
 	}
 
+	
+	
+	
+	
 	public List<TravelCard> getUserIDs() {
 		return users;
 	}
 
+	
+	
+	
+	
 	public boolean reportExists(String reportName) {
 		File tmpDir = new File(reportName);
 		return tmpDir.exists();
 	}
 
+	
+	
+	
+	
 	public void setuserIDs(List<TravelCard> users) {
 		this.users = users;
 	}
 
+	
+	
+	
+	
 }

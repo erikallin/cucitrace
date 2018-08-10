@@ -31,6 +31,8 @@ import org.jfree.chart.plot.PiePlot;
 import org.jfree.chart.title.TextTitle;
 
 public class StationList {
+	
+	
 	private static JFreeChart createChart(PieDataset dataset) {
 
 		JFreeChart chart = ChartFactory.createPieChart(Constants.REPORT_STATION_STATISTICS, // chart
@@ -94,20 +96,34 @@ public class StationList {
 	 * 
 	 * @return A radial gradient paint.
 	 */
+	
+	
+	
+	
+	
 	private static RadialGradientPaint createGradientPaint(Color c1, Color c2) {
 		Point2D center = new Point2D.Float(0, 0);
 		float radius = 200;
 		float[] dist = { 0.0f, 1.0f };
 		return new RadialGradientPaint(center, radius, dist, new Color[] { c1, c2 });
 	}
+	
+	
+	
+	
 
 	private List<Station> availableStations;
 
+	
 	public StationList() {
 		availableStations = new ArrayList<Station>();
 		RandomStations gen = new RandomStations();
 		availableStations = gen.generate(10);
 	}
+	
+	
+	
+	
 
 	public void generateStationStatisticsReport() {
 		PDFDocument pdfDoc = new PDFDocument();
@@ -125,19 +141,35 @@ public class StationList {
 
 	}
 
+	
+	
+	
+	
 	public List<Station> getUserIDs() {
 		return availableStations;
 	}
 
+	
+	
+	
+	
 	public boolean reportExists(String reportName) {
 		File tmpDir = new File(reportName);
 		return tmpDir.exists();
 	}
 
+	
+	
+	
+	
 	public void setStationIDs(List<Station> stations) {
 		this.availableStations = stations;
 	}
 
+	
+	
+	
+	
 	private PieDataset createDatasetStationStatistics() {
 		int sumCheckIn = 0;
 		int sumCheckOut = 0;

@@ -6,5 +6,7 @@ Feature: Setup the system
   Scenario: Successfully verified: The three checks are met
   
     Given a manager wants to setup the system with the log file "Logfile.txt"
+   
     When setup
+    
     And the log file "Logfile.txt" recording system actions is generated
