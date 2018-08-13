@@ -19,7 +19,7 @@ Feature: Basic Arithmethic
     
     Then the result displayed is 9
     
-    And reset calculator after five seconds
+
 
 
   Scenario: simple multiplication
@@ -32,6 +32,6 @@ Feature: Basic Arithmethic
     
     Then the result displayed is 5
     
-    And reset calculator after five seconds
+    
     
     

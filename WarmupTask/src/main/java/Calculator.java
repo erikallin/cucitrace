@@ -75,8 +75,8 @@ public class Calculator {
 	
 	
 	
-	private void reset(){
-		//state = 0;
+	public void reset(){
+		
 	}
 }
 

@@ -40,14 +40,12 @@ public class CalculatorSteps {
 	public void the_result_displayed_is(long result) throws Throwable {
 		assertThat(calculator.getState()).isEqualTo(result);
 		expected_result = result;
+		calculator.reset();
 	}
 	
 	
 	
 	
-	@Then("^reset calculator after five seconds$")
-	public void reset_calculator_after_five_seconds(){
-		//calculator.reset();
-	}
+
 	
 }

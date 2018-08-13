@@ -9,9 +9,9 @@ Feature: Checking out with travel card
    
     Given a travel card with check-in status is true
    
-    And a check-in automaton at "Sydhavn St"
+    And a check-in automaton at "Norreport St"
    
-    And a check-out automaton at "Norreport St"
+    And a check-out automaton at "Sydhavn St"
    
     When a travel card check-out
    
@@ -25,7 +25,7 @@ Feature: Checking out with travel card
    
     Given a travel card with check-in status is false
    
-    And a check-out automaton at "Norreport St"
+    And a check-out automaton at "Sydhavn St"
    
     When a travel card check-out
    
