@@ -16,7 +16,7 @@ public class TravelCardUserList {
 
 	
 	public TravelCardUserList() {
-		users = new ArrayList<>();
+		users = new ArrayList<TravelCard>();
 		RandomTravelCardUsers rru = new RandomTravelCardUsers();
 		users = rru.generate(10);
 
