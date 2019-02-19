@@ -4,11 +4,11 @@ public class DepositToEmployeeCard {
 
 	
 	private int countDeposits = 0;
-	
-		
+
+
 	private ResponseObject response;
-	
-	
+
+
 	private String canteenName;
 
 	
@@ -16,23 +16,23 @@ public class DepositToEmployeeCard {
 		this.canteenName = canteenName;
 
 	}
-	
-	
-	
-	
+
+
+
+
 
 	public ResponseObject deposit(EmployeeCard account, int amount) {
-		
+
 		if (!account.isInUseStatus()) {
-		
+
 			account.setInUseStatus(true);
 			account.depositBalance(amount);
 			response = new ResponseObject(200, Constants.DEPOSIT_SUCCESS);
 
-			InitSystem.isl.getLogger()
-					.info("DEPOSIT: Self-service machine at " + canteenName + " : " + Constants.DEPOSIT_SUCCESS + amount + " DKK");
+			InitSystem.isl.getLogger().info("DEPOSIT: Self-service machine at " + canteenName + " : "
+					+ Constants.DEPOSIT_SUCCESS + amount + " DKK");
 			InitSystem.isl.printLog();
-			countDeposits++;
+			setCountDeposits(getCountDeposits() + 1);
 			
 		} else {
 			
@@ -71,8 +71,17 @@ public class DepositToEmployeeCard {
 	
 	
 	
-	
+	public int getCountDeposits() {
+		return countDeposits;
+	}
 
+
+
+
+
+	public void setCountDeposits(int countDeposits) {
+		this.countDeposits = countDeposits;
+	}	
 
 	
 	

@@ -4,42 +4,43 @@ public class WithdrawFromEmployeeCard {
 
 	
 	private int countWithdrawals = 0;
-	
-	
-	private final int FEE = 1;
-	private final int MINIMUM_ACCOUNT_BALANCE = 50;
-	
-	
-	private ResponseObject response;
-	
-	
-	private String canteenName;
 
 	
+	private final int FEE = 1;
+
+
+	private final int MINIMUM_ACCOUNT_BALANCE = 50;
+
+
+	private ResponseObject response;
+
+
+	private String canteenName;
+
+
 	public WithdrawFromEmployeeCard(String canteenName) {
 		this.setCanteenName(canteenName);
 	}
 
-	
-	
-	
-	
+
+
+
 	public ResponseObject withdraw(EmployeeCard account, int amount) {
-	
+
 		if (!account.isInUseStatus()) {
-			
+
 			if (hasEnoughBalance(account)) {
-			
+
 				account.setInUseStatus(true);
 				chargeFee(account);
 
 				account.withdrawBalance(amount);
 				response = new ResponseObject(230, Constants.WITHDRAWAL_SUCCESS);
 
-				InitSystem.isl.getLogger()
-						.info("WITHDRAWAL: Self-service machine at " + canteenName + " : " + Constants.WITHDRAWAL_SUCCESS + amount + " DKK");
+				InitSystem.isl.getLogger().info("WITHDRAWAL: Self-service machine at " + canteenName + " : "
+						+ Constants.WITHDRAWAL_SUCCESS + amount + " DKK");
 				InitSystem.isl.printLog();
-				countWithdrawals++;
+				setCountWithdrawals(getCountWithdrawals() + 1);
 			
 			} else {
 				
@@ -93,11 +94,32 @@ public class WithdrawFromEmployeeCard {
 
 	}
 
+
+
+
 	
 	private boolean hasEnoughBalance(EmployeeCard account) {
 		return account.getBalance() > MINIMUM_ACCOUNT_BALANCE;
 	}
 	
+
+
+
+
+	public int getCountWithdrawals() {
+		return countWithdrawals;
+	}
+
+
+
+
+
+	public void setCountWithdrawals(int countWithdrawals) {
+		this.countWithdrawals = countWithdrawals;
+	}
 	
+	
+
+
 	
 }

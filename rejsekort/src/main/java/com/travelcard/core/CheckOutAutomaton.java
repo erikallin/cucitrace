@@ -4,14 +4,14 @@ public class CheckOutAutomaton {
 
 	
 	private int countCheckedOut = 0;
-	
-	
+
+
 	private final int FARE = 25;
-	
-	
+
+
 	private ResponseObject response;
-	
-	
+
+
 	private String stationName;
 
 	
@@ -19,12 +19,12 @@ public class CheckOutAutomaton {
 		this.setStationName(stationName);
 	}
 
-	
-	
-	
-	
+
+
+
+
 	public ResponseObject checkOut(TravelCard card) {
-	
+
 		if (card.isCheckedInStatus()) {
 			charge(card);
 			card.setCheckedInStatus(false);
@@ -33,7 +33,7 @@ public class CheckOutAutomaton {
 			InitSystem.isl.getLogger()
 					.info("CHECKOUT: Automaton at " + stationName + " : " + Constants.CHECKED_OUT_SUCCESS);
 			InitSystem.isl.printLog();
-			countCheckedOut++;
+			setCountCheckedOut(getCountCheckedOut() + 1);
 
 		} else {
 
@@ -80,7 +80,24 @@ public class CheckOutAutomaton {
 
 	}
 
+
 	
 	
 	
+	public int getCountCheckedOut() {
+		return countCheckedOut;
+	}
+
+
+
+	
+
+	public void setCountCheckedOut(int countCheckedOut) {
+		this.countCheckedOut = countCheckedOut;
+	}
+
+
+
+
+
 }
