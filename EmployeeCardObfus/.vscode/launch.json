@@ -1,0 +1,112 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Debug (Launch) - Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TrueTypeFont<employeeCard>",
+            "request": "launch",
+            "mainClass": "com.orsonpdf.font.TrueTypeFont",
+            "projectName": "employeeCard"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-JCommon<employeeCard>",
+            "request": "launch",
+            "mainClass": "org.jfree.JCommon",
+            "projectName": "employeeCard"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-ClassPathDebugger<employeeCard>",
+            "request": "launch",
+            "mainClass": "org.jfree.base.ClassPathDebugger",
+            "projectName": "employeeCard"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-JFreeChart<employeeCard>",
+            "request": "launch",
+            "mainClass": "org.jfree.chart.JFreeChart",
+            "projectName": "employeeCard"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-BarChartDemo1<employeeCard>",
+            "request": "launch",
+            "mainClass": "org.jfree.chart.demo.BarChartDemo1",
+            "projectName": "employeeCard"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-PieChartDemo1<employeeCard>",
+            "request": "launch",
+            "mainClass": "org.jfree.chart.demo.PieChartDemo1",
+            "projectName": "employeeCard"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TimeSeriesChartDemo1<employeeCard>",
+            "request": "launch",
+            "mainClass": "org.jfree.chart.demo.TimeSeriesChartDemo1",
+            "projectName": "employeeCard"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-CombinedCategoryPlotDemo1<employeeCard>",
+            "request": "launch",
+            "mainClass": "org.jfree.experimental.chart.demo.CombinedCategoryPlotDemo1",
+            "projectName": "employeeCard"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-CombinedXYPlotDemo1<employeeCard>",
+            "request": "launch",
+            "mainClass": "org.jfree.experimental.chart.demo.CombinedXYPlotDemo1",
+            "projectName": "employeeCard"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-SWTBarChartDemo1<employeeCard>",
+            "request": "launch",
+            "mainClass": "org.jfree.experimental.chart.swt.demo.SWTBarChartDemo1",
+            "projectName": "employeeCard"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-SWTMultipleAxisDemo1<employeeCard>",
+            "request": "launch",
+            "mainClass": "org.jfree.experimental.chart.swt.demo.SWTMultipleAxisDemo1",
+            "projectName": "employeeCard"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-SWTPieChartDemo1<employeeCard>",
+            "request": "launch",
+            "mainClass": "org.jfree.experimental.chart.swt.demo.SWTPieChartDemo1",
+            "projectName": "employeeCard"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-SWTTimeSeriesDemo<employeeCard>",
+            "request": "launch",
+            "mainClass": "org.jfree.experimental.chart.swt.demo.SWTTimeSeriesDemo",
+            "projectName": "employeeCard"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-RadialLayout<employeeCard>",
+            "request": "launch",
+            "mainClass": "org.jfree.layout.RadialLayout",
+            "projectName": "employeeCard"
+        }
+    ]
+}
