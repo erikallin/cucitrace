@@ -4,56 +4,12 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 public class a
   implements c
 {
   public d aP()
   {
-    return d.bN;
+    return d.ASCII85;
   }
   
   public byte[] a(byte[] paramArrayOfByte)

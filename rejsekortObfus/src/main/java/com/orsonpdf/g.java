@@ -3,51 +3,6 @@ package com.orsonpdf;
 import com.orsonpdf.util.a;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 public abstract class g
   extends r
 {
@@ -58,7 +13,7 @@ public abstract class g
   protected g(int paramInt, h paramh)
   {
     super(paramInt);
-    a.a(paramh, "functionType");
+    a.aab(paramh, "functionType");
     this.R = paramh;
     this.S = new double[] { 0.0D, 1.0D };
     this.K = new b();
@@ -66,9 +21,6 @@ public abstract class g
     this.K.a("/FunctionType", String.valueOf(
       paramh.S()));
   }
-  
-
-
 
 
   public h Q()
@@ -77,21 +29,15 @@ public abstract class g
   }
   
 
-
-
-
   public double[] R()
   {
     return (double[])this.S.clone();
   }
   
 
-
-
-
   public void a(double[] paramArrayOfDouble)
   {
-    a.a(paramArrayOfDouble, "domain");
+    a.aab(paramArrayOfDouble, "domain");
     this.S = ((double[])paramArrayOfDouble.clone());
     this.K.a("/Domain", t.b(this.S));
   }

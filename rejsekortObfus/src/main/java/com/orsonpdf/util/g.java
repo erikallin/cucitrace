@@ -11,56 +11,6 @@ import java.awt.geom.Rectangle2D.Double;
 import java.text.AttributedString;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 public class g
 {
   public static Rectangle2D a(String paramString, Graphics2D paramGraphics2D, float paramFloat1, float paramFloat2, f paramf)
@@ -74,19 +24,6 @@ public class g
     paramGraphics2D.drawString(paramString, paramFloat1 + arrayOfFloat[0], paramFloat2 + arrayOfFloat[1]);
     return localDouble;
   }
-  
-
-
-
-
-
-
-
-
-
-
-
-
 
 
   private static float[] a(Graphics2D paramGraphics2D, String paramString, f paramf)
@@ -125,21 +62,6 @@ public class g
     arrayOfFloat[1] = f6;
     return arrayOfFloat;
   }
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -183,15 +105,6 @@ public class g
     arrayOfFloat[1] = f6;
     return arrayOfFloat;
   }
-  
-
-
-
-
-
-
-
-
 
 
   public static Rectangle2D a(String paramString, Graphics2D paramGraphics2D, FontMetrics paramFontMetrics)
@@ -201,19 +114,6 @@ public class g
     return new Rectangle2D.Double(0.0D, -paramFontMetrics.getAscent(), d1, d2);
   }
   
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
   public static void a(String paramString, Graphics2D paramGraphics2D, float paramFloat1, float paramFloat2, f paramf, double paramDouble, float paramFloat3, float paramFloat4)
@@ -226,18 +126,6 @@ public class g
       paramFloat3, paramFloat4);
   }
   
-
-
-
-
-
-
-
-
-
-
-
-
 
 
   public static void a(String paramString, Graphics2D paramGraphics2D, float paramFloat1, float paramFloat2, f paramf1, double paramDouble, f paramf2)
@@ -253,16 +141,6 @@ public class g
       paramFloat2 + arrayOfFloat1[1] + arrayOfFloat2[1]);
   }
   
-
-
-
-
-
-
-
-
-
-
 
 
   private static float[] b(Graphics2D paramGraphics2D, String paramString, f paramf)
@@ -305,35 +183,11 @@ public class g
   
 
 
-
-
-
-
-
-
-
-
-
-
   public static void a(String paramString, Graphics2D paramGraphics2D, double paramDouble, float paramFloat1, float paramFloat2)
   {
     a(paramString, paramGraphics2D, paramFloat1, paramFloat2, paramDouble, paramFloat1, paramFloat2);
   }
   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
   public static void a(String paramString, Graphics2D paramGraphics2D, float paramFloat1, float paramFloat2, double paramDouble, float paramFloat3, float paramFloat4)

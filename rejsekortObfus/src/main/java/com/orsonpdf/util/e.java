@@ -5,74 +5,24 @@ import java.awt.geom.Point2D;
 import java.util.Arrays;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 public class e
 {
   private RadialGradientPaint ce;
   float cf = 0.0F;
   
 
-
-
-
   public e(RadialGradientPaint paramRadialGradientPaint)
   {
-    a.a(paramRadialGradientPaint, "rgp");
+    a.aab(paramRadialGradientPaint, "rgp");
     this.ce = paramRadialGradientPaint;
   }
   
-
-
-
-
 
   public RadialGradientPaint aY()
   {
     return this.ce;
   }
   
-
-
-
-
 
 
 
@@ -99,10 +49,6 @@ public class e
     }
     return true;
   }
-  
-
-
-
 
 
   public int O()

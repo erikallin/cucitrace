@@ -2,6 +2,7 @@ package com.travelcard.core;
 
 import com.orsonpdf.k;
 import com.orsonpdf.m;
+import com.orsonpdf.n;
 import com.orsonpdf.u;
 import com.travelcard.datagenerator.util.a;
 import java.awt.BasicStroke;
@@ -85,19 +86,7 @@ public class h
     localJFreeChart.addSubtitle(localTextTitle2);
     return localJFreeChart;
   }
-  
-
-
-
-
-
-
-
-
-
-
-
-
+ 
 
 
 
@@ -111,26 +100,20 @@ public class h
   
 
 
-
-
-
-
   public h()
   {
-    this.de = new ArrayList();
+    this.de = new ArrayList<g>();
     a locala = new a();
     this.de = locala.x(10);
   }
   
-
-
 
   public void by()
   {
     k localk = new k();
     localk.x("Station Statistics Report");
     localk.y("Travel Card System");
-    u localu = localk.a(new Rectangle(612, 468));
+    u localu = localk.e(new Rectangle(612, 468));
     m localm = localu.aI();
     JFreeChart localJFreeChart = a(bA());
     localJFreeChart.setPadding(new RectangleInsets(4.0D, 8.0D, 2.0D, 2.0D));
@@ -141,9 +124,6 @@ public class h
     localk.a(new File("repStationStatistics.pdf"));
   }
   
-
-
-
 
   public List<g> bz()
   {

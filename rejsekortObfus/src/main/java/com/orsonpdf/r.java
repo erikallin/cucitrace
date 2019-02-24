@@ -5,48 +5,6 @@ import java.io.IOException;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 public abstract class r
 {
   private int X;
@@ -58,11 +16,6 @@ public abstract class r
   }
   
 
-
-
-
-
-
   protected r(int paramInt1, int paramInt2)
   {
     this.X = paramInt1;
@@ -70,16 +23,11 @@ public abstract class r
   }
   
 
-
-
-
   public int S()
   {
     return this.X;
   }
   
-
-
 
 
   public int aD()
@@ -89,19 +37,11 @@ public abstract class r
   
 
 
-
-
-
-
-
   public String aE()
   {
     return this.X + " " + this.bk + " R";
   }
   
-
-
-
 
 
   public byte[] I()
@@ -114,8 +54,6 @@ public abstract class r
     return localByteArrayOutputStream.toByteArray();
   }
   
-
-
 
   public abstract byte[] K()
     throws IOException;

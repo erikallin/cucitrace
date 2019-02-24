@@ -5,48 +5,6 @@ import com.orsonpdf.r;
 import com.orsonpdf.util.a;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 public abstract class c
   extends r
 {
@@ -56,7 +14,7 @@ public abstract class c
   protected c(int paramInt, d paramd)
   {
     super(paramInt);
-    a.a(paramd, "shadingType");
+    a.aab(paramd, "shadingType");
     this.bU = paramd;
     this.K = new b();
     this.K.a("/ShadingType", String.valueOf(

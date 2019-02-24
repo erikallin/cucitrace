@@ -1,58 +1,21 @@
 package com.orsonpdf;
 
 
-
-
-
-
-
-
-
-
-
-
 public final class d
   extends g
 {
   double L;
   
 
-
-
-
-
-
-
-
-
-
   float[] M;
   
-
-
-
-
-
-
-
-
-
 
   float[] N;
   
 
-
-
-
-
-
-
-
-
-
   public d(int paramInt, float[] paramArrayOfFloat1, float[] paramArrayOfFloat2)
   {
-    super(paramInt, h.U);
+    super(paramInt, h.EXPONENTIAL_INTERPOLATION);
     this.K.a("/N", "1");
     this.L = 1.0D;
     a(paramArrayOfFloat1);
@@ -60,17 +23,11 @@ public final class d
   }
   
 
-
-
-
   public double L()
   {
     return this.L;
   }
   
-
-
-
 
   public void a(double paramDouble)
   {
@@ -79,19 +36,11 @@ public final class d
   }
   
 
-
-
-
-
   public float[] M()
   {
     return (float[])this.M.clone();
   }
   
-
-
-
-
 
   public void a(float[] paramArrayOfFloat)
   {
@@ -101,17 +50,11 @@ public final class d
   
 
 
-
-
-
   public float[] N()
   {
     return (float[])this.N.clone();
   }
   
-
-
-
 
 
   public void b(float[] paramArrayOfFloat)

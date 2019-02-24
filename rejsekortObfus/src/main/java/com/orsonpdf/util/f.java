@@ -1,94 +1,56 @@
 package com.orsonpdf.util;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 public enum f
 {
+  
+  /** Top/left. */
+  TOP_LEFT("TextAnchor.TOP_LEFT"),
+
+  /** Top/center. */
+  TOP_CENTER("TextAnchor.TOP_CENTER"),
+
+  /** Top/right. */
+  TOP_RIGHT("TextAnchor.TOP_RIGHT"),
+
+  /** Half-ascent/left. */
+  HALF_ASCENT_LEFT("TextAnchor.HALF_ASCENT_LEFT"),
+
+  /** Half-ascent/center. */
+  HALF_ASCENT_CENTER("TextAnchor.HALF_ASCENT_CENTER"),
+
+  /** Half-ascent/right. */
+  HALF_ASCENT_RIGHT("TextAnchor.HALF_ASCENT_RIGHT"),
+
+  /** Middle/left. */
+  CENTER_LEFT("TextAnchor.CENTER_LEFT"),
+
+  /** Middle/center. */
+  CENTER("TextAnchor.CENTER"),
+
+  /** Middle/right. */
+  CENTER_RIGHT("TextAnchor.CENTER_RIGHT"),
+
+  /** Baseline/left. */
+  BASELINE_LEFT("TextAnchor.BASELINE_LEFT"),
+
+  /** Baseline/center. */
+  BASELINE_CENTER("TextAnchor.BASELINE_CENTER"),
+
+  /** Baseline/right. */
+    BASELINE_RIGHT("TextAnchor.BASELINE_RIGHT"),
+
+  /** Bottom/left. */
+  BOTTOM_LEFT("TextAnchor.BOTTOM_LEFT"),
+
+  /** Bottom/center. */
+  BOTTOM_CENTER("TextAnchor.BOTTOM_CENTER"),
+
+  /** Bottom/right. */
+  BOTTOM_RIGHT("TextAnchor.BOTTOM_RIGHT");
+	
   private String O;
   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
   private f(String paramString1)
   {
@@ -97,26 +59,20 @@ public enum f
   
 
 
-
-
-
   public boolean aZ()
   {
-    return (this == cg) || (this == cm) || 
-      (this == cj) || (this == cp) || 
-      (this == cs);
+    return (this == TOP_LEFT) || (this == CENTER_LEFT ) || 
+      (this == HALF_ASCENT_LEFT) || (this == BASELINE_LEFT) || 
+      (this == BOTTOM_LEFT);
   }
   
 
 
-
-
-
   public boolean ba()
   {
-    return (this == ch) || (this == cn) || 
-      (this == ck) || (this == cq) || 
-      (this == ct);
+    return (this == TOP_CENTER) || (this == CENTER) || 
+      (this == HALF_ASCENT_CENTER) || (this == BASELINE_CENTER) || 
+      (this == BOTTOM_CENTER);
   }
   
 
@@ -126,9 +82,9 @@ public enum f
 
   public boolean bb()
   {
-    return (this == ci) || (this == co) || 
-      (this == cl) || (this == cr) || 
-      (this == cu);
+    return (this == TOP_RIGHT) || (this == CENTER_RIGHT) || 
+      (this == HALF_ASCENT_RIGHT) || (this == BASELINE_RIGHT) || 
+      (this == BOTTOM_RIGHT);
   }
   
 
@@ -138,7 +94,7 @@ public enum f
 
   public boolean bc()
   {
-    return (this == cg) || (this == ch) || (this == ci);
+    return (this == TOP_LEFT) || (this == TOP_CENTER) || (this == TOP_RIGHT);
   }
   
 
@@ -148,8 +104,8 @@ public enum f
 
   public boolean bd()
   {
-    return (this == cj) || (this == ck) || 
-      (this == cl);
+    return (this == HALF_ASCENT_LEFT) || (this == HALF_ASCENT_CENTER) || 
+      (this == HALF_ASCENT_RIGHT);
   }
   
 
@@ -159,7 +115,7 @@ public enum f
 
   public boolean be()
   {
-    return (this == cm) || (this == cn) || (this == co);
+    return (this == CENTER_LEFT ) || (this == CENTER) || (this == CENTER_RIGHT);
   }
   
 
@@ -169,8 +125,8 @@ public enum f
 
   public boolean bf()
   {
-    return (this == cp) || (this == cq) || 
-      (this == cr);
+    return (this == BASELINE_LEFT) || (this == BASELINE_CENTER) || 
+      (this == BASELINE_RIGHT);
   }
   
 
@@ -180,8 +136,8 @@ public enum f
 
   public boolean bg()
   {
-    return (this == cs) || (this == ct) || 
-      (this == cu);
+    return (this == BOTTOM_LEFT) || (this == BOTTOM_CENTER) || 
+      (this == BOTTOM_RIGHT);
   }
   
 

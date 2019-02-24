@@ -5,53 +5,6 @@ import com.orsonpdf.t;
 import com.orsonpdf.util.a;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 public final class b
   extends c
 {
@@ -62,9 +15,9 @@ public final class b
   
   public b(int paramInt, double[] paramArrayOfDouble, g paramg)
   {
-    super(paramInt, d.bX);
-    a.a(6, paramArrayOfDouble, "coords");
-    a.a(paramg, "function");
+    super(paramInt, d.RADIAL);
+    a.aad(6, paramArrayOfDouble, "coords");
+    a.aab(paramg, "function");
     this.K.a("/ColorSpace", "/DeviceRGB");
     c(paramArrayOfDouble);
     a(paramg);
@@ -88,7 +41,7 @@ public final class b
 
   public void c(double[] paramArrayOfDouble)
   {
-    a.a(6, paramArrayOfDouble, "coords");
+    a.aad(6, paramArrayOfDouble, "coords");
     this.bR = ((double[])paramArrayOfDouble.clone());
     this.K.a("/Coords", t.b(this.bR));
   }
@@ -108,7 +61,7 @@ public final class b
 
   public void a(g paramg)
   {
-    a.a(paramg, "function");
+    a.aab(paramg, "function");
     this.bS = paramg;
     this.K.a("/Function", this.bS);
   }
@@ -128,7 +81,7 @@ public final class b
 
   public void a(double[] paramArrayOfDouble)
   {
-    a.a(2, paramArrayOfDouble, "domain");
+    a.aad(2, paramArrayOfDouble, "domain");
     this.S = ((double[])paramArrayOfDouble.clone());
     this.K.a("/Domain", t.b(this.S));
   }
@@ -148,7 +101,7 @@ public final class b
 
   public void b(boolean[] paramArrayOfBoolean)
   {
-    a.a(2, paramArrayOfBoolean, "extend");
+    a.aac(2, paramArrayOfBoolean, "extend");
     this.bT = ((boolean[])paramArrayOfBoolean.clone());
     this.K.a("/Extend", t.a(this.bT));
   }

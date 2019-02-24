@@ -6,45 +6,7 @@ import java.awt.GraphicsDevice;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-public class o
-  extends GraphicsDevice
+public class o extends GraphicsDevice
 {
   private String bd;
   GraphicsConfiguration be;
@@ -56,42 +18,25 @@ public class o
   }
   
 
-
-
-
-
-  public int az()
-  {
-    return 1;
+  public GraphicsConfiguration[] getConfigurations() {
+    return new GraphicsConfiguration[] { getDefaultConfiguration() };
   }
-  
+
+
+
+  public GraphicsConfiguration getDefaultConfiguration() {
+	return this.be;
+  }
 
 
 
 
-
-  public String aA()
-  {
+  public String getIDstring() {
     return this.bd;
   }
-  
 
 
-
-
-
-  public GraphicsConfiguration[] aB()
-  {
-    return new GraphicsConfiguration[] { aC() };
-  }
-  
-
-
-
-
-
-  public GraphicsConfiguration aC()
-  {
-    return this.be;
+  public int getType() {
+	  return GraphicsDevice.TYPE_PRINTER;
   }
 }

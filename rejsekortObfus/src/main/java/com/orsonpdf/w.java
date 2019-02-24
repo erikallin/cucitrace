@@ -7,63 +7,22 @@ import java.awt.geom.AffineTransform;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-public abstract class w
-  extends r
+public abstract class w extends r
 {
-  protected b K;
   
-  public static final class a
-    extends w
+  
+  public static final class an extends w
   {
     private c bD;
     
-    public a(int paramInt, c paramc, AffineTransform paramAffineTransform)
+    public an(int paramInt, c paramc, AffineTransform paramAffineTransform)
     {
-      super();
+      super(paramInt);
       this.K.a("/PatternType", "2");
       this.K.a("/Matrix", t.e(paramAffineTransform));
-      a(paramc);
+      aa(paramc);
     }
     
-
-
 
 
     public c aN()
@@ -73,18 +32,16 @@ public abstract class w
     
 
 
-
-
-    public void a(c paramc)
+    public void aa(c paramc)
     {
-      a.a(paramc, "shading");
+      a.aab(paramc, "shading");
       this.bD = paramc;
       this.K.a("/Shading", this.bD);
     }
   }
   
 
-
+  protected b K;
 
 
 
@@ -95,9 +52,6 @@ public abstract class w
     this.K = new b("/Pattern");
   }
   
-
-
-
 
 
 

@@ -7,79 +7,37 @@ import java.util.List;
 import java.util.Map;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 public final class v
   extends r
 {
   private k bx;
+  
+  
   private List<u> by;
+  
+  
   private List<l> bz;
+  
+  
   private Map<e, l> bA;
+  
   private int bB = 1;
   
-
-
-
   private f bC;
   
-
 
 
   v(int paramInt1, int paramInt2, k paramk)
   {
     super(paramInt1, paramInt2);
-    com.orsonpdf.util.a.a(paramk, "parent");
+    com.orsonpdf.util.a.aab(paramk, "parent");
     this.bx = paramk;
-    this.by = new ArrayList();
-    this.bz = new ArrayList();
-    this.bA = new HashMap();
+    this.by = new ArrayList<u>();
+    this.bz = new ArrayList<l>();
+    this.bA = new HashMap<e, l>();
     this.bC = new a();
   }
   
-
-
 
 
   public k aK()
@@ -89,8 +47,6 @@ public final class v
   
 
 
-
-
   public List<u> aL()
   {
     return this.by;
@@ -98,15 +54,11 @@ public final class v
   
 
 
-
-
   public List<l> aM()
   {
     return this.bz;
   }
   
-
-
 
 
 
@@ -124,16 +76,11 @@ public final class v
   
 
 
-
   void a(u paramu)
   {
     this.by.add(paramu);
   }
   
-
-
-
-
 
 
 

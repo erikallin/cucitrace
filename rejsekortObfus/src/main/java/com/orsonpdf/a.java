@@ -4,50 +4,6 @@ import java.awt.Font;
 import java.util.HashMap;
 import java.util.Map;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 public class a
   implements f
 {

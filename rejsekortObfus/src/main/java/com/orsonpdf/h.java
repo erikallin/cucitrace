@@ -4,58 +4,27 @@ package com.orsonpdf;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 public enum h
 {
-  private int X;
+  
+  /** PDF function type 0. */
+  SAMPLED(0),
+    
+  /** PDF function type 2. */
+  EXPONENTIAL_INTERPOLATION(2),
+    
+  /** PDF function type 3. */
+  STITCHING(3),
+    
+  /** PDF function type 4. */
+  POSTSCRIPT_CALCULATOR(4);
+	
+  private int n;
   
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  private h(int paramInt1)
+  private h(int n)
   {
-    this.X = paramInt1;
+    this.n = n;
   }
   
 
@@ -64,6 +33,6 @@ public enum h
 
   public int S()
   {
-    return this.X;
+    return this.n;
   }
 }

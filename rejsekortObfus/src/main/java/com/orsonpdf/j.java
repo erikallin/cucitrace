@@ -22,67 +22,6 @@ import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 public class j
   extends y
 {
@@ -131,9 +70,6 @@ public class j
   }
   
 
-
-
-
   void a(AffineTransform paramAffineTransform)
   {
     StringBuilder localStringBuilder = new StringBuilder();
@@ -146,8 +82,6 @@ public class j
     w(localStringBuilder.toString());
   }
   
-
-
 
 
   void b(AffineTransform paramAffineTransform)
@@ -169,10 +103,6 @@ public class j
   }
   
 
-
-
-
-
   void c(AffineTransform paramAffineTransform)
   {
     StringBuilder localStringBuilder = new StringBuilder();
@@ -187,11 +117,9 @@ public class j
   
 
 
-
-
-  void a(Shape paramShape)
+  void d(Shape paramShape)
   {
-    a.a(paramShape, "clip");
+    a.aab(paramShape, "clip");
     StringBuilder localStringBuilder = new StringBuilder();
     Path2D.Double localDouble = new Path2D.Double(paramShape);
     localStringBuilder.append(c(localDouble));
@@ -204,7 +132,7 @@ public class j
 
 
 
-  void a(Stroke paramStroke)
+  void e(Stroke paramStroke)
   {
     if (!(paramStroke instanceof BasicStroke)) {
       return;
@@ -227,7 +155,7 @@ public class j
 
 
 
-  void a(Color paramColor)
+  void f(Color paramColor)
   {
     float f1 = paramColor.getRed() / 255.0F;
     float f2 = paramColor.getGreen() / 255.0F;
@@ -243,7 +171,7 @@ public class j
 
 
 
-  void b(Color paramColor)
+  void g(Color paramColor)
   {
     float f1 = paramColor.getRed() / 255.0F;
     float f2 = paramColor.getGreen() / 255.0F;
@@ -260,7 +188,7 @@ public class j
 
 
 
-  void a(GradientPaint paramGradientPaint)
+  void h(GradientPaint paramGradientPaint)
   {
     String str = this.ab.c(paramGradientPaint);
     StringBuilder localStringBuilder = new StringBuilder("/Pattern CS\n");
@@ -273,7 +201,7 @@ public class j
 
 
 
-  void a(RadialGradientPaint paramRadialGradientPaint)
+  void i(RadialGradientPaint paramRadialGradientPaint)
   {
     String str = this.ab.c(paramRadialGradientPaint);
     StringBuilder localStringBuilder = new StringBuilder("/Pattern CS\n");
@@ -286,7 +214,7 @@ public class j
 
 
 
-  void b(GradientPaint paramGradientPaint)
+  void i(GradientPaint paramGradientPaint)
   {
     String str = this.ab.c(paramGradientPaint);
     StringBuilder localStringBuilder = new StringBuilder("/Pattern cs\n");
@@ -299,7 +227,7 @@ public class j
 
 
 
-  void b(RadialGradientPaint paramRadialGradientPaint)
+  void j(RadialGradientPaint paramRadialGradientPaint)
   {
     String str = this.ab.c(paramRadialGradientPaint);
     StringBuilder localStringBuilder = new StringBuilder("/Pattern cs\n");
@@ -313,7 +241,7 @@ public class j
 
 
 
-  void a(AlphaComposite paramAlphaComposite)
+  void k(AlphaComposite paramAlphaComposite)
   {
     if (paramAlphaComposite == null) {
       this.ai = 1.0F;

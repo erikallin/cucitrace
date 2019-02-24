@@ -51,8 +51,7 @@ public final class StitchingFunction extends Function {
      * @param bounds  the bounds.
      * @param encode  the encoding.
      */
-    public StitchingFunction(int number, Function[] functions, float[] bounds,
-            float[] encode) {
+    public StitchingFunction(int number, Function[] functions, float[] bounds, float[] encode) {
         super(number, FunctionType.STITCHING);
         this.functions = functions;
         this.dictionary.put("/Functions", functions);

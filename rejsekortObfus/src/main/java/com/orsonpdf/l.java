@@ -1,93 +1,53 @@
 package com.orsonpdf;
 
 
-
-
-
-
 public class l
   extends r
 {
   public static final String au = "Helvetica";
   
 
-
-
-
   public static final String av = "Helvetica-Bold";
   
-
-
-
 
   public static final String aw = "Helvetica-Oblique";
   
 
-
-
-
   public static final String ax = "Helvetica-BoldOblique";
   
-
-
-
 
   public static final String ay = "Times-Roman";
   
 
-
-
-
   public static final String az = "Times-Bold";
   
 
-
-
   public static final String aA = "Times-Italic";
-  
-
 
 
   public static final String aB = "Times-BoldItalic";
   
 
-
-
   public static final String aC = "Courier";
   
-
-
 
   public static final String aD = "Courier-Bold";
   
 
-
-
   public static final String aE = "Courier-Italic";
   
-
-
 
   public static final String aF = "Courier-BoldItalic";
   
 
-
-
   private String O;
   
-
-
 
   private String aG;
   
 
-
-
   private String aH;
   
-
-
-
 
   l(int paramInt1, int paramInt2, String paramString1, String paramString2, String paramString3)
   {
@@ -99,18 +59,11 @@ public class l
   
 
 
-
-
-
   public String ad()
   {
     return this.O;
   }
   
-
-
-
-
 
 
   public byte[] K()

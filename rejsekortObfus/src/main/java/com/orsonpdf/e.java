@@ -5,52 +5,6 @@ import com.orsonpdf.util.d;
 import java.awt.Font;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 public class e
 {
   private String O;
@@ -59,19 +13,13 @@ public class e
   
   public static e b(Font paramFont)
   {
-    a.a(paramFont, "f");
+    a.aab(paramFont, "f");
     String str = paramFont.getFamily().replace(' ', '_');
     boolean bool1 = paramFont.isBold();
     boolean bool2 = paramFont.isItalic();
     return new e(str, bool1, bool2);
   }
   
-
-
-
-
-
-
 
 
   public e(String paramString, boolean paramBoolean1, boolean paramBoolean2)
@@ -81,11 +29,6 @@ public class e
     this.Q = paramBoolean2;
   }
   
-
-
-
-
-
 
 
   public boolean a(Object paramObject)
@@ -111,9 +54,6 @@ public class e
   
 
 
-
-
-
   public int O()
   {
     int i = 3;
@@ -123,9 +63,6 @@ public class e
     return i;
   }
   
-
-
-
 
 
 

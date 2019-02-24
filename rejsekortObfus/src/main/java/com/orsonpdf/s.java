@@ -6,49 +6,6 @@ import java.awt.Image;
 import java.awt.image.BufferedImage;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 public class s
   extends y
 {
@@ -59,48 +16,37 @@ public class s
   public s(int paramInt, Image paramImage)
   {
     super(paramInt);
-    a.a(paramImage, "img");
+    a.aab(paramImage, "img");
     this.aI = paramImage.getWidth(null);
     this.aJ = paramImage.getHeight(null);
     this.bi = paramImage;
   }
   
 
-
-
-
   public byte[] X()
   {
     BufferedImage localBufferedImage;
-    
-
 
     if (!(this.bi instanceof BufferedImage)) {
-      localBufferedImage = new BufferedImage(this.aI, this.aJ, 
-        2);
-      localObject = localBufferedImage.createGraphics();
-      ((Graphics2D)localObject).drawImage(this.bi, 0, 0, null);
+      localBufferedImage = new BufferedImage(this.aI, this.aJ, 2);
+      
+      Graphics2D localObject = localBufferedImage.createGraphics();
+      localObject.drawImage(this.bi, 0, 0, null);
     } else {
       localBufferedImage = (BufferedImage)this.bi;
     }
     
-    Object localObject = new byte[this.aI * this.aJ];
+    byte[] localObject = new byte[this.aI * this.aJ];
     int i = 0;
     for (int j = this.aJ - 1; j >= 0; j--) {
       for (int k = 0; k < this.aI; k++) {
         int m = localBufferedImage.getRGB(k, j);
-        localObject[(i++)] = ((byte)(m >> 24));
+        localObject[i++] = (byte) (m >> 24);
       }
     }
-    return (byte[])localObject;
+    return localObject;
   }
   
-
-
-
-
-
-
 
 
   protected b o(int paramInt)

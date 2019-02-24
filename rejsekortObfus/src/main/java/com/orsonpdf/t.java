@@ -9,55 +9,11 @@ import java.util.Calendar;
 import java.util.Date;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 public class t
 {
   public static String a(boolean[] paramArrayOfBoolean)
   {
-    a.a(paramArrayOfBoolean, "b");
+    a.aab(paramArrayOfBoolean, "b");
     StringBuilder localStringBuilder = new StringBuilder("[");
     for (int i = 0; i < paramArrayOfBoolean.length; i++) {
       if (i != 0) {
@@ -69,14 +25,9 @@ public class t
   }
   
 
-
-
-
-
-
   public static String c(float[] paramArrayOfFloat)
   {
-    a.a(paramArrayOfFloat, "f");
+    a.aab(paramArrayOfFloat, "f");
     StringBuilder localStringBuilder = new StringBuilder("[");
     for (int i = 0; i < paramArrayOfFloat.length; i++) {
       if (i != 0) {
@@ -89,13 +40,9 @@ public class t
   
 
 
-
-
-
-
   public static String b(double[] paramArrayOfDouble)
   {
-    a.a(paramArrayOfDouble, "d");
+    a.aab(paramArrayOfDouble, "d");
     StringBuilder localStringBuilder = new StringBuilder("[");
     for (int i = 0; i < paramArrayOfDouble.length; i++) {
       if (i != 0) {
@@ -107,14 +54,9 @@ public class t
   }
   
 
-
-
-
-
-
   public static String e(AffineTransform paramAffineTransform)
   {
-    a.a(paramAffineTransform, "t");
+    a.aab(paramAffineTransform, "t");
     StringBuilder localStringBuilder = new StringBuilder("[");
     localStringBuilder.append(paramAffineTransform.getScaleX()).append(" ");
     localStringBuilder.append(paramAffineTransform.getShearY()).append(" ");
@@ -126,12 +68,6 @@ public class t
   }
   
 
-
-
-
-
-
-
   public static String a(Date paramDate)
   {
     Calendar localCalendar = Calendar.getInstance();
@@ -139,12 +75,6 @@ public class t
     return a(localCalendar);
   }
   
-
-
-
-
-
-
 
   public static String a(Calendar paramCalendar)
   {
@@ -162,10 +92,6 @@ public class t
     return "D:" + str1 + str3;
   }
   
-
-
-
-
 
 
   public static byte[] z(String paramString)

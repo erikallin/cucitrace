@@ -4,60 +4,16 @@ import java.awt.Color;
 import java.awt.GradientPaint;
 import java.awt.geom.Point2D;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 public final class b
 {
   private GradientPaint cd;
   
   public b(GradientPaint paramGradientPaint)
   {
-    a.a(paramGradientPaint, "paint");
+    a.aab(paramGradientPaint, "paint");
     this.cd = paramGradientPaint;
   }
   
-
-
-
 
 
   public GradientPaint aX()
@@ -65,11 +21,6 @@ public final class b
     return this.cd;
   }
   
-
-
-
-
-
 
 
   public boolean a(Object paramObject)
@@ -104,10 +55,6 @@ public final class b
     return true;
   }
   
-
-
-
-
 
   public int O()
   {

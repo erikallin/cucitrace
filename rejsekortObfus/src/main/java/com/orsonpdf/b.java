@@ -7,52 +7,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 public class b
 {
   private String J;
@@ -63,9 +17,6 @@ public class b
     this(null);
   }
   
-
-
-
 
 
   public b(String paramString)
@@ -169,50 +120,57 @@ public class b
     
     for (Object localObject1 : this.I.keySet()) {
       Object localObject2 = this.I.get(localObject1);
-      if (((localObject2 instanceof Number)) || ((localObject2 instanceof String))) {
+      
+      if (localObject2 instanceof Number || localObject2 instanceof String) {
         localStringBuilder.append(localObject1.toString()).append(" ");
-        localStringBuilder.append(localObject2.toString()).append("\n"); } else { Object localObject3;
-        if ((localObject2 instanceof r)) {
-          localObject3 = (r)localObject2;
+        localStringBuilder.append(localObject2.toString()).append("\n"); 
+      
+      } else if (localObject2 instanceof r) {
+    	  r localObject3 = (r) localObject2;
           localStringBuilder.append(localObject1.toString()).append(" ");
-          localStringBuilder.append(((r)localObject3).aE()).append("\n"); } else { int i;
-          if ((localObject2 instanceof String[])) {
+          localStringBuilder.append(((s)localObject3).aE()).append("\n"); 
+      
+      } else if (localObject2 instanceof String[]) {
+          localStringBuilder.append(localObject1.toString()).append(" ");
+          String[] localObject4 = (String[]) localObject2;
+          localStringBuilder.append("[");
+          for (int i = 0; i < localObject4.length; i++) {
+            if (i != 0) {
+              localStringBuilder.append(" ");
+            }
+            localStringBuilder.append(localObject4[i]);
+          }
+          localStringBuilder.append("]\n");
+          
+    	  } else if ((localObject2 instanceof s[])) {
             localStringBuilder.append(localObject1.toString()).append(" ");
-            localObject3 = (String[])localObject2;
+            s[] localObject4 = (s[])localObject2;
             localStringBuilder.append("[");
-            for (i = 0; i < localObject3.length; i++) {
+            for (int i = 0; i < localObject4.length; i++) {
               if (i != 0) {
                 localStringBuilder.append(" ");
               }
-              localStringBuilder.append(localObject3[i]);
+              localStringBuilder.append(localObject4[i].aE());
             }
             localStringBuilder.append("]\n");
-          } else if ((localObject2 instanceof r[])) {
-            localStringBuilder.append(localObject1.toString()).append(" ");
-            localObject3 = (r[])localObject2;
-            localStringBuilder.append("[");
-            for (i = 0; i < localObject3.length; i++) {
-              if (i != 0) {
-                localStringBuilder.append(" ");
-              }
-              localStringBuilder.append(localObject3[i].aE());
-            }
-            localStringBuilder.append("]\n");
+          
           } else if ((localObject2 instanceof Rectangle2D)) {
-            localObject3 = (Rectangle2D)localObject2;
+        	Rectangle2D localObject3 = (Rectangle2D) localObject2;
             localStringBuilder.append(localObject1.toString()).append(" ");
-            localStringBuilder.append("[").append(((Rectangle2D)localObject3).getX()).append(" ");
-            localStringBuilder.append(((Rectangle2D)localObject3).getY()).append(" ").append(((Rectangle2D)localObject3).getWidth()).append(" ");
-            localStringBuilder.append(((Rectangle2D)localObject3).getHeight()).append("]\n");
+            localStringBuilder.append("[").append((localObject3).getX()).append(" ");
+            localStringBuilder.append(localObject3.getY()).append(" ").append(((Rectangle2D)localObject3).getWidth()).append(" ");
+            localStringBuilder.append(localObject3.getHeight()).append("]\n");
+          
           } else if ((localObject2 instanceof b)) {
             localStringBuilder.append(localObject1.toString()).append(" ");
-            localObject3 = (b)localObject2;
+            b localObject3 = (b) localObject2;
             localStringBuilder.append(((b)localObject3).J());
+          
           } else if ((localObject2 instanceof float[])) {
             localStringBuilder.append(localObject1.toString()).append(" ");
-            localObject3 = (float[])localObject2;
+            float[] localObject3 = (float[]) localObject2;
             localStringBuilder.append("[");
-            for (i = 0; i < localObject3.length; i++) {
+            for (int i = 0; i < localObject3.length; i++) {
               if (i != 0) {
                 localStringBuilder.append(" ");
               }
@@ -223,8 +181,9 @@ public class b
           else {
             throw new RuntimeException("Unrecognised value type: " + localObject2);
           }
-        } } }
+        }
     localStringBuilder.append(">>\n");
     return localStringBuilder.toString();
   }
+
 }

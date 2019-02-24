@@ -5,56 +5,6 @@ import java.io.IOException;
 import java.io.OutputStream;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 public class b
   extends FilterOutputStream
 {
@@ -77,24 +27,12 @@ public class b
   }
   
 
-
-
-
-
-
-
   public b(OutputStream paramOutputStream, boolean paramBoolean)
   {
     this(paramOutputStream);
     this.bM = paramBoolean;
   }
   
-
-
-
-
-
-
 
 
   public b(OutputStream paramOutputStream, int paramInt, boolean paramBoolean)
@@ -111,10 +49,6 @@ public class b
     this.bL = true;
   }
   
-
-
-
-
 
 
   public void q(int paramInt)
@@ -163,20 +97,12 @@ public class b
 
 
 
-
-
-
-
   public void r(int paramInt)
     throws IOException
   {
     super.write(paramInt);
   }
   
-
-
-
-
 
 
 
@@ -188,13 +114,6 @@ public class b
   
 
 
-
-
-
-
-
-
-
   public void a(byte[] paramArrayOfByte, int paramInt1, int paramInt2)
     throws IOException
   {
@@ -203,9 +122,6 @@ public class b
     }
   }
   
-
-
-
 
 
 
@@ -237,17 +153,9 @@ public class b
       }
     } while (
     
-
-
-
-
-
       i-- > 0);
   }
   
-
-
-
 
 
   public void aR()

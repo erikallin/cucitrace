@@ -1,5 +1,6 @@
 package com.orsonpdf;
 
+import com.orsonpdf.filter.Filter;
 import com.orsonpdf.filter.c;
 import com.orsonpdf.filter.d;
 import com.orsonpdf.util.a;
@@ -10,68 +11,23 @@ import java.util.Iterator;
 import java.util.List;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-public abstract class y
-  extends r
+public abstract class y extends r
 {
   private List<c> bH;
   
   y(int paramInt)
   {
     super(paramInt);
-    this.bH = new ArrayList();
+    this.bH = new ArrayList<c>();
   }
   
-
-
-
-
-
 
   public void a(c paramc)
   {
-    a.a(paramc, "f");
+    a.aab(paramc, "f");
     this.bH.add(paramc);
   }
   
-
-
 
 
   public void aO()
@@ -80,34 +36,22 @@ public abstract class y
   }
   
 
-
-
-
-
-
-
-  public byte[] K()
-    throws IOException
+  
+  public byte[] K() throws IOException
   {
     ByteArrayOutputStream localByteArrayOutputStream = new ByteArrayOutputStream();
     byte[] arrayOfByte = X();
-    for (Iterator localIterator = this.bH.iterator(); localIterator.hasNext();) { localObject = (c)localIterator.next();
-      arrayOfByte = ((c)localObject).a(arrayOfByte);
+    for (c paramc : this.bH) {
+      arrayOfByte = paramc.a(arrayOfByte);
     }
-    Object localObject = o(arrayOfByte.length);
-    localByteArrayOutputStream.write(((b)localObject).I());
-    localByteArrayOutputStream.write(t.z("stream\n"));
+    b localObject = o(arrayOfByte.length);
+    localByteArrayOutputStream.write(localObject.I());
+    localByteArrayOutputStream.write(PDFUtils.toBytes("stream\n"));
     localByteArrayOutputStream.write(arrayOfByte);
-    localByteArrayOutputStream.write(t.z("endstream\n"));
+    localByteArrayOutputStream.write(PDFUtils.toBytes("endstream\n"));
     return localByteArrayOutputStream.toByteArray();
   }
-  
-
-
-
-
-
-
+ 
 
 
   protected b o(int paramInt)
