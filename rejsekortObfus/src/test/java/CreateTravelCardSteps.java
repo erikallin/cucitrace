@@ -1,10 +1,10 @@
 import static org.junit.Assert.assertEquals;
 
-import com.creditcard.validation.CreditCard;
-import com.travelcard.core.Constants;
-import com.travelcard.core.Kiosk;
-import com.travelcard.core.ResponseObject;
-import com.travelcard.core.TravelCard;
+import com.creditcard.validation.a;
+import com.travelcard.core.c;
+import com.travelcard.core.e;
+import com.travelcard.core.f;
+import com.travelcard.core.j;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -12,22 +12,22 @@ import cucumber.api.java.en.When;
 
 public class CreateTravelCardSteps {
 	
-	
-	TravelCard currentUser_tc;
-	
-	
-	CreditCard ccInUse;
+	j currentUser_tc;
 	
 	
-	Kiosk registrationKiosk;
+	a ccInUse;
+	
+	
+	e registrationKiosk;
+	
+	
+	f response;
 
-	
-	ResponseObject response;
 
 	
 	@Given("^a customer at a registration kiosk at station \"([^\"]*)\"$")
 	public void a_customer_at_a_registration_kiosk_at_station(String stationName) {
-		registrationKiosk = new Kiosk(stationName);
+		registrationKiosk = new e(stationName);
 	}
 	
 	
@@ -36,9 +36,9 @@ public class CreateTravelCardSteps {
 
 	@Given("^his credit card \"([^\"]*)\" was successfully verified by the registration kiosk$")
 	public void his_credit_card_was_successfully_verified_by_the_registration_kiosk(String ccNumber) {
-		ccInUse = new CreditCard(ccNumber);
-		ccInUse.setValid(true);
-		registrationKiosk.setInsertedCC(ccInUse);
+		ccInUse = new a(ccNumber);
+		ccInUse.c(true);
+		registrationKiosk.a(ccInUse);
 	}
 	
 	
@@ -47,7 +47,7 @@ public class CreateTravelCardSteps {
 
 	@Given("^his credit card accepts to charge the amount of (\\d+)$")
 	public void his_credit_card_accepts_to_charge_the_amount_of(int amount) {
-		ccInUse.setBalance(amount);
+		ccInUse.k(amount);
 
 	}
 	
@@ -57,7 +57,7 @@ public class CreateTravelCardSteps {
 
 	@Given("^his credit card declines to charge the amount of (\\d+)$")
 	public void his_credit_card_declines_to_charge_the_amount_of(int amount) {
-		ccInUse.setBalance(Constants.notEnoughBalance - amount);
+		ccInUse.k(c.cK - amount);
 	}
 	
 	
@@ -66,7 +66,7 @@ public class CreateTravelCardSteps {
 
 	@Given("^a userID number \"([^\"]*)\" is not registered in the system$")
 	public void a_userID_number_is_not_registered_in_the_system(String userIDnumber) {
-		currentUser_tc = new TravelCard(userIDnumber);
+		currentUser_tc = new j(userIDnumber);
 	}
 
 	
@@ -75,7 +75,7 @@ public class CreateTravelCardSteps {
 	
 	@When("^issue a travel card$")
 	public void issue_a_travel_card() {
-		response = registrationKiosk.issueTravelCard(currentUser_tc);
+		response = registrationKiosk.e(currentUser_tc);
 	}
 
 	
@@ -85,7 +85,7 @@ public class CreateTravelCardSteps {
 	@Then("^a travel card user is registered$")
 	public void a_travel_card_user_is_registered() {
 
-		assertEquals(registrationKiosk.getTcUsers().contains(currentUser_tc), true);
+		assertEquals(registrationKiosk.bp().contains(currentUser_tc), true);
 
 	}
 	
@@ -95,7 +95,7 @@ public class CreateTravelCardSteps {
 
 	@Then("^the registration kiosk displays a message that a travel card is issued$")
 	public void the_registration_kiosk_displays_a_message_that_a_travel_card_is_issued() {
-		assertEquals(response.getMessage(), Constants.TRAVEL_CARD_CREATION_SUCCESS);
+		assertEquals(response.bt(), c.cQ);
 	}
 
 	
@@ -104,8 +104,8 @@ public class CreateTravelCardSteps {
 	
 	@Given("^a userID number \"([^\"]*)\" is registered in the system$")
 	public void a_userID_number_is_registered_in_the_system(String userIDnumber) {
-		currentUser_tc = new TravelCard(userIDnumber);
-		registrationKiosk.getTcUsers().add(currentUser_tc);
+		currentUser_tc = new j(userIDnumber);
+		registrationKiosk.bp().add(currentUser_tc);
 	}
 	
 	
@@ -114,7 +114,7 @@ public class CreateTravelCardSteps {
 
 	@Then("^the registration kiosk displays a message that a travel card not issued because user already registered in the system$")
 	public void the_registration_kiosk_displays_a_message_that_a_travel_card_not_issued_because_user_already_registered_in_the_system() {
-		assertEquals(response.getMessage(), Constants.TRAVEL_CARD_CREATION_FAILURE);
+		assertEquals(response.bt(), c.cP);
 	}
 
 	
@@ -123,7 +123,7 @@ public class CreateTravelCardSteps {
 	
 	@Then("^the registration kiosk displays a message that a travel card not issued because credit card was declined$")
 	public void the_registration_kiosk_displays_a_message_that_a_travel_card_not_issued_because_credit_card_was_declined() {
-		assertEquals(response.getMessage(), Constants.INVALID_CC_LOW_BALANCE);
+		assertEquals(response.bt(), c.cJ);
 	}
 	
 	
@@ -132,7 +132,7 @@ public class CreateTravelCardSteps {
 
 	@Then("^the registration kiosk posts that message on the system log$")
 	public void the_registration_kiosk_posts_that_message_on_the_system_log() {
-		registrationKiosk.checkRegistered();
+		registrationKiosk.bm();
 	}
 
 }

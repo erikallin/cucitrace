@@ -1,14 +1,14 @@
 import static org.junit.Assert.assertEquals;
-import com.travelcard.core.SystemLogger;
+import com.travelcard.core.i;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.When;
 
 public class ASystemInitializationSteps {
 
-	SystemLogger init;
+	i init;
 	
 	
-	String logname; 
+	String logname;
 	
 
 	@Given("^a manager wants to setup the system with the log file \"([^\"]*)\"$")
@@ -21,7 +21,7 @@ public class ASystemInitializationSteps {
 
 	@When("^setup$")
 	public void setup() {
-		init = new SystemLogger(logname);
+		init = new i(logname);
 	}
 
 	
@@ -30,7 +30,7 @@ public class ASystemInitializationSteps {
 	
 	@When("^the log file \"([^\"]*)\" recording system actions is generated$")
 	public void the_log_file_recording_system_actions_is_generated(String filename) {
-		assertEquals(init.exists(filename), true);
+		assertEquals(init.G(filename), true);
 
 	}
 	
