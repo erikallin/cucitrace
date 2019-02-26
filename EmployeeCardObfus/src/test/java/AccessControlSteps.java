@@ -1,8 +1,9 @@
 import static org.junit.Assert.assertEquals;
 
-import com.employeecard.core.a;
-import com.employeecard.core.g;
-import com.employeecard.core.j;
+import com.b.a.a;
+import com.b.a.g;
+import com.b.a.j;
+
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
