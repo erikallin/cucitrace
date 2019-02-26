@@ -5,71 +5,29 @@ import com.orsonpdf.r;
 import com.orsonpdf.util.a;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 public abstract class c
   extends r
 {
-  private d cU;
-  protected b aK;
+  private d bU;
+  protected b K;
   
   protected c(int paramInt, d paramd)
   {
     super(paramInt);
-    a.a(paramd, "shadingType");
-    this.cU = paramd;
-    this.aK = new b();
-    this.aK.a("/ShadingType", String.valueOf(
-      paramd.aC()));
+    a.aab(paramd, "shadingType");
+    this.bU = paramd;
+    this.K = new b();
+    this.K.a("/ShadingType", String.valueOf(
+      paramd.S()));
   }
   
 
 
 
 
-  public d bG()
+  public d aW()
   {
-    return this.cU;
+    return this.bU;
   }
   
 
@@ -78,8 +36,8 @@ public abstract class c
 
 
 
-  public byte[] au()
+  public byte[] K()
   {
-    return this.aK.as();
+    return this.K.I();
   }
 }

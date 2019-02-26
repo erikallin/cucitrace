@@ -5,74 +5,24 @@ import java.awt.geom.Point2D;
 import java.util.Arrays;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 public class e
 {
-  private RadialGradientPaint de;
-  float df = 0.0F;
+  private RadialGradientPaint ce;
+  float cf = 0.0F;
   
-
-
-
 
   public e(RadialGradientPaint paramRadialGradientPaint)
   {
-    a.a(paramRadialGradientPaint, "rgp");
-    this.de = paramRadialGradientPaint;
+    a.aab(paramRadialGradientPaint, "rgp");
+    this.ce = paramRadialGradientPaint;
   }
   
 
-
-
-
-
-  public RadialGradientPaint bI()
+  public RadialGradientPaint aY()
   {
-    return this.de;
+    return this.ce;
   }
   
-
-
-
-
 
 
 
@@ -85,34 +35,30 @@ public class e
       return false;
     }
     RadialGradientPaint localRadialGradientPaint = (RadialGradientPaint)paramObject;
-    if (!this.de.getCenterPoint().equals(localRadialGradientPaint.getCenterPoint())) {
+    if (!this.ce.getCenterPoint().equals(localRadialGradientPaint.getCenterPoint())) {
       return false;
     }
-    if (!this.de.getFocusPoint().equals(localRadialGradientPaint.getCenterPoint())) {
+    if (!this.ce.getFocusPoint().equals(localRadialGradientPaint.getCenterPoint())) {
       return false;
     }
-    if (!Arrays.equals(this.de.getColors(), localRadialGradientPaint.getColors())) {
+    if (!Arrays.equals(this.ce.getColors(), localRadialGradientPaint.getColors())) {
       return false;
     }
-    if (!Arrays.equals(this.de.getFractions(), localRadialGradientPaint.getFractions())) {
+    if (!Arrays.equals(this.ce.getFractions(), localRadialGradientPaint.getFractions())) {
       return false;
     }
     return true;
   }
-  
 
 
-
-
-
-  public int ay()
+  public int O()
   {
     int i = 5;
-    i = 47 * i + this.de.getCenterPoint().hashCode();
-    i = 47 * i + this.de.getFocusPoint().hashCode();
-    i = 47 * i + Float.floatToIntBits(this.de.getRadius());
-    i = 47 * i + Arrays.hashCode(this.de.getColors());
-    i = 47 * i + Arrays.hashCode(this.de.getFractions());
+    i = 47 * i + this.ce.getCenterPoint().hashCode();
+    i = 47 * i + this.ce.getFocusPoint().hashCode();
+    i = 47 * i + Float.floatToIntBits(this.ce.getRadius());
+    i = 47 * i + Arrays.hashCode(this.ce.getColors());
+    i = 47 * i + Arrays.hashCode(this.ce.getFractions());
     return i;
   }
 }

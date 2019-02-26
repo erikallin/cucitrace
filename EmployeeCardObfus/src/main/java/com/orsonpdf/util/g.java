@@ -11,56 +11,6 @@ import java.awt.geom.Rectangle2D.Double;
 import java.text.AttributedString;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 public class g
 {
   public static Rectangle2D a(String paramString, Graphics2D paramGraphics2D, float paramFloat1, float paramFloat2, f paramf)
@@ -74,19 +24,6 @@ public class g
     paramGraphics2D.drawString(paramString, paramFloat1 + arrayOfFloat[0], paramFloat2 + arrayOfFloat[1]);
     return localDouble;
   }
-  
-
-
-
-
-
-
-
-
-
-
-
-
 
 
   private static float[] a(Graphics2D paramGraphics2D, String paramString, f paramf)
@@ -104,42 +41,27 @@ public class g
     float f5 = 0.0F;
     float f6 = 0.0F;
     
-    if (paramf.bK()) {
+    if (paramf.ba()) {
       f5 = (float)-localRectangle2D.getWidth() / 2.0F;
-    } else if (paramf.bL()) {
+    } else if (paramf.bb()) {
       f5 = (float)-localRectangle2D.getWidth();
     }
     
-    if (paramf.bM()) {
+    if (paramf.bc()) {
       f6 = -f3 - f4 + (float)localRectangle2D.getHeight();
-    } else if (paramf.bN()) {
+    } else if (paramf.bd()) {
       f6 = f2;
-    } else if (paramf.bO()) {
+    } else if (paramf.be()) {
       f6 = -f3 - f4 + (float)(localRectangle2D.getHeight() / 2.0D);
-    } else if (paramf.bP()) {
+    } else if (paramf.bf()) {
       f6 = 0.0F;
-    } else if (paramf.bQ()) {
+    } else if (paramf.bg()) {
       f6 = -localLineMetrics.getDescent() - localLineMetrics.getLeading();
     }
     arrayOfFloat[0] = f5;
     arrayOfFloat[1] = f6;
     return arrayOfFloat;
   }
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -159,21 +81,21 @@ public class g
     float f5 = 0.0F;
     float f6 = 0.0F;
     
-    if (paramf.bK()) {
+    if (paramf.ba()) {
       f5 = (float)-localRectangle2D.getWidth() / 2.0F;
-    } else if (paramf.bL()) {
+    } else if (paramf.bb()) {
       f5 = (float)-localRectangle2D.getWidth();
     }
     
-    if (paramf.bM()) {
+    if (paramf.bc()) {
       f6 = -f3 - f4 + (float)localRectangle2D.getHeight();
-    } else if (paramf.bN()) {
+    } else if (paramf.bd()) {
       f6 = f2;
-    } else if (paramf.bO()) {
+    } else if (paramf.be()) {
       f6 = -f3 - f4 + (float)(localRectangle2D.getHeight() / 2.0D);
-    } else if (paramf.bP()) {
+    } else if (paramf.bf()) {
       f6 = 0.0F;
-    } else if (paramf.bQ()) {
+    } else if (paramf.bg()) {
       f6 = -localLineMetrics.getDescent() - localLineMetrics.getLeading();
     }
     if (paramRectangle2D != null) {
@@ -183,15 +105,6 @@ public class g
     arrayOfFloat[1] = f6;
     return arrayOfFloat;
   }
-  
-
-
-
-
-
-
-
-
 
 
   public static Rectangle2D a(String paramString, Graphics2D paramGraphics2D, FontMetrics paramFontMetrics)
@@ -201,19 +114,6 @@ public class g
     return new Rectangle2D.Double(0.0D, -paramFontMetrics.getAscent(), d1, d2);
   }
   
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
   public static void a(String paramString, Graphics2D paramGraphics2D, float paramFloat1, float paramFloat2, f paramf, double paramDouble, float paramFloat3, float paramFloat4)
@@ -226,18 +126,6 @@ public class g
       paramFloat3, paramFloat4);
   }
   
-
-
-
-
-
-
-
-
-
-
-
-
 
 
   public static void a(String paramString, Graphics2D paramGraphics2D, float paramFloat1, float paramFloat2, f paramf1, double paramDouble, f paramf2)
@@ -255,16 +143,6 @@ public class g
   
 
 
-
-
-
-
-
-
-
-
-
-
   private static float[] b(Graphics2D paramGraphics2D, String paramString, f paramf)
   {
     float[] arrayOfFloat = new float[2];
@@ -279,23 +157,23 @@ public class g
     float f5 = 0.0F;
     float f6 = 0.0F;
     
-    if (paramf.bJ()) {
+    if (paramf.aZ()) {
       f5 = 0.0F;
-    } else if (paramf.bK()) {
+    } else if (paramf.ba()) {
       f5 = (float)localRectangle2D.getWidth() / 2.0F;
-    } else if (paramf.bL()) {
+    } else if (paramf.bb()) {
       f5 = (float)localRectangle2D.getWidth();
     }
     
-    if (paramf.bM()) {
+    if (paramf.bc()) {
       f6 = f3 + f4 - (float)localRectangle2D.getHeight();
-    } else if (paramf.bO()) {
+    } else if (paramf.be()) {
       f6 = f3 + f4 - (float)(localRectangle2D.getHeight() / 2.0D);
-    } else if (paramf.bN()) {
+    } else if (paramf.bd()) {
       f6 = -f2;
-    } else if (paramf.bP()) {
+    } else if (paramf.bf()) {
       f6 = 0.0F;
-    } else if (paramf.bQ()) {
+    } else if (paramf.bg()) {
       f6 = localLineMetrics.getDescent() + localLineMetrics.getLeading();
     }
     arrayOfFloat[0] = f5;
@@ -305,35 +183,11 @@ public class g
   
 
 
-
-
-
-
-
-
-
-
-
-
   public static void a(String paramString, Graphics2D paramGraphics2D, double paramDouble, float paramFloat1, float paramFloat2)
   {
     a(paramString, paramGraphics2D, paramFloat1, paramFloat2, paramDouble, paramFloat1, paramFloat2);
   }
   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
   public static void a(String paramString, Graphics2D paramGraphics2D, float paramFloat1, float paramFloat2, double paramDouble, float paramFloat3, float paramFloat4)

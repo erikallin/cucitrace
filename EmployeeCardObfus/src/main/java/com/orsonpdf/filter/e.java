@@ -5,57 +5,12 @@ import java.io.IOException;
 import java.util.zip.DeflaterOutputStream;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 public class e
   implements c
 {
-  public d bz()
+  public d aP()
   {
-    return d.cO;
+    return d.FLATE;
   }
   
   public byte[] a(byte[] paramArrayOfByte)

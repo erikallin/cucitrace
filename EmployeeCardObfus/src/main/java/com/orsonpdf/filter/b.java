@@ -5,70 +5,20 @@ import java.io.IOException;
 import java.io.OutputStream;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 public class b
   extends FilterOutputStream
 {
-  private int bI = 72;
+  private int aI = 72;
   
-  private int cI;
+  private int bI;
   
-  private int cJ;
+  private int bJ;
   
-  private int cK;
+  private int bK;
   
-  private boolean cL;
+  private boolean bL;
   
-  private boolean cM;
+  private boolean bM;
   
 
   public b(OutputStream paramOutputStream)
@@ -77,85 +27,69 @@ public class b
   }
   
 
-
-
-
-
-
-
   public b(OutputStream paramOutputStream, boolean paramBoolean)
   {
     this(paramOutputStream);
-    this.cM = paramBoolean;
+    this.bM = paramBoolean;
   }
   
-
-
-
-
-
-
 
 
   public b(OutputStream paramOutputStream, int paramInt, boolean paramBoolean)
   {
     this(paramOutputStream);
     
-    this.cM = paramBoolean;
+    this.bM = paramBoolean;
   }
   
 
-  private void bA()
+  private void aQ()
     throws IOException
   {
-    this.cL = true;
+    this.bL = true;
   }
   
 
 
-
-
-
-
-  public void z(int paramInt)
+  public void q(int paramInt)
     throws IOException
   {
-    if (!this.cL) {
-      bA();
+    if (!this.bL) {
+      aQ();
     }
-    switch (this.cK++) {
+    switch (this.bK++) {
     case 0: 
-      this.cJ |= (paramInt & 0xFF) << 24;
+      this.bJ |= (paramInt & 0xFF) << 24;
       break;
     case 1: 
-      this.cJ |= (paramInt & 0xFF) << 16;
+      this.bJ |= (paramInt & 0xFF) << 16;
       break;
     case 2: 
-      this.cJ |= (paramInt & 0xFF) << 8;
+      this.bJ |= (paramInt & 0xFF) << 8;
       break;
     case 3: 
-      this.cJ |= paramInt & 0xFF;
-      if (this.cJ == 0)
+      this.bJ |= paramInt & 0xFF;
+      if (this.bJ == 0)
       {
         this.out.write(122);
-        if (this.cI++ >= this.bI) {
-          this.cI = 0;
+        if (this.bI++ >= this.aI) {
+          this.bI = 0;
           this.out.write(13);
           this.out.write(10);
         }
-      } else if ((this.cM) && (this.cJ == 538976288))
+      } else if ((this.bM) && (this.bJ == 538976288))
       {
         this.out.write(121);
-        if (this.cI++ >= this.bI) {
-          this.cI = 0;
+        if (this.bI++ >= this.aI) {
+          this.bI = 0;
           this.out.write(13);
           this.out.write(10);
         }
       } else {
-        d(this.cJ, this.cK);
+        b(this.bJ, this.bK);
       }
-      this.cJ = 0;
-      this.cK = 0;
+      this.bJ = 0;
+      this.bK = 0;
     }
     
   }
@@ -163,20 +97,12 @@ public class b
 
 
 
-
-
-
-
-  public void A(int paramInt)
+  public void r(int paramInt)
     throws IOException
   {
     super.write(paramInt);
   }
   
-
-
-
-
 
 
 
@@ -188,28 +114,18 @@ public class b
   
 
 
-
-
-
-
-
-
-
   public void a(byte[] paramArrayOfByte, int paramInt1, int paramInt2)
     throws IOException
   {
     for (int i = 0; i < paramInt2; i++) {
-      A(paramArrayOfByte[(paramInt1 + i)]);
+      r(paramArrayOfByte[(paramInt1 + i)]);
     }
   }
   
 
 
 
-
-
-
-  private void d(int paramInt1, int paramInt2)
+  private void b(int paramInt1, int paramInt2)
     throws IOException
   {
     int i = 5;
@@ -230,33 +146,25 @@ public class b
     i = paramInt2;
     do {
       this.out.write(arrayOfByte[(j = (short)(j - 1))] + 33);
-      if (this.cI++ >= this.bI) {
-        this.cI = 0;
+      if (this.bI++ >= this.aI) {
+        this.bI = 0;
         this.out.write(13);
         this.out.write(10);
       }
     } while (
     
-
-
-
-
-
       i-- > 0);
   }
   
 
 
-
-
-
-  public void bB()
+  public void aR()
     throws IOException
   {
-    if (this.cL) {
-      if (this.cK > 0)
-        d(this.cJ, this.cK);
-      if (this.cI + 2 > this.bI) {
+    if (this.bL) {
+      if (this.bK > 0)
+        b(this.bJ, this.bK);
+      if (this.bI + 2 > this.aI) {
         this.out.write(13);
         this.out.write(10);
       }
@@ -266,8 +174,8 @@ public class b
       this.out.write(13);
       this.out.write(10);
       
-      this.cL = false;
-      this.cJ = (this.cK = 0);
+      this.bL = false;
+      this.bJ = (this.bK = 0);
     }
     
     super.flush();

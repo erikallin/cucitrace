@@ -1,122 +1,65 @@
 package com.orsonpdf;
 
 
-
-
-
-
-
-
-
-
-
-
 public final class d
   extends g
 {
-  double aL;
+  double L;
   
 
-
-
-
-
-
-
-
-
-
-  float[] aM;
+  float[] M;
   
 
-
-
-
-
-
-
-
-
-
-  float[] aN;
+  float[] N;
   
-
-
-
-
-
-
-
-
-
 
   public d(int paramInt, float[] paramArrayOfFloat1, float[] paramArrayOfFloat2)
   {
-    super(paramInt, h.aU);
-    this.aK.a("/N", "1");
-    this.aL = 1.0D;
+    super(paramInt, h.EXPONENTIAL_INTERPOLATION);
+    this.K.a("/N", "1");
+    this.L = 1.0D;
     a(paramArrayOfFloat1);
     b(paramArrayOfFloat2);
   }
   
 
-
-
-
-  public double av()
+  public double L()
   {
-    return this.aL;
+    return this.L;
   }
   
-
-
-
 
   public void a(double paramDouble)
   {
-    this.aL = paramDouble;
-    this.aK.a("/N", String.valueOf(paramDouble));
+    this.L = paramDouble;
+    this.K.a("/N", String.valueOf(paramDouble));
   }
   
 
-
-
-
-
-  public float[] aw()
+  public float[] M()
   {
-    return (float[])this.aM.clone();
+    return (float[])this.M.clone();
   }
   
-
-
-
-
 
   public void a(float[] paramArrayOfFloat)
   {
-    this.aM = ((float[])paramArrayOfFloat.clone());
-    this.aK.a("/C0", t.c(paramArrayOfFloat));
+    this.M = ((float[])paramArrayOfFloat.clone());
+    this.K.a("/C0", t.c(paramArrayOfFloat));
   }
   
 
 
-
-
-
-  public float[] ax()
+  public float[] N()
   {
-    return (float[])this.aN.clone();
+    return (float[])this.N.clone();
   }
   
-
-
-
 
 
   public void b(float[] paramArrayOfFloat)
   {
-    this.aN = ((float[])paramArrayOfFloat.clone());
-    this.aK.a("/C1", t.c(paramArrayOfFloat));
+    this.N = ((float[])paramArrayOfFloat.clone());
+    this.K.a("/C1", t.c(paramArrayOfFloat));
   }
 }

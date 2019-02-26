@@ -3,97 +3,43 @@ package com.orsonpdf;
 import com.orsonpdf.util.a;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 public abstract class g
   extends r
 {
-  private h aR;
-  private double[] aS;
-  protected b aK;
+  private h R;
+  private double[] S;
+  protected b K;
   
   protected g(int paramInt, h paramh)
   {
     super(paramInt);
-    a.a(paramh, "functionType");
-    this.aR = paramh;
-    this.aS = new double[] { 0.0D, 1.0D };
-    this.aK = new b();
-    this.aK.a("/Domain", t.b(this.aS));
-    this.aK.a("/FunctionType", String.valueOf(
-      paramh.aC()));
+    a.aab(paramh, "functionType");
+    this.R = paramh;
+    this.S = new double[] { 0.0D, 1.0D };
+    this.K = new b();
+    this.K.a("/Domain", t.b(this.S));
+    this.K.a("/FunctionType", String.valueOf(
+      paramh.S()));
   }
-  
 
 
-
-
-  public h aA()
+  public h Q()
   {
-    return this.aR;
+    return this.R;
   }
   
 
-
-
-
-  public double[] aB()
+  public double[] R()
   {
-    return (double[])this.aS.clone();
+    return (double[])this.S.clone();
   }
   
-
-
-
 
   public void a(double[] paramArrayOfDouble)
   {
-    a.a(paramArrayOfDouble, "domain");
-    this.aS = ((double[])paramArrayOfDouble.clone());
-    this.aK.a("/Domain", t.b(this.aS));
+    a.aab(paramArrayOfDouble, "domain");
+    this.S = ((double[])paramArrayOfDouble.clone());
+    this.K.a("/Domain", t.b(this.S));
   }
   
 
@@ -102,8 +48,8 @@ public abstract class g
 
 
 
-  public byte[] au()
+  public byte[] K()
   {
-    return this.aK.as();
+    return this.K.I();
   }
 }

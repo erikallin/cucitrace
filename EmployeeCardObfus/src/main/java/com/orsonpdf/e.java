@@ -5,61 +5,15 @@ import com.orsonpdf.util.d;
 import java.awt.Font;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 public class e
 {
-  private String aO;
-  private boolean aP;
-  private boolean aQ;
+  private String O;
+  private boolean P;
+  private boolean Q;
   
   public static e b(Font paramFont)
   {
-    a.a(paramFont, "f");
+    a.aab(paramFont, "f");
     String str = paramFont.getFamily().replace(' ', '_');
     boolean bool1 = paramFont.isBold();
     boolean bool2 = paramFont.isItalic();
@@ -68,24 +22,13 @@ public class e
   
 
 
-
-
-
-
-
-
   public e(String paramString, boolean paramBoolean1, boolean paramBoolean2)
   {
-    this.aO = paramString;
-    this.aP = paramBoolean1;
-    this.aQ = paramBoolean2;
+    this.O = paramString;
+    this.P = paramBoolean1;
+    this.Q = paramBoolean2;
   }
   
-
-
-
-
-
 
 
   public boolean a(Object paramObject)
@@ -97,13 +40,13 @@ public class e
       return false;
     }
     e locale = (e)paramObject;
-    if (!d.a(this.aO, locale.aO)) {
+    if (!d.a(this.O, locale.O)) {
       return false;
     }
-    if (this.aP != locale.aP) {
+    if (this.P != locale.P) {
       return false;
     }
-    if (this.aQ != locale.aQ) {
+    if (this.Q != locale.Q) {
       return false;
     }
     return true;
@@ -111,30 +54,24 @@ public class e
   
 
 
-
-
-
-  public int ay()
+  public int O()
   {
     int i = 3;
-    i = 97 * i + d.c(this.aO);
-    i = 97 * i + (this.aP ? 1 : 0);
-    i = 97 * i + (this.aQ ? 1 : 0);
+    i = 97 * i + d.c(this.O);
+    i = 97 * i + (this.P ? 1 : 0);
+    i = 97 * i + (this.Q ? 1 : 0);
     return i;
   }
   
 
 
 
-
-
-
-  public String az()
+  public String P()
   {
     StringBuilder localStringBuilder = new StringBuilder();
-    localStringBuilder.append("FontKey[name=").append(this.aO);
-    localStringBuilder.append(",isBold=").append(this.aP);
-    localStringBuilder.append(",isItalic=").append(this.aQ);
+    localStringBuilder.append("FontKey[name=").append(this.O);
+    localStringBuilder.append(",isBold=").append(this.P);
+    localStringBuilder.append(",isItalic=").append(this.Q);
     localStringBuilder.append("]");
     return localStringBuilder.toString();
   }

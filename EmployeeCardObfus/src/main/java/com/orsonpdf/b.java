@@ -7,56 +7,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 public class b
 {
-  private String aJ;
-  private Map aI;
+  private String J;
+  private Map I;
   
   public b()
   {
@@ -65,31 +19,28 @@ public class b
   
 
 
-
-
-
   public b(String paramString)
   {
-    this.aJ = paramString;
-    this.aI = new HashMap();
+    this.J = paramString;
+    this.I = new HashMap();
   }
   
 
 
 
 
-  public String ap()
+  public String F()
   {
-    return this.aJ;
+    return this.J;
   }
   
 
 
 
 
-  public void D(String paramString)
+  public void u(String paramString)
   {
-    this.aJ = paramString;
+    this.J = paramString;
   }
   
 
@@ -99,18 +50,18 @@ public class b
 
 
 
-  public boolean aq()
+  public boolean G()
   {
-    return this.aI.isEmpty();
+    return this.I.isEmpty();
   }
   
 
 
 
 
-  public int ar()
+  public int H()
   {
-    return this.aI.size();
+    return this.I.size();
   }
   
 
@@ -120,7 +71,7 @@ public class b
 
   public void a(String paramString, Object paramObject)
   {
-    this.aI.put(paramString, paramObject);
+    this.I.put(paramString, paramObject);
   }
   
 
@@ -130,23 +81,23 @@ public class b
 
 
 
-  public Object E(String paramString)
+  public Object v(String paramString)
   {
-    return this.aI.remove(paramString);
+    return this.I.remove(paramString);
   }
   
 
 
 
 
-  public byte[] as()
+  public byte[] I()
   {
     ByteArrayOutputStream localByteArrayOutputStream = new ByteArrayOutputStream();
     
 
     try
     {
-      localByteArrayOutputStream.write(t.I(at()));
+      localByteArrayOutputStream.write(t.z(J()));
     } catch (IOException localIOException) {
       throw new RuntimeException("Dictionary.toPDFBytes() failed.", localIOException);
     }
@@ -159,60 +110,67 @@ public class b
 
 
 
-  public String at()
+  public String J()
   {
     StringBuilder localStringBuilder = new StringBuilder();
     localStringBuilder.append("<< ");
-    if (this.aJ != null) {
-      localStringBuilder.append("/Type ").append(this.aJ).append("\n");
+    if (this.J != null) {
+      localStringBuilder.append("/Type ").append(this.J).append("\n");
     }
     
-    for (Object localObject1 : this.aI.keySet()) {
-      Object localObject2 = this.aI.get(localObject1);
-      if (((localObject2 instanceof Number)) || ((localObject2 instanceof String))) {
+    for (Object localObject1 : this.I.keySet()) {
+      Object localObject2 = this.I.get(localObject1);
+      
+      if (localObject2 instanceof Number || localObject2 instanceof String) {
         localStringBuilder.append(localObject1.toString()).append(" ");
-        localStringBuilder.append(localObject2.toString()).append("\n"); } else { Object localObject3;
-        if ((localObject2 instanceof r)) {
-          localObject3 = (r)localObject2;
+        localStringBuilder.append(localObject2.toString()).append("\n"); 
+      
+      } else if (localObject2 instanceof r) {
+    	  r localObject3 = (r) localObject2;
           localStringBuilder.append(localObject1.toString()).append(" ");
-          localStringBuilder.append(((r)localObject3).bo()).append("\n"); } else { int i;
-          if ((localObject2 instanceof String[])) {
+          localStringBuilder.append(((s)localObject3).aE()).append("\n"); 
+      
+      } else if (localObject2 instanceof String[]) {
+          localStringBuilder.append(localObject1.toString()).append(" ");
+          String[] localObject4 = (String[]) localObject2;
+          localStringBuilder.append("[");
+          for (int i = 0; i < localObject4.length; i++) {
+            if (i != 0) {
+              localStringBuilder.append(" ");
+            }
+            localStringBuilder.append(localObject4[i]);
+          }
+          localStringBuilder.append("]\n");
+          
+    	  } else if ((localObject2 instanceof s[])) {
             localStringBuilder.append(localObject1.toString()).append(" ");
-            localObject3 = (String[])localObject2;
+            s[] localObject4 = (s[])localObject2;
             localStringBuilder.append("[");
-            for (i = 0; i < localObject3.length; i++) {
+            for (int i = 0; i < localObject4.length; i++) {
               if (i != 0) {
                 localStringBuilder.append(" ");
               }
-              localStringBuilder.append(localObject3[i]);
+              localStringBuilder.append(localObject4[i].aE());
             }
             localStringBuilder.append("]\n");
-          } else if ((localObject2 instanceof r[])) {
-            localStringBuilder.append(localObject1.toString()).append(" ");
-            localObject3 = (r[])localObject2;
-            localStringBuilder.append("[");
-            for (i = 0; i < localObject3.length; i++) {
-              if (i != 0) {
-                localStringBuilder.append(" ");
-              }
-              localStringBuilder.append(localObject3[i].bo());
-            }
-            localStringBuilder.append("]\n");
+          
           } else if ((localObject2 instanceof Rectangle2D)) {
-            localObject3 = (Rectangle2D)localObject2;
+        	Rectangle2D localObject3 = (Rectangle2D) localObject2;
             localStringBuilder.append(localObject1.toString()).append(" ");
-            localStringBuilder.append("[").append(((Rectangle2D)localObject3).getX()).append(" ");
-            localStringBuilder.append(((Rectangle2D)localObject3).getY()).append(" ").append(((Rectangle2D)localObject3).getWidth()).append(" ");
-            localStringBuilder.append(((Rectangle2D)localObject3).getHeight()).append("]\n");
+            localStringBuilder.append("[").append((localObject3).getX()).append(" ");
+            localStringBuilder.append(localObject3.getY()).append(" ").append(((Rectangle2D)localObject3).getWidth()).append(" ");
+            localStringBuilder.append(localObject3.getHeight()).append("]\n");
+          
           } else if ((localObject2 instanceof b)) {
             localStringBuilder.append(localObject1.toString()).append(" ");
-            localObject3 = (b)localObject2;
-            localStringBuilder.append(((b)localObject3).at());
+            b localObject3 = (b) localObject2;
+            localStringBuilder.append(((b)localObject3).J());
+          
           } else if ((localObject2 instanceof float[])) {
             localStringBuilder.append(localObject1.toString()).append(" ");
-            localObject3 = (float[])localObject2;
+            float[] localObject3 = (float[]) localObject2;
             localStringBuilder.append("[");
-            for (i = 0; i < localObject3.length; i++) {
+            for (int i = 0; i < localObject3.length; i++) {
               if (i != 0) {
                 localStringBuilder.append(" ");
               }
@@ -223,8 +181,9 @@ public class b
           else {
             throw new RuntimeException("Unrecognised value type: " + localObject2);
           }
-        } } }
+        }
     localStringBuilder.append(">>\n");
     return localStringBuilder.toString();
   }
+
 }

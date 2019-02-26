@@ -1,129 +1,82 @@
 package com.orsonpdf;
 
 
-
-
-
-
 public class l
   extends r
 {
-  public static final String bu = "Helvetica";
+  public static final String au = "Helvetica";
   
 
-
-
-
-  public static final String bv = "Helvetica-Bold";
+  public static final String av = "Helvetica-Bold";
   
 
-
-
-
-  public static final String bw = "Helvetica-Oblique";
+  public static final String aw = "Helvetica-Oblique";
   
 
-
-
-
-  public static final String bx = "Helvetica-BoldOblique";
+  public static final String ax = "Helvetica-BoldOblique";
   
 
-
-
-
-  public static final String by = "Times-Roman";
+  public static final String ay = "Times-Roman";
   
 
-
-
-
-  public static final String bz = "Times-Bold";
+  public static final String az = "Times-Bold";
   
 
+  public static final String aA = "Times-Italic";
 
 
-  public static final String bA = "Times-Italic";
+  public static final String aB = "Times-BoldItalic";
   
 
-
-
-  public static final String bB = "Times-BoldItalic";
+  public static final String aC = "Courier";
   
 
-
-
-  public static final String bC = "Courier";
+  public static final String aD = "Courier-Bold";
   
 
-
-
-  public static final String bD = "Courier-Bold";
+  public static final String aE = "Courier-Italic";
   
 
-
-
-  public static final String bE = "Courier-Italic";
+  public static final String aF = "Courier-BoldItalic";
   
 
-
-
-  public static final String bF = "Courier-BoldItalic";
+  private String O;
   
 
-
-
-  private String aO;
+  private String aG;
   
 
-
-
-  private String bG;
+  private String aH;
   
-
-
-
-  private String bH;
-  
-
-
-
 
   l(int paramInt1, int paramInt2, String paramString1, String paramString2, String paramString3)
   {
     super(paramInt1, paramInt2);
-    this.aO = paramString1;
-    this.bG = paramString2;
-    this.bH = paramString3;
+    this.O = paramString1;
+    this.aG = paramString2;
+    this.aH = paramString3;
   }
   
 
 
-
-
-
-  public String aN()
+  public String ad()
   {
-    return this.aO;
+    return this.O;
   }
   
 
 
-
-
-
-
-  public byte[] au()
+  public byte[] K()
   {
-    return aO().as();
+    return ae().I();
   }
   
-  private b aO() {
+  private b ae() {
     b localb = new b("/Font");
     localb.a("/Subtype", "/Type1");
-    localb.a("/Name", this.aO);
-    localb.a("/BaseFont", this.bG);
-    localb.a("/Encoding", this.bH);
+    localb.a("/Name", this.O);
+    localb.a("/BaseFont", this.aG);
+    localb.a("/Encoding", this.aH);
     return localb;
   }
 }

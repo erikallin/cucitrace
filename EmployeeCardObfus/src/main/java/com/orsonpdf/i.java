@@ -16,7 +16,7 @@ package com.orsonpdf;
 public class i
   extends c
 {
-  private float aZ;
+  private float Z;
   
 
 
@@ -30,7 +30,7 @@ public class i
 
 
 
-  private float ba;
+  private float aa;
   
 
 
@@ -54,9 +54,9 @@ public class i
 
 
 
-  public float aD()
+  public float T()
   {
-    return this.aZ;
+    return this.Z;
   }
   
 
@@ -65,8 +65,8 @@ public class i
 
   public void a(float paramFloat)
   {
-    this.aZ = paramFloat;
-    this.aK.a("/CA", Float.valueOf(paramFloat));
+    this.Z = paramFloat;
+    this.K.a("/CA", Float.valueOf(paramFloat));
   }
   
 
@@ -74,9 +74,9 @@ public class i
 
 
 
-  public float aE()
+  public float U()
   {
-    return this.ba;
+    return this.aa;
   }
   
 
@@ -86,7 +86,7 @@ public class i
 
   public void b(float paramFloat)
   {
-    this.ba = paramFloat;
-    this.aK.a("/ca", Float.valueOf(paramFloat));
+    this.aa = paramFloat;
+    this.K.a("/ca", Float.valueOf(paramFloat));
   }
 }

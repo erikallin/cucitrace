@@ -22,95 +22,34 @@ import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 public class j
   extends y
 {
-  private u bb;
-  private ByteArrayOutputStream bc;
-  private Font bd;
-  private int be;
-  private AffineTransform bf;
-  private DecimalFormat bg;
-  private DecimalFormat bh;
+  private u ab;
+  private ByteArrayOutputStream ac;
+  private Font ad;
+  private int ae;
+  private AffineTransform af;
+  private DecimalFormat ag;
+  private DecimalFormat ah;
   
   j(int paramInt, u paramu)
   {
     super(paramInt);
-    this.bb = paramu;
-    this.bc = new ByteArrayOutputStream();
-    this.bd = new Font("Dialog", 0, 12);
-    this.be = 255;
+    this.ab = paramu;
+    this.ac = new ByteArrayOutputStream();
+    this.ad = new Font("Dialog", 0, 12);
+    this.ae = 255;
     
     DecimalFormatSymbols localDecimalFormatSymbols = new DecimalFormatSymbols();
     localDecimalFormatSymbols.setDecimalSeparator('.');
-    this.bg = new DecimalFormat("0.##", localDecimalFormatSymbols);
-    this.bh = new DecimalFormat("0.######", localDecimalFormatSymbols);
+    this.ag = new DecimalFormat("0.##", localDecimalFormatSymbols);
+    this.ah = new DecimalFormat("0.######", localDecimalFormatSymbols);
   }
   
-  private void F(String paramString) {
+  private void w(String paramString) {
     try {
-      this.bc.write(t.I(paramString));
+      this.ac.write(t.z(paramString));
     } catch (IOException localIOException) {
       throw new RuntimeException(localIOException);
     }
@@ -118,21 +57,18 @@ public class j
   
 
 
-  void aF()
+  void V()
   {
-    F("q\n");
+    w("q\n");
   }
   
 
 
-  void aG()
+  void W()
   {
-    F("Q\n");
+    w("Q\n");
   }
   
-
-
-
 
   void a(AffineTransform paramAffineTransform)
   {
@@ -143,11 +79,9 @@ public class j
     localStringBuilder.append(c(paramAffineTransform.getScaleY())).append(" ");
     localStringBuilder.append(c(paramAffineTransform.getTranslateX())).append(" ");
     localStringBuilder.append(c(paramAffineTransform.getTranslateY())).append(" cm\n");
-    F(localStringBuilder.toString());
+    w(localStringBuilder.toString());
   }
   
-
-
 
 
   void b(AffineTransform paramAffineTransform)
@@ -156,22 +90,18 @@ public class j
     try {
       AffineTransform localAffineTransform2 = localAffineTransform1.createInverse();
       AffineTransform localAffineTransform3;
-      if (this.bf != null) {
-        localAffineTransform3 = new AffineTransform(this.bf);
+      if (this.af != null) {
+        localAffineTransform3 = new AffineTransform(this.af);
         localAffineTransform3.concatenate(localAffineTransform1);
       } else {
         localAffineTransform3 = localAffineTransform1;
       }
-      this.bf = localAffineTransform2;
+      this.af = localAffineTransform2;
       a(localAffineTransform3);
     }
     catch (NoninvertibleTransformException localNoninvertibleTransformException) {}
   }
   
-
-
-
-
 
   void c(AffineTransform paramAffineTransform)
   {
@@ -182,21 +112,19 @@ public class j
     localStringBuilder.append(paramAffineTransform.getScaleY()).append(" ");
     localStringBuilder.append(paramAffineTransform.getTranslateX()).append(" ");
     localStringBuilder.append(paramAffineTransform.getTranslateY()).append(" Tm\n");
-    F(localStringBuilder.toString());
+    w(localStringBuilder.toString());
   }
   
 
 
-
-
-  void a(Shape paramShape)
+  void d(Shape paramShape)
   {
-    a.a(paramShape, "clip");
+    a.aab(paramShape, "clip");
     StringBuilder localStringBuilder = new StringBuilder();
     Path2D.Double localDouble = new Path2D.Double(paramShape);
     localStringBuilder.append(c(localDouble));
     localStringBuilder.append("W n\n");
-    F(localStringBuilder.toString());
+    w(localStringBuilder.toString());
   }
   
 
@@ -204,7 +132,7 @@ public class j
 
 
 
-  void a(Stroke paramStroke)
+  void e(Stroke paramStroke)
   {
     if (!(paramStroke instanceof BasicStroke)) {
       return;
@@ -220,14 +148,14 @@ public class j
     } else {
       localStringBuilder.append("[] 0 d\n");
     }
-    F(localStringBuilder.toString());
+    w(localStringBuilder.toString());
   }
   
 
 
 
 
-  void a(Color paramColor)
+  void f(Color paramColor)
   {
     float f1 = paramColor.getRed() / 255.0F;
     float f2 = paramColor.getGreen() / 255.0F;
@@ -235,15 +163,15 @@ public class j
     StringBuilder localStringBuilder = new StringBuilder();
     localStringBuilder.append(f1).append(" ").append(f2).append(" ").append(f3)
       .append(" RG\n");
-    F(localStringBuilder.toString());
-    v(paramColor.getAlpha());
+    w(localStringBuilder.toString());
+    m(paramColor.getAlpha());
   }
   
 
 
 
 
-  void b(Color paramColor)
+  void g(Color paramColor)
   {
     float f1 = paramColor.getRed() / 255.0F;
     float f2 = paramColor.getGreen() / 255.0F;
@@ -251,8 +179,8 @@ public class j
     StringBuilder localStringBuilder = new StringBuilder();
     localStringBuilder.append(f1).append(" ").append(f2).append(" ").append(f3)
       .append(" rg\n");
-    F(localStringBuilder.toString());
-    v(paramColor.getAlpha());
+    w(localStringBuilder.toString());
+    m(paramColor.getAlpha());
   }
   
 
@@ -260,12 +188,12 @@ public class j
 
 
 
-  void a(GradientPaint paramGradientPaint)
+  void h(GradientPaint paramGradientPaint)
   {
-    String str = this.bb.c(paramGradientPaint);
+    String str = this.ab.c(paramGradientPaint);
     StringBuilder localStringBuilder = new StringBuilder("/Pattern CS\n");
     localStringBuilder.append(str).append(" SCN\n");
-    F(localStringBuilder.toString());
+    w(localStringBuilder.toString());
   }
   
 
@@ -273,12 +201,12 @@ public class j
 
 
 
-  void a(RadialGradientPaint paramRadialGradientPaint)
+  void i(RadialGradientPaint paramRadialGradientPaint)
   {
-    String str = this.bb.c(paramRadialGradientPaint);
+    String str = this.ab.c(paramRadialGradientPaint);
     StringBuilder localStringBuilder = new StringBuilder("/Pattern CS\n");
     localStringBuilder.append(str).append(" SCN\n");
-    F(localStringBuilder.toString());
+    w(localStringBuilder.toString());
   }
   
 
@@ -286,12 +214,12 @@ public class j
 
 
 
-  void b(GradientPaint paramGradientPaint)
+  void i(GradientPaint paramGradientPaint)
   {
-    String str = this.bb.c(paramGradientPaint);
+    String str = this.ab.c(paramGradientPaint);
     StringBuilder localStringBuilder = new StringBuilder("/Pattern cs\n");
     localStringBuilder.append(str).append(" scn\n");
-    F(localStringBuilder.toString());
+    w(localStringBuilder.toString());
   }
   
 
@@ -299,33 +227,33 @@ public class j
 
 
 
-  void b(RadialGradientPaint paramRadialGradientPaint)
+  void j(RadialGradientPaint paramRadialGradientPaint)
   {
-    String str = this.bb.c(paramRadialGradientPaint);
+    String str = this.ab.c(paramRadialGradientPaint);
     StringBuilder localStringBuilder = new StringBuilder("/Pattern cs\n");
     localStringBuilder.append(str).append(" scn\n");
-    F(localStringBuilder.toString());
+    w(localStringBuilder.toString());
   }
   
-  private float bi = 1.0F;
+  private float ai = 1.0F;
   
 
 
 
 
-  void a(AlphaComposite paramAlphaComposite)
+  void k(AlphaComposite paramAlphaComposite)
   {
     if (paramAlphaComposite == null) {
-      this.bi = 1.0F;
+      this.ai = 1.0F;
     } else {
-      this.bi = paramAlphaComposite.getAlpha();
+      this.ai = paramAlphaComposite.getAlpha();
       int i = (int)(paramAlphaComposite.getAlpha() * 255.0F);
-      if (this.be != i) {
-        String str = this.bb.y(i);
+      if (this.ae != i) {
+        String str = this.ab.p(i);
         StringBuilder localStringBuilder = new StringBuilder();
         localStringBuilder.append(str).append(" gs\n");
-        F(localStringBuilder.toString());
-        this.be = i;
+        w(localStringBuilder.toString());
+        this.ae = i;
       }
     }
   }
@@ -335,29 +263,29 @@ public class j
 
 
 
-  void v(int paramInt)
+  void m(int paramInt)
   {
-    int i = (int)(paramInt * this.bi);
-    if (this.be != i) {
-      String str = this.bb.y(i);
+    int i = (int)(paramInt * this.ai);
+    if (this.ae != i) {
+      String str = this.ab.p(i);
       StringBuilder localStringBuilder = new StringBuilder();
       localStringBuilder.append(str).append(" gs\n");
-      F(localStringBuilder.toString());
-      this.be = i;
+      w(localStringBuilder.toString());
+      this.ae = i;
     }
   }
   
   private String b(double paramDouble) {
-    if (this.bg != null) {
-      return this.bg.format(paramDouble);
+    if (this.ag != null) {
+      return this.ag.format(paramDouble);
     }
     return String.valueOf(paramDouble);
   }
   
   private String c(double paramDouble)
   {
-    if (this.bh != null) {
-      return this.bh.format(paramDouble);
+    if (this.ah != null) {
+      return this.ah.format(paramDouble);
     }
     return String.valueOf(paramDouble);
   }
@@ -375,7 +303,7 @@ public class j
     localStringBuilder.append(b(paramLine2D.getX2())).append(" ").append(b(paramLine2D.getY2()))
       .append(" ").append("l\n");
     localStringBuilder.append("S\n");
-    F(localStringBuilder.toString());
+    w(localStringBuilder.toString());
   }
   
 
@@ -386,7 +314,7 @@ public class j
   {
     StringBuilder localStringBuilder = new StringBuilder();
     localStringBuilder.append(c(paramPath2D)).append("S\n");
-    F(localStringBuilder.toString());
+    w(localStringBuilder.toString());
   }
   
 
@@ -397,7 +325,7 @@ public class j
   {
     StringBuilder localStringBuilder = new StringBuilder();
     localStringBuilder.append(c(paramPath2D)).append("f\n");
-    F(localStringBuilder.toString());
+    w(localStringBuilder.toString());
   }
   
 
@@ -408,7 +336,7 @@ public class j
 
   void c(Font paramFont)
   {
-    this.bd = paramFont;
+    this.ad = paramFont;
   }
   
 
@@ -421,17 +349,17 @@ public class j
 
   void a(String paramString, float paramFloat1, float paramFloat2)
   {
-    String str = this.bb.f(this.bd);
-    F("BT ");
+    String str = this.ab.f(this.ad);
+    w("BT ");
     AffineTransform localAffineTransform = new AffineTransform(1.0D, 0.0D, 0.0D, -1.0D, 0.0D, 
       paramFloat2 * 2.0F);
     c(localAffineTransform);
     StringBuilder localStringBuilder = new StringBuilder();
-    localStringBuilder.append(str).append(" ").append(this.bd.getSize())
+    localStringBuilder.append(str).append(" ").append(this.ad.getSize())
       .append(" Tf ");
     localStringBuilder.append(b(paramFloat1)).append(" ").append(b(paramFloat2)).append(" Td (")
       .append(paramString).append(") Tj ET\n");
-    F(localStringBuilder.toString());
+    w(localStringBuilder.toString());
   }
   
 
@@ -444,14 +372,14 @@ public class j
 
   void a(Image paramImage, int paramInt1, int paramInt2, int paramInt3, int paramInt4)
   {
-    String str = this.bb.a(paramImage, true);
+    String str = this.ab.a(paramImage, true);
     StringBuilder localStringBuilder = new StringBuilder();
     localStringBuilder.append("q\n");
     localStringBuilder.append(b(paramInt3)).append(" 0 0 ").append(b(paramInt4)).append(" ");
     localStringBuilder.append(b(paramInt1)).append(" ").append(b(paramInt2)).append(" cm\n");
     localStringBuilder.append(str).append(" Do\n");
     localStringBuilder.append("Q\n");
-    F(localStringBuilder.toString());
+    w(localStringBuilder.toString());
   }
   
 
@@ -522,8 +450,8 @@ public class j
     return localStringBuilder.toString();
   }
   
-  public byte[] aH()
+  public byte[] X()
   {
-    return this.bc.toByteArray();
+    return this.ac.toByteArray();
   }
 }

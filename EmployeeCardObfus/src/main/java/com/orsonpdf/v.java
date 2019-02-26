@@ -7,115 +7,67 @@ import java.util.List;
 import java.util.Map;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 public final class v
   extends r
 {
-  private k cx;
-  private List<u> cy;
-  private List<l> cz;
-  private Map<e, l> cA;
-  private int cB = 1;
+  private k bx;
   
-
-
-
-  private f cC;
   
-
+  private List<u> by;
+  
+  
+  private List<l> bz;
+  
+  
+  private Map<e, l> bA;
+  
+  private int bB = 1;
+  
+  private f bC;
+  
 
 
   v(int paramInt1, int paramInt2, k paramk)
   {
     super(paramInt1, paramInt2);
-    com.orsonpdf.util.a.a(paramk, "parent");
-    this.cx = paramk;
-    this.cy = new ArrayList();
-    this.cz = new ArrayList();
-    this.cA = new HashMap();
-    this.cC = new a();
+    com.orsonpdf.util.a.aab(paramk, "parent");
+    this.bx = paramk;
+    this.by = new ArrayList<u>();
+    this.bz = new ArrayList<l>();
+    this.bA = new HashMap<e, l>();
+    this.bC = new a();
+  }
+  
+
+
+  public k aK()
+  {
+    return this.bx;
+  }
+  
+
+
+  public List<u> aL()
+  {
+    return this.by;
+  }
+  
+
+
+  public List<l> aM()
+  {
+    return this.bz;
   }
   
 
 
 
 
-  public k bu()
+
+  public l A(String paramString)
   {
-    return this.cx;
-  }
-  
-
-
-
-
-  public List<u> bv()
-  {
-    return this.cy;
-  }
-  
-
-
-
-
-  public List<l> bw()
-  {
-    return this.cz;
-  }
-  
-
-
-
-
-
-
-
-  public l J(String paramString)
-  {
-    for (l locall : this.cz) {
-      if (locall.aN().equals(paramString)) {
+    for (l locall : this.bz) {
+      if (locall.ad().equals(paramString)) {
         return locall;
       }
     }
@@ -124,50 +76,45 @@ public final class v
   
 
 
-
   void a(u paramu)
   {
-    this.cy.add(paramu);
+    this.by.add(paramu);
   }
   
-
-
-
-
 
 
 
   public String f(Font paramFont)
   {
     e locale = e.b(paramFont);
-    l locall = (l)this.cA.get(locale);
+    l locall = (l)this.bA.get(locale);
     if (locall == null) {
-      int i = this.cx.aL();
-      String str1 = "/F" + this.cB + "-" + 
+      int i = this.bx.ab();
+      String str1 = "/F" + this.bB + "-" + 
         paramFont.getFamily().replace(' ', '_');
-      String str2 = this.cC.a(paramFont);
-      this.cB += 1;
+      String str2 = this.bC.a(paramFont);
+      this.bB += 1;
       locall = new l(i, 0, str1, "/" + str2, 
         "/MacRomanEncoding");
-      this.cz.add(locall);
-      this.cA.put(locale, locall);
+      this.bz.add(locall);
+      this.bA.put(locale, locall);
     }
-    return locall.aN();
+    return locall.ad();
   }
   
-  private b aO() {
+  private b ae() {
     b localb = new b("/Pages");
-    u[] arrayOfu = new u[this.cy.size()];
-    for (int i = 0; i < this.cy.size(); i++) {
-      arrayOfu[i] = ((u)this.cy.get(i));
+    u[] arrayOfu = new u[this.by.size()];
+    for (int i = 0; i < this.by.size(); i++) {
+      arrayOfu[i] = ((u)this.by.get(i));
     }
     localb.a("/Kids", arrayOfu);
-    localb.a("/Count", Integer.valueOf(this.cy.size()));
+    localb.a("/Count", Integer.valueOf(this.by.size()));
     return localb;
   }
   
-  public byte[] au()
+  public byte[] K()
   {
-    return aO().as();
+    return ae().I();
   }
 }

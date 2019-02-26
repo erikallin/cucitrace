@@ -1,106 +1,35 @@
 package com.orsonpdf;
 
-import java.awt.RenderingHints.Key;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+import java.awt.RenderingHints;
 
 
 public final class p
 {
-  public static final a cf = new a(0);
+  public static final ak bf = new ak(0);
+  
+  public static final Object bg = "VALUE_DRAW_STRING_TYPE_STANDARD";
+  
+  public static final Object bh = "VALUE_DRAW_STRING_TYPE_VECTOR";
   
 
-
-
-
-
-  public static final Object cg = "VALUE_DRAW_STRING_TYPE_STANDARD";
-  
-
-
-
-
-
-  public static final Object ch = "VALUE_DRAW_STRING_TYPE_VECTOR";
-  
-
-  public static class a
-    extends RenderingHints.Key
+  public static class ak extends RenderingHints.Key
   {
-    public a(int paramInt)
+    public ak(int paramInt)
     {
-      super();
+      super(paramInt);
     }
     
 
 
-
-
-
-
-
-
-    public boolean b(Object paramObject)
-    {
-      switch (intKey()) {
-      case 0: 
-        return (paramObject == null) || 
-          (p.cg.equals(paramObject)) || 
-          (p.ch.equals(paramObject));
-      }
-      throw new RuntimeException("Not expected!");
-    }
+	@Override
+	public boolean isCompatibleValue(Object arg0) {
+	      switch (intKey()) {
+	      case 0: 
+	        return (arg0 == null) || 
+	          (p.bg.equals(arg0)) || 
+	          (p.bh.equals(arg0));
+	      }
+	      throw new RuntimeException("Not expected!");
+	}
   }
 }

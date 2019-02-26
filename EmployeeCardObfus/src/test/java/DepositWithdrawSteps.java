@@ -1,9 +1,9 @@
 import static org.junit.Assert.assertEquals;
 
-import com.employeecard.core.DepositToEmployeeCard;
-import com.employeecard.core.EmployeeCard;
-import com.employeecard.core.ResponseObject;
-import com.employeecard.core.WithdrawFromEmployeeCard;
+import com.employeecard.core.f;
+import com.employeecard.core.g;
+import com.employeecard.core.j;
+import com.employeecard.core.m;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -11,24 +11,24 @@ import cucumber.api.java.en.When;
 
 public class DepositWithdrawSteps {
 
-	EmployeeCard card = new EmployeeCard();
-		
-	
-	DepositToEmployeeCard depositSelfService;
-	
-	
-	WithdrawFromEmployeeCard withdrawSelfService;
-	
-	
-	ResponseObject responseDepositMoneySelfService;
-	
+	g card = new g();
+  
 
-	ResponseObject responseWithdrawMoneySelfService;
-	
+	f depositSelfService;
+  
+
+	m withdrawSelfService;
+  
+
+	j responseDepositMoneySelfService;
+  
+
+	j responseWithdrawMoneySelfService;
+
 
 	@Given("^an employee card with a balance of (\\d+)$")
 	public void an_employee_card_with_a_balance_of(int balance) {
-		card.setBalance(balance);
+		card.j(balance);
 	}
 
 	
@@ -37,7 +37,7 @@ public class DepositWithdrawSteps {
 	
 	@Given("^a self-service machine for depositing at \"([^\"]*)\"$")
 	public void a_self_service_machine_for_depositing_at(String canteenName) {
-		depositSelfService = new DepositToEmployeeCard(canteenName);
+		depositSelfService = new f(canteenName);
 	}
 	
 	
@@ -46,7 +46,7 @@ public class DepositWithdrawSteps {
 
 	@Given("^an employee card with in use status is (true|false)$")
 	public void an_employee_card_with_in_use_status_is_false(boolean inUseStatus) {
-		card.setInUseStatus(inUseStatus);
+		card.e(inUseStatus);
 	}
 	
 	
@@ -55,7 +55,7 @@ public class DepositWithdrawSteps {
 
 	@When("^an employee card is set to in use and is deposited with a balance of (\\d+)$")
 	public void an_employee_card_is_set_to_in_use_and_is_deposited_with_a_balance_of(int amount) {
-		responseDepositMoneySelfService = depositSelfService.deposit(card, amount);
+		responseDepositMoneySelfService = depositSelfService.a(card, amount);
 	}
 
 	
@@ -64,7 +64,7 @@ public class DepositWithdrawSteps {
 	
 	@Then("^the employee card after a deposit has a new balance (\\d+)$")
 	public void the_employee_card_after_a_deposit_has_a_new_balance(int newBalance) {
-		assertEquals(card.getBalance(), newBalance);
+		assertEquals(card.u(), newBalance);
 	}
 	
 	
@@ -73,7 +73,7 @@ public class DepositWithdrawSteps {
 	
 	@Given("^a self-service machine for withdrawing at \"([^\"]*)\"$")
 	public void a_withdrawing_self_service_machine_at(String canteenName) {
-		withdrawSelfService = new WithdrawFromEmployeeCard(canteenName);
+		withdrawSelfService = new m(canteenName);
 	}
 	
 	
@@ -82,7 +82,7 @@ public class DepositWithdrawSteps {
 
 	@When("^an employee card is set to in use and is withdrawn with a balance of (\\d+)$")
 	public void an_employee_card_is_set_to_in_use_and_is_withdrawn_with_a_balance_of(int amount) {
-		responseWithdrawMoneySelfService = withdrawSelfService.withdraw(card, amount);
+		responseWithdrawMoneySelfService = withdrawSelfService.c(card, amount);
 	}
 
 	
@@ -91,7 +91,7 @@ public class DepositWithdrawSteps {
 	
 	@Then("^the employee card after a withdrawal has a new balance (\\d+)$")
 	public void the_employee_card_after_a_withdrawal_has_a_new_balance(int newBalance) {
-		assertEquals(card.getBalance(), newBalance);
+		assertEquals(card.u(), newBalance);
 
 	}
 
@@ -101,8 +101,7 @@ public class DepositWithdrawSteps {
 	
 	@Then("^the depositing self-service machine displays a message that \"([^\"]*)\"$")
 	public void the_depositing_self_service_machine_displays_a_message_that(String msg) {
-		assertEquals(responseDepositMoneySelfService.getMessage(), msg);
-
+		assertEquals(responseDepositMoneySelfService.Y(), msg);
 	}
 	
 	
@@ -111,7 +110,7 @@ public class DepositWithdrawSteps {
 
 	@Then("^the withdrawing self-service machine displays a message that \"([^\"]*)\"$")
 	public void the_withdrawing_self_service_machine_displays_a_message_that(String msg) {
-		assertEquals(responseWithdrawMoneySelfService.getMessage(), msg);
+		assertEquals(responseWithdrawMoneySelfService.Y(), msg);
 
 	}
 	
@@ -121,7 +120,7 @@ public class DepositWithdrawSteps {
 
 	@Then("^the depositing self-service machine posts that message in the system log$")
 	public void the_depositing_self_service_machine_posts_that_message_in_the_system_log() {
-		depositSelfService.depositLog();
+		depositSelfService.R();
 	}
 	
 	
@@ -130,7 +129,7 @@ public class DepositWithdrawSteps {
 
 	@Then("^the withdrawing self-service machine posts that message in the system log$")
 	public void the_withdrawing_self_service_machine_posts_that_message_in_the_system_log(){
-		withdrawSelfService.withdrawalLog();
+		withdrawSelfService.ag();
 	}
 
 

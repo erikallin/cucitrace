@@ -7,84 +7,41 @@ import java.awt.geom.AffineTransform;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-public abstract class w
-  extends r
+public abstract class w extends r
 {
-  protected b aK;
   
-  public static final class a
-    extends w
+  
+  public static final class an extends w
   {
-    private c cD;
+    private c bD;
     
-    public a(int paramInt, c paramc, AffineTransform paramAffineTransform)
+    public an(int paramInt, c paramc, AffineTransform paramAffineTransform)
     {
-      super();
-      this.aK.a("/PatternType", "2");
-      this.aK.a("/Matrix", t.e(paramAffineTransform));
-      a(paramc);
+      super(paramInt);
+      this.K.a("/PatternType", "2");
+      this.K.a("/Matrix", t.e(paramAffineTransform));
+      aa(paramc);
     }
     
 
 
-
-
-    public c bx()
+    public c aN()
     {
-      return this.cD;
+      return this.bD;
     }
     
 
 
-
-
-    public void a(c paramc)
+    public void aa(c paramc)
     {
-      a.a(paramc, "shading");
-      this.cD = paramc;
-      this.aK.a("/Shading", this.cD);
+      a.aab(paramc, "shading");
+      this.bD = paramc;
+      this.K.a("/Shading", this.bD);
     }
   }
   
 
-
+  protected b K;
 
 
 
@@ -92,17 +49,14 @@ public abstract class w
   protected w(int paramInt)
   {
     super(paramInt);
-    this.aK = new b("/Pattern");
+    this.K = new b("/Pattern");
   }
   
 
 
 
-
-
-
-  public byte[] au()
+  public byte[] K()
   {
-    return this.aK.as();
+    return this.K.I();
   }
 }

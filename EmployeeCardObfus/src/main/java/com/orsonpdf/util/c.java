@@ -5,15 +5,11 @@ import java.awt.Shape;
 import java.awt.geom.Arc2D;
 import java.awt.geom.Arc2D.Double;
 import java.awt.geom.Ellipse2D;
-import java.awt.geom.Ellipse2D.Double;
 import java.awt.geom.GeneralPath;
 import java.awt.geom.Line2D;
-import java.awt.geom.Line2D.Double;
-import java.awt.geom.Path2D.Double;
+import java.awt.geom.Path2D;
 import java.awt.geom.Rectangle2D;
-import java.awt.geom.Rectangle2D.Double;
 import java.awt.geom.RoundRectangle2D;
-import java.awt.geom.RoundRectangle2D.Double;
 import java.awt.image.BufferedImage;
 import java.awt.image.ColorModel;
 import java.awt.image.RenderedImage;
@@ -21,50 +17,11 @@ import java.awt.image.WritableRaster;
 import java.util.Hashtable;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 public class c
 {
   public static Shape g(Shape paramShape)
   {
-    a.a(paramShape, "shape");
+    a.aab(paramShape, "shape");
     Object localObject; if ((paramShape instanceof Line2D)) {
       localObject = (Line2D)paramShape;
       return new Line2D.Double(((Line2D)localObject).getX1(), ((Line2D)localObject).getY1(), ((Line2D)localObject).getX2(), ((Line2D)localObject).getY2());
@@ -99,16 +56,6 @@ public class c
   }
   
 
-
-
-
-
-
-
-
-
-
-
   public static GeneralPath a(int[] paramArrayOfInt1, int[] paramArrayOfInt2, int paramInt, boolean paramBoolean)
   {
     GeneralPath localGeneralPath = new GeneralPath();
@@ -122,15 +69,6 @@ public class c
     return localGeneralPath;
   }
   
-
-
-
-
-
-
-
-
-
 
   public static BufferedImage a(RenderedImage paramRenderedImage)
   {

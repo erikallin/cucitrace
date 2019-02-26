@@ -3,89 +3,36 @@ package com.orsonpdf;
 import com.orsonpdf.util.a;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 public class c
   extends r
 {
-  protected b aK;
+  protected b K;
   
   c(int paramInt, String paramString)
   {
     super(paramInt);
-    this.aK = new b(paramString);
+    this.K = new b(paramString);
   }
   
-
-
-
-
 
 
   public void a(String paramString, Object paramObject)
   {
-    a.a(paramObject, "value");
-    this.aK.a("/" + paramString, paramObject);
+    a.aab(paramObject, "value");
+    this.K.a("/" + paramString, paramObject);
   }
   
 
 
-
-
-
-
-  public Object E(String paramString)
+  public Object v(String paramString)
   {
-    return this.aK.E("/" + paramString);
+    return this.K.v("/" + paramString);
   }
   
 
 
-
-
-
-
-  public byte[] au()
+  public byte[] K()
   {
-    return this.aK.as();
+    return this.K.I();
   }
 }

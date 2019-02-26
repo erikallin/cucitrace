@@ -4,72 +4,23 @@ import java.awt.Color;
 import java.awt.GradientPaint;
 import java.awt.geom.Point2D;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 public final class b
 {
-  private GradientPaint dd;
+  private GradientPaint cd;
   
   public b(GradientPaint paramGradientPaint)
   {
-    a.a(paramGradientPaint, "paint");
-    this.dd = paramGradientPaint;
+    a.aab(paramGradientPaint, "paint");
+    this.cd = paramGradientPaint;
   }
   
 
 
-
-
-
-  public GradientPaint bH()
+  public GradientPaint aX()
   {
-    return this.dd;
+    return this.cd;
   }
   
-
-
-
-
-
 
 
   public boolean a(Object paramObject)
@@ -81,8 +32,8 @@ public final class b
       return false;
     }
     b localb = (b)paramObject;
-    GradientPaint localGradientPaint1 = this.dd;
-    GradientPaint localGradientPaint2 = localb.bH();
+    GradientPaint localGradientPaint1 = this.cd;
+    GradientPaint localGradientPaint2 = localb.aX();
     if (!localGradientPaint1.getColor1().equals(localGradientPaint2.getColor1())) {
       return false;
     }
@@ -105,17 +56,13 @@ public final class b
   }
   
 
-
-
-
-
-  public int ay()
+  public int O()
   {
     int i = 5;
-    i = 47 * i + this.dd.getPoint1().hashCode();
-    i = 47 * i + this.dd.getPoint2().hashCode();
-    i = 47 * i + this.dd.getColor1().hashCode();
-    i = 47 * i + this.dd.getColor2().hashCode();
+    i = 47 * i + this.cd.getPoint1().hashCode();
+    i = 47 * i + this.cd.getPoint2().hashCode();
+    i = 47 * i + this.cd.getColor1().hashCode();
+    i = 47 * i + this.cd.getColor2().hashCode();
     return i;
   }
 }

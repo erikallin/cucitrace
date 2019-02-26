@@ -114,7 +114,7 @@ public class ActivateEmployeeCardForPurchasesSteps {
 
 	@Then("^the self service machine displays a message that an employee card is not registered for purchases because user already registered in the system$")
 	public void the_self_service_machine_displays_a_message_that_an_employee_card_is_not_registered_for_purchases_because_user_already_registered_in_the_system() {
-		assertEquals(response.getMessage(), Constants.EMPLOYEE_CARD_ACTIVATED_FOR_PURCHASES_SUCCESS);
+		assertEquals(response.getMessage(), Constants.EMPLOYEE_CARD_ACTIVATED_FOR_PURCHASES_FAILURE);
 	}
 
 	

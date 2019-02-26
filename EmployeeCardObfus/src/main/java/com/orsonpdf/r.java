@@ -5,52 +5,10 @@ import java.io.IOException;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 public abstract class r
 {
-  private int aX;
-  private int ck;
+  private int X;
+  private int bk;
   
   protected r(int paramInt)
   {
@@ -58,74 +16,54 @@ public abstract class r
   }
   
 
-
-
-
-
-
   protected r(int paramInt1, int paramInt2)
   {
-    this.aX = paramInt1;
-    this.ck = paramInt2;
+    this.X = paramInt1;
+    this.bk = paramInt2;
   }
   
 
-
-
-
-  public int aC()
+  public int S()
   {
-    return this.aX;
+    return this.X;
   }
   
 
 
-
-
-  public int bn()
+  public int aD()
   {
-    return this.ck;
+    return this.bk;
   }
   
 
 
-
-
-
-
-
-  public String bo()
+  public String aE()
   {
-    return this.aX + " " + this.ck + " R";
+    return this.X + " " + this.bk + " R";
   }
   
 
 
-
-
-
-  public byte[] as()
+  public byte[] I()
     throws IOException
   {
     ByteArrayOutputStream localByteArrayOutputStream = new ByteArrayOutputStream();
-    localByteArrayOutputStream.write(t.I(bp()));
-    localByteArrayOutputStream.write(au());
-    localByteArrayOutputStream.write(t.I("endobj\n"));
+    localByteArrayOutputStream.write(t.z(aF()));
+    localByteArrayOutputStream.write(K());
+    localByteArrayOutputStream.write(t.z("endobj\n"));
     return localByteArrayOutputStream.toByteArray();
   }
   
 
-
-
-  public abstract byte[] au()
+  public abstract byte[] K()
     throws IOException;
   
 
 
-  private String bp()
+  private String aF()
   {
     StringBuilder localStringBuilder = new StringBuilder();
-    localStringBuilder.append(this.aX).append(" ").append(this.ck).append(" ");
+    localStringBuilder.append(this.X).append(" ").append(this.bk).append(" ");
     localStringBuilder.append("obj\n");
     return localStringBuilder.toString();
   }

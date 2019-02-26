@@ -4,56 +4,12 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 public class a
   implements c
 {
-  public d bz()
+  public d aP()
   {
-    return d.cN;
+    return d.ASCII85;
   }
   
   public byte[] a(byte[] paramArrayOfByte)
@@ -62,7 +18,7 @@ public class a
     b localb = new b(localByteArrayOutputStream);
     try {
       localb.write(paramArrayOfByte);
-      localb.bB();
+      localb.aR();
       localb.close();
     }
     catch (IOException localIOException) {

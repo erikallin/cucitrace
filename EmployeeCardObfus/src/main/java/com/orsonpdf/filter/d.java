@@ -6,55 +6,21 @@ import com.orsonpdf.util.a;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 public enum d
 {
-  private String cP;
+  
+  /** ASCII85 encoding. */
+  ASCII85("/ASCII85Decode"),
+    
+  /** Flate encoding. */
+  FLATE("/FlateDecode");
+	
+  private String bP;
   
   private d(String paramString1)
   {
-    a.a(paramString1, "decode");
-    this.cP = paramString1;
+    a.aab(paramString1, "decode");
+    this.bP = paramString1;
   }
   
 
@@ -62,8 +28,8 @@ public enum d
 
 
 
-  public String bC()
+  public String aS()
   {
-    return this.cP;
+    return this.bP;
   }
 }

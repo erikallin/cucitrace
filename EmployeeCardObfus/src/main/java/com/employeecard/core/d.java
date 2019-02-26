@@ -89,19 +89,6 @@ public class d
   
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
   private static RadialGradientPaint a(Color paramColor1, Color paramColor2)
   {
     Point2D.Float localFloat = new Point2D.Float(0.0F, 0.0F);
@@ -110,9 +97,6 @@ public class d
     return new RadialGradientPaint(localFloat, f, arrayOfFloat, new Color[] { paramColor1, paramColor2 });
   }
   
-
-
-
 
 
 
@@ -129,10 +113,10 @@ public class d
   public void O()
   {
     k localk = new k();
-    localk.G("Canteen Statistics Report");
-    localk.H("Employee Card System");
-    u localu = localk.a(new Rectangle(612, 468));
-    m localm = localu.bs();
+    localk.x("Canteen Statistics Report");
+    localk.y("Employee Card System");
+    u localu = localk.e(new Rectangle(612, 468));
+    m localm = localu.aI();
     JFreeChart localJFreeChart = a(Q());
     localJFreeChart.setPadding(new RectangleInsets(4.0D, 8.0D, 2.0D, 2.0D));
     ChartPanel localChartPanel = new ChartPanel(localJFreeChart, false);
