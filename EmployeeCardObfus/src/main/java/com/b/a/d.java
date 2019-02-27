@@ -1,6 +1,6 @@
 package com.b.a;
 
-import com.b.b.b;
+import com.b.b.a.b;
 import com.c.k;
 import com.c.m;
 import com.c.u;

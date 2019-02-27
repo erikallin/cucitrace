@@ -17,7 +17,7 @@ public class b
   public b()
   {
     this.L = new ArrayList();
-    com.b.b.a locala = new com.b.b.a();
+    com.b.b.a.a locala = new com.b.b.a.a();
     this.L = locala.u(10);
   }
   

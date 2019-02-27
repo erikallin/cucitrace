@@ -1,6 +1,6 @@
 import static org.junit.Assert.assertEquals;
 
-import com.a.a;
+import com.a.a.a;
 import com.b.a.e;
 import com.b.a.g;
 import com.b.a.j;
