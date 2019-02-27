@@ -1,9 +1,9 @@
 import static org.junit.Assert.assertEquals;
 
-import com.c.a.a;
-import com.c.a.b;
-import com.c.a.f;
-import com.c.a.j;
+import com.c.aa.a;
+import com.c.aa.b;
+import com.c.aa.f;
+import com.c.aa.j;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;

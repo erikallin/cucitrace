@@ -1,6 +1,6 @@
 package com.b;
 
-import com.b.util.a;
+import com.b.cc.a;
 
 
 public class c
