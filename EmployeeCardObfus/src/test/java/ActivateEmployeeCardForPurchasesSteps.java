@@ -1,10 +1,10 @@
 import static org.junit.Assert.assertEquals;
 
-import com.a.aa.a;
-import com.b.aa.e;
-import com.b.aa.g;
-import com.b.aa.j;
-import com.b.aa.k;
+import com.creditcard.a;
+import com.employeecard.e;
+import com.employeecard.g;
+import com.employeecard.j;
+import com.employeecard.k;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;

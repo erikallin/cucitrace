@@ -1,9 +1,9 @@
 import static org.junit.Assert.assertEquals;
 
-import com.employeecard.core.DepositToEmployeeCard;
-import com.employeecard.core.EmployeeCard;
-import com.employeecard.core.ResponseObject;
-import com.employeecard.core.WithdrawFromEmployeeCard;
+import com.employeecard.DepositToEmployeeCard;
+import com.employeecard.EmployeeCard;
+import com.employeecard.ResponseObject;
+import com.employeecard.WithdrawFromEmployeeCard;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;

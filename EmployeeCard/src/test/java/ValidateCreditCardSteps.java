@@ -4,10 +4,10 @@ import cucumber.api.java.en.When;
 
 import static org.junit.Assert.*;
 
-import com.creditcard.validation.CreditCard;
-import com.employeecard.core.Constants;
-import com.employeecard.core.ResponseObject;
-import com.employeecard.core.SelfServiceMachine;
+import com.creditcard.CreditCard;
+import com.employeecard.Constants;
+import com.employeecard.ResponseObject;
+import com.employeecard.SelfServiceMachine;
 
 public class ValidateCreditCardSteps {
 

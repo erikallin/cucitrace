@@ -1,8 +1,8 @@
 import static org.junit.Assert.assertEquals;
 
-import com.c.aa.g;
-import com.c.aa.h;
-import com.c.aa.k;
+import com.travelcard.core.g;
+import com.travelcard.core.h;
+import com.travelcard.core.k;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;

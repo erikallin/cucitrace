@@ -1,6 +1,6 @@
 import static org.junit.Assert.assertEquals;
 
-import com.employeecard.core.SystemLogger;
+import com.employeecard.SystemLogger;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.When;

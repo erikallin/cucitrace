@@ -1,10 +1,10 @@
 import static org.junit.Assert.assertEquals;
 
-import com.creditcard.validation.CreditCard;
-import com.employeecard.core.Constants;
-import com.employeecard.core.EmployeeCard;
-import com.employeecard.core.ResponseObject;
-import com.employeecard.core.SelfServiceMachine;
+import com.creditcard.CreditCard;
+import com.employeecard.Constants;
+import com.employeecard.EmployeeCard;
+import com.employeecard.ResponseObject;
+import com.employeecard.SelfServiceMachine;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
