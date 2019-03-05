@@ -4,18 +4,18 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
 
-public class a
-  implements c
+public class ASCII85Filter
+  implements Filter
 {
-  public d aP()
+  public FilterType aP()
   {
-    return d.ASCII85;
+    return FilterType.ASCII85;
   }
   
   public byte[] a(byte[] paramArrayOfByte)
   {
     ByteArrayOutputStream localByteArrayOutputStream = new ByteArrayOutputStream();
-    b localb = new b(localByteArrayOutputStream);
+    Ascii85OutputStream localb = new Ascii85OutputStream(localByteArrayOutputStream);
     try {
       localb.write(paramArrayOfByte);
       localb.aR();

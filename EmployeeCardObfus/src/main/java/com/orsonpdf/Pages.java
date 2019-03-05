@@ -7,54 +7,54 @@ import java.util.List;
 import java.util.Map;
 
 
-public final class v
-  extends r
+public final class Pages
+  extends PDFObject
 {
-  private k bx;
+  private PDFDocument bx;
   
   
-  private List<u> by;
+  private List<Page> by;
   
   
-  private List<l> bz;
+  private List<PDFFont> bz;
   
   
-  private Map<e, l> bA;
+  private Map<FontKey, PDFFont> bA;
   
   private int bB = 1;
   
-  private f bC;
+  private FontMapper bC;
   
 
 
-  v(int paramInt1, int paramInt2, k paramk)
+  Pages(int paramInt1, int paramInt2, PDFDocument paramk)
   {
     super(paramInt1, paramInt2);
-    com.orsonpdf.util.a.aab(paramk, "parent");
+    com.orsonpdf.util.Args.aab(paramk, "parent");
     this.bx = paramk;
-    this.by = new ArrayList<u>();
-    this.bz = new ArrayList<l>();
-    this.bA = new HashMap<e, l>();
-    this.bC = new a();
+    this.by = new ArrayList<Page>();
+    this.bz = new ArrayList<PDFFont>();
+    this.bA = new HashMap<FontKey, PDFFont>();
+    this.bC = new DefaultFontMapper();
   }
   
 
 
-  public k aK()
+  public PDFDocument aK()
   {
     return this.bx;
   }
   
 
 
-  public List<u> aL()
+  public List<Page> aL()
   {
     return this.by;
   }
   
 
 
-  public List<l> aM()
+  public List<PDFFont> aM()
   {
     return this.bz;
   }
@@ -64,9 +64,9 @@ public final class v
 
 
 
-  public l A(String paramString)
+  public PDFFont A(String paramString)
   {
-    for (l locall : this.bz) {
+    for (PDFFont locall : this.bz) {
       if (locall.ad().equals(paramString)) {
         return locall;
       }
@@ -76,7 +76,7 @@ public final class v
   
 
 
-  void a(u paramu)
+  void a(Page paramu)
   {
     this.by.add(paramu);
   }
@@ -86,15 +86,15 @@ public final class v
 
   public String f(Font paramFont)
   {
-    e locale = e.b(paramFont);
-    l locall = (l)this.bA.get(locale);
+    FontKey locale = FontKey.b(paramFont);
+    PDFFont locall = (PDFFont)this.bA.get(locale);
     if (locall == null) {
       int i = this.bx.ab();
       String str1 = "/F" + this.bB + "-" + 
         paramFont.getFamily().replace(' ', '_');
       String str2 = this.bC.a(paramFont);
       this.bB += 1;
-      locall = new l(i, 0, str1, "/" + str2, 
+      locall = new PDFFont(i, 0, str1, "/" + str2, 
         "/MacRomanEncoding");
       this.bz.add(locall);
       this.bA.put(locale, locall);
@@ -102,11 +102,11 @@ public final class v
     return locall.ad();
   }
   
-  private b ae() {
-    b localb = new b("/Pages");
-    u[] arrayOfu = new u[this.by.size()];
+  private Dictionary ae() {
+    Dictionary localb = new Dictionary("/Pages");
+    Page[] arrayOfu = new Page[this.by.size()];
     for (int i = 0; i < this.by.size(); i++) {
-      arrayOfu[i] = ((u)this.by.get(i));
+      arrayOfu[i] = ((Page)this.by.get(i));
     }
     localb.a("/Kids", arrayOfu);
     localb.a("/Count", Integer.valueOf(this.by.size()));

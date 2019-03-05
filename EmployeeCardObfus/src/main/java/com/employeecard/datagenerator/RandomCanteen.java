@@ -3,18 +3,18 @@ package com.employeecard.datagenerator;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.employeecard.c;
+import com.employeecard.Canteen;
 
-public class b
+public class RandomCanteen
 {
   private static final String[] aF = { "Meyers", "ISS", "Shackenborg", "Eurest", "Europa 1989", "Green kitchen", 
     "DTU Student Canteen 101", "KU Student Canteen", "SDU Student Canteen", "DTU Student Canteen 341" };
   
-  private static c ak()
+  private static Canteen ak()
   {
-    c localc = new c((String)d.a(aF));
-    localc.p(d.b(0, 10));
-    localc.o(d.b(0, 10));
+    Canteen localc = new Canteen((String)RandomUtils.a(aF));
+    localc.p(RandomUtils.b(0, 10));
+    localc.o(RandomUtils.b(0, 10));
     return localc;
   }
   
@@ -23,7 +23,7 @@ public class b
 
 
 
-  public List<c> u(int paramInt)
+  public List<Canteen> u(int paramInt)
   {
     ArrayList localArrayList = new ArrayList();
     

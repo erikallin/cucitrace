@@ -1,23 +1,30 @@
 package com.orsonpdf.shading;
 
-import com.orsonpdf.b;
-import com.orsonpdf.g;
-import com.orsonpdf.t;
+import com.orsonpdf.Dictionary;
+import com.orsonpdf.Function;
+import com.orsonpdf.PDFUtils;
 
 
-public final class a
-  extends c
+public final class AxialShading
+  extends Shading
 {
   private double[] bR;
-  private g bS;
+  
+  
+  private Function bS;
+  
+  
   private double[] S;
+  
+  
   private boolean[] bT;
   
-  public a(int paramInt, double[] paramArrayOfDouble, g paramg)
+  
+  public AxialShading(int paramInt, double[] paramArrayOfDouble, Function paramg)
   {
-    super(paramInt, d.AXIAL);
-    com.orsonpdf.util.a.aad(4, paramArrayOfDouble, "coords");
-    com.orsonpdf.util.a.aab(paramg, "function");
+    super(paramInt, ShadingType.AXIAL);
+    com.orsonpdf.util.Args.aad(4, paramArrayOfDouble, "coords");
+    com.orsonpdf.util.Args.aab(paramg, "function");
     this.K.a("/ColorSpace", "/DeviceRGB");
     c(paramArrayOfDouble);
     a(paramg);
@@ -25,22 +32,31 @@ public final class a
     this.S = new double[] { 0.0D, 1.0D };
   }
   
+  
+  
+  
 
   public double[] aT()
   {
     return (double[])this.bR.clone();
   }
   
+  
+  
+  
 
   public void c(double[] paramArrayOfDouble)
   {
-    com.orsonpdf.util.a.aad(4, paramArrayOfDouble, "coords");
+    com.orsonpdf.util.Args.aad(4, paramArrayOfDouble, "coords");
     this.bR = ((double[])paramArrayOfDouble.clone());
-    this.K.a("/Coords", t.b(this.bR));
+    this.K.a("/Coords", PDFUtils.b(this.bR));
   }
   
 
-  public g aU()
+  
+  
+  
+  public Function aU()
   {
     return this.bS;
   }
@@ -49,9 +65,9 @@ public final class a
 
 
 
-  public void a(g paramg)
+  public void a(Function paramg)
   {
-    com.orsonpdf.util.a.aab(paramg, "function");
+    com.orsonpdf.util.Args.aab(paramg, "function");
     this.bS = paramg;
     this.K.a("/Function", this.bS);
   }
@@ -71,9 +87,9 @@ public final class a
 
   public void a(double[] paramArrayOfDouble)
   {
-    com.orsonpdf.util.a.aad(2, paramArrayOfDouble, "domain");
+    com.orsonpdf.util.Args.aad(2, paramArrayOfDouble, "domain");
     this.S = ((double[])paramArrayOfDouble.clone());
-    this.K.a("/Domain", t.b(this.S));
+    this.K.a("/Domain", PDFUtils.b(this.S));
   }
   
 
@@ -91,8 +107,8 @@ public final class a
 
   public void b(boolean[] paramArrayOfBoolean)
   {
-    com.orsonpdf.util.a.aac(2, paramArrayOfBoolean, "extend");
+    com.orsonpdf.util.Args.aac(2, paramArrayOfBoolean, "extend");
     this.bT = ((boolean[])paramArrayOfBoolean.clone());
-    this.K.a("/Extend", t.a(this.bT));
+    this.K.a("/Extend", PDFUtils.a(this.bT));
   }
 }

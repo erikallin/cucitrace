@@ -1,23 +1,23 @@
 package com.orsonpdf.shading;
 
-import com.orsonpdf.g;
-import com.orsonpdf.t;
-import com.orsonpdf.util.a;
+import com.orsonpdf.Function;
+import com.orsonpdf.PDFUtils;
+import com.orsonpdf.util.Args;
 
 
-public final class b
-  extends c
+public final class RadialShading
+  extends Shading
 {
   private double[] bR;
-  private g bS;
+  private Function bS;
   private double[] S;
   private boolean[] bT;
   
-  public b(int paramInt, double[] paramArrayOfDouble, g paramg)
+  public RadialShading(int paramInt, double[] paramArrayOfDouble, Function paramg)
   {
-    super(paramInt, d.RADIAL);
-    a.aad(6, paramArrayOfDouble, "coords");
-    a.aab(paramg, "function");
+    super(paramInt, ShadingType.RADIAL);
+    Args.aad(6, paramArrayOfDouble, "coords");
+    Args.aab(paramg, "function");
     this.K.a("/ColorSpace", "/DeviceRGB");
     c(paramArrayOfDouble);
     a(paramg);
@@ -41,16 +41,16 @@ public final class b
 
   public void c(double[] paramArrayOfDouble)
   {
-    a.aad(6, paramArrayOfDouble, "coords");
+    Args.aad(6, paramArrayOfDouble, "coords");
     this.bR = ((double[])paramArrayOfDouble.clone());
-    this.K.a("/Coords", t.b(this.bR));
+    this.K.a("/Coords", PDFUtils.b(this.bR));
   }
   
 
 
 
 
-  public g aU()
+  public Function aU()
   {
     return this.bS;
   }
@@ -59,9 +59,9 @@ public final class b
 
 
 
-  public void a(g paramg)
+  public void a(Function paramg)
   {
-    a.aab(paramg, "function");
+    Args.aab(paramg, "function");
     this.bS = paramg;
     this.K.a("/Function", this.bS);
   }
@@ -81,9 +81,9 @@ public final class b
 
   public void a(double[] paramArrayOfDouble)
   {
-    a.aad(2, paramArrayOfDouble, "domain");
+    Args.aad(2, paramArrayOfDouble, "domain");
     this.S = ((double[])paramArrayOfDouble.clone());
-    this.K.a("/Domain", t.b(this.S));
+    this.K.a("/Domain", PDFUtils.b(this.S));
   }
   
 
@@ -101,8 +101,8 @@ public final class b
 
   public void b(boolean[] paramArrayOfBoolean)
   {
-    a.aac(2, paramArrayOfBoolean, "extend");
+    Args.aac(2, paramArrayOfBoolean, "extend");
     this.bT = ((boolean[])paramArrayOfBoolean.clone());
-    this.K.a("/Extend", t.a(this.bT));
+    this.K.a("/Extend", PDFUtils.a(this.bT));
   }
 }

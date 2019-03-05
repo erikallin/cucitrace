@@ -1,7 +1,7 @@
 package com.orsonpdf.shading;
 
 
-public enum d
+public enum ShadingType
 {
   
     FUNCTION(1),
@@ -24,7 +24,7 @@ public enum d
   
 
 
-  private d(int paramInt1)
+  private ShadingType(int paramInt1)
   {
     this.X = paramInt1;
   }

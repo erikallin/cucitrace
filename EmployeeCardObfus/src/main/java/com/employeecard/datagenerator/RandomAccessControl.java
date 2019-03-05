@@ -3,11 +3,11 @@ package com.employeecard.datagenerator;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.employeecard.b;
+import com.employeecard.AccessControlList;
 
-public class a
+public class RandomAccessControl
 {
-  private b aE;
+  private AccessControlList aE;
   
   private int ah()
   {
@@ -15,7 +15,7 @@ public class a
   }
   
   private static int ai() {
-    return d.b(0, 3);
+    return RandomUtils.b(0, 3);
   }
   
 
@@ -24,7 +24,7 @@ public class a
 
 
 
-  public List<com.employeecard.a> u(int paramInt)
+  public List<com.employeecard.AccessControl> u(int paramInt)
   {
     ArrayList localArrayList = new ArrayList();
     
@@ -35,7 +35,7 @@ public class a
     return localArrayList;
   }
   
-  private com.employeecard.a aj() {
-    return new com.employeecard.a(ah(), ai());
+  private com.employeecard.AccessControl aj() {
+    return new com.employeecard.AccessControl(ah(), ai());
   }
 }

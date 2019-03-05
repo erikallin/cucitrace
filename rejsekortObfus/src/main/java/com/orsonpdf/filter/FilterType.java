@@ -1,12 +1,12 @@
 package com.orsonpdf.filter;
 
-import com.orsonpdf.util.a;
+import com.orsonpdf.util.Args;
 
 
 
 
 
-public enum d
+public enum FilterType
 {
   
   /** ASCII85 encoding. */
@@ -17,9 +17,9 @@ public enum d
 	
   private String bP;
   
-  private d(String paramString1)
+  private FilterType(String paramString1)
   {
-    a.aab(paramString1, "decode");
+    Args.aab(paramString1, "decode");
     this.bP = paramString1;
   }
   

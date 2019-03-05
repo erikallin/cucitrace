@@ -2,55 +2,55 @@ package com.orsonpdf;
 
 import java.awt.geom.AffineTransform;
 
-import com.orsonpdf.shading.c;
-import com.orsonpdf.util.a;
+import com.orsonpdf.shading.Shading;
+import com.orsonpdf.util.Args;
 
 
 
 
-public abstract class w extends r
+public abstract class Pattern extends PDFObject
 {
   
   
-  public static final class an extends w
+  public static final class an extends Pattern
   {
-    private c bD;
+    private Shading bD;
     
-    public an(int paramInt, c paramc, AffineTransform paramAffineTransform)
+    public an(int paramInt, Shading paramc, AffineTransform paramAffineTransform)
     {
       super(paramInt);
       this.K.a("/PatternType", "2");
-      this.K.a("/Matrix", t.e(paramAffineTransform));
+      this.K.a("/Matrix", PDFUtils.e(paramAffineTransform));
       aa(paramc);
     }
     
 
 
-    public c aN()
+    public Shading aN()
     {
       return this.bD;
     }
     
 
 
-    public void aa(c paramc)
+    public void aa(Shading paramc)
     {
-      a.aab(paramc, "shading");
+      Args.aab(paramc, "shading");
       this.bD = paramc;
       this.K.a("/Shading", this.bD);
     }
   }
   
 
-  protected b K;
+  protected Dictionary K;
 
 
 
 
-  protected w(int paramInt)
+  protected Pattern(int paramInt)
   {
     super(paramInt);
-    this.K = new b("/Pattern");
+    this.K = new Dictionary("/Pattern");
   }
   
 

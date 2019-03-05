@@ -3,9 +3,7 @@ package com.employeecard.datagenerator;
 import java.util.Random;
 
 
-
-
-public class d
+public class RandomUtils
 {
   private static final Random aH = new Random();
   

@@ -5,12 +5,12 @@ import java.io.IOException;
 import java.util.zip.DeflaterOutputStream;
 
 
-public class e
-  implements c
+public class FlateFilter
+  implements Filter
 {
-  public d aP()
+  public FilterType aP()
   {
-    return d.FLATE;
+    return FilterType.FLATE;
   }
   
   public byte[] a(byte[] paramArrayOfByte)

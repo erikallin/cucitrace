@@ -1,8 +1,8 @@
 package com.orsonpdf.filter;
 
-public abstract interface c
+public abstract interface Filter
 {
-  public abstract d aP();
+  public abstract FilterType aP();
   
   public abstract byte[] a(byte[] paramArrayOfByte);
 }

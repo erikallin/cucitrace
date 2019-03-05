@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 
 
-public class b
+public class Ascii85OutputStream
   extends FilterOutputStream
 {
   private int aI = 72;
@@ -21,13 +21,13 @@ public class b
   private boolean bM;
   
 
-  public b(OutputStream paramOutputStream)
+  public Ascii85OutputStream(OutputStream paramOutputStream)
   {
     super(paramOutputStream);
   }
   
 
-  public b(OutputStream paramOutputStream, boolean paramBoolean)
+  public Ascii85OutputStream(OutputStream paramOutputStream, boolean paramBoolean)
   {
     this(paramOutputStream);
     this.bM = paramBoolean;
@@ -35,7 +35,7 @@ public class b
   
 
 
-  public b(OutputStream paramOutputStream, int paramInt, boolean paramBoolean)
+  public Ascii85OutputStream(OutputStream paramOutputStream, int paramInt, boolean paramBoolean)
   {
     this(paramOutputStream);
     

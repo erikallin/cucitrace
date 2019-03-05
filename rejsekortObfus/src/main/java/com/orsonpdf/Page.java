@@ -14,44 +14,44 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.orsonpdf.filter.e;
+import com.orsonpdf.filter.FlateFilter;
 
-public class u extends r
+public class Page extends PDFObject
 {
-  private v bl;
+  private Pages bl;
   private Rectangle2D bm;
-  private j bn;
-  private m bo;
+  private GraphicsStream bn;
+  private PDFGraphics2D bo;
   private List<String> bp;
-  private Map<com.orsonpdf.util.b, String> bq;
-  private Map<com.orsonpdf.util.e, String> br;
-  private b bs;
-  private b bt;
+  private Map<com.orsonpdf.util.GradientPaintKey, String> bq;
+  private Map<com.orsonpdf.util.RadialGradientPaintKey, String> br;
+  private Dictionary bs;
+  private Dictionary bt;
   private AffineTransform bu;
-  private b bv = new b();
+  private Dictionary bv = new Dictionary();
   
-  u(int paramInt1, int paramInt2, v paramu, Rectangle2D paramRectangle2D)
+  Page(int paramInt1, int paramInt2, Pages paramu, Rectangle2D paramRectangle2D)
   {
     this(paramInt1, paramInt2, paramu, paramRectangle2D, true);
   }
   
-  u(int paramInt1, int paramInt2, v paramu, Rectangle2D paramRectangle2D, boolean paramBoolean)
+  Page(int paramInt1, int paramInt2, Pages paramu, Rectangle2D paramRectangle2D, boolean paramBoolean)
   {
     super(paramInt1, paramInt2);
-    com.orsonpdf.util.a.aab(paramRectangle2D, "bounds");
+    com.orsonpdf.util.Args.aab(paramRectangle2D, "bounds");
     this.bl = paramu;
     this.bm = (Rectangle2D) paramRectangle2D.clone();
     this.bp = new ArrayList<String>();
     int i = this.bl.aK().ab();
-    this.bn = new j(i, this);
+    this.bn = new GraphicsStream(i, this);
     if (paramBoolean) {
-      this.bn.a(new e());
+      this.bn.a(new FlateFilter());
     }
-    this.bq = new HashMap<com.orsonpdf.util.b, String>();
-    this.br = new HashMap<com.orsonpdf.util.e, String>();
+    this.bq = new HashMap<com.orsonpdf.util.GradientPaintKey, String>();
+    this.br = new HashMap<com.orsonpdf.util.RadialGradientPaintKey, String>();
     
-    this.bs = new b();
-    this.bt = new b();
+    this.bs = new Dictionary();
+    this.bt = new Dictionary();
     
     this.bu = AffineTransform.getTranslateInstance(0.0D, 
       paramRectangle2D.getHeight());
@@ -64,15 +64,15 @@ public class u extends r
     return (Rectangle2D) this.bm.clone();
   }
   
-  public r aH()
+  public PDFObject aH()
   {
     return this.bn;
   }
   
-  public m aI()
+  public PDFGraphics2D aI()
   {
     if (this.bo == null) {
-      this.bo = new m(this.bn, 
+      this.bo = new PDFGraphics2D(this.bn, 
         (int) this.bm.getWidth(), 
         (int) this.bm.getHeight());
     }
@@ -88,12 +88,12 @@ public class u extends r
     return str;
   }
   
-  private b aJ()
+  private Dictionary aJ()
   {
-    b localb = new b();
+    Dictionary localb = new Dictionary();
     for (String str : this.bp)
     {
-      l locall = this.bl.A(str);
+      PDFFont locall = this.bl.A(str);
       localb.a(str, locall.aE());
     }
     return localb;
@@ -101,12 +101,12 @@ public class u extends r
   
   String c(GradientPaint paramGradientPaint)
   {
-    com.orsonpdf.util.b localb = new com.orsonpdf.util.b(paramGradientPaint);
+    com.orsonpdf.util.GradientPaintKey localb = new com.orsonpdf.util.GradientPaintKey(paramGradientPaint);
     String str = (String)this.bq.get(localb);
     if (str == null)
     {
-      k localk = this.bl.aK();
-      d locald = new d(
+      PDFDocument localk = this.bl.aK();
+      ExponentialInterpolationFunction locald = new ExponentialInterpolationFunction(
         localk.ab(), 
         paramGradientPaint.getColor1().getRGBColorComponents(null), 
         paramGradientPaint.getColor2().getRGBColorComponents(null));
@@ -116,9 +116,9 @@ public class u extends r
       arrayOfDouble[1] = paramGradientPaint.getPoint1().getY();
       arrayOfDouble[2] = paramGradientPaint.getPoint2().getX();
       arrayOfDouble[3] = paramGradientPaint.getPoint2().getY();
-      com.orsonpdf.shading.a locala = new com.orsonpdf.shading.a(localk.ab(), arrayOfDouble, locald);
+      com.orsonpdf.shading.AxialShading locala = new com.orsonpdf.shading.AxialShading(localk.ab(), arrayOfDouble, locald);
       localk.f(locala);
-      w locala1 = new w.an(localk.ab(), locala, 
+      Pattern locala1 = new Pattern.an(localk.ab(), locala, 
         this.bu);
       localk.f(locala1);
       str = "/P" + (this.bs.H() + 1);
@@ -130,12 +130,12 @@ public class u extends r
   
   String c(RadialGradientPaint paramRadialGradientPaint)
   {
-    com.orsonpdf.util.e locale = new com.orsonpdf.util.e(paramRadialGradientPaint);
+    com.orsonpdf.util.RadialGradientPaintKey locale = new com.orsonpdf.util.RadialGradientPaintKey(paramRadialGradientPaint);
     String str = (String)this.br.get(locale);
     if (str == null)
     {
-      k localk = this.bl.aK();
-      g localg = a(paramRadialGradientPaint);
+      PDFDocument localk = this.bl.aK();
+      Function localg = a(paramRadialGradientPaint);
       localk.f(localg);
       double[] arrayOfDouble = new double[6];
       arrayOfDouble[0] = paramRadialGradientPaint.getFocusPoint().getX();
@@ -144,9 +144,9 @@ public class u extends r
       arrayOfDouble[3] = paramRadialGradientPaint.getCenterPoint().getX();
       arrayOfDouble[4] = paramRadialGradientPaint.getCenterPoint().getY();
       arrayOfDouble[5] = paramRadialGradientPaint.getRadius();
-      com.orsonpdf.shading.b localb = new com.orsonpdf.shading.b(localk.ab(), arrayOfDouble, localg);
+      com.orsonpdf.shading.RadialShading localb = new com.orsonpdf.shading.RadialShading(localk.ab(), arrayOfDouble, localg);
       localk.f(localb);
-      w locala = new w.an(localk.ab(), localb, 
+      Pattern locala = new Pattern.an(localk.ab(), localb, 
         this.bu);
       localk.f(locala);
       str = "/P" + (this.bs.H() + 1);
@@ -156,24 +156,24 @@ public class u extends r
     return str;
   }
   
-  private g a(MultipleGradientPaint paramMultipleGradientPaint)
+  private Function a(MultipleGradientPaint paramMultipleGradientPaint)
   {
-    k localk = this.bl.aK();
+    PDFDocument localk = this.bl.aK();
     if (paramMultipleGradientPaint.getColors().length == 2)
     {
-      d locald = new d(
+      ExponentialInterpolationFunction locald = new ExponentialInterpolationFunction(
         localk.ab(), 
         paramMultipleGradientPaint.getColors()[0].getRGBColorComponents(null), 
         paramMultipleGradientPaint.getColors()[1].getRGBColorComponents(null));
       return locald;
     }
     int i = paramMultipleGradientPaint.getColors().length - 1;
-    g[] arrayOfg = new g[i];
+    Function[] arrayOfg = new Function[i];
     float[] arrayOfFloat1 = new float[i - 1];
     float[] arrayOfFloat2 = new float[i * 2];
     for (int j = 0; j < i; j++)
     {
-      arrayOfg[j] = new d(
+      arrayOfg[j] = new ExponentialInterpolationFunction(
         localk.ab(), 
         paramMultipleGradientPaint.getColors()[j].getRGBColorComponents(null), 
         paramMultipleGradientPaint.getColors()[(j + 1)].getRGBColorComponents(null));
@@ -184,7 +184,7 @@ public class u extends r
       arrayOfFloat2[(j * 2)] = 0.0F;
       arrayOfFloat2[(j * 2 + 1)] = 1.0F;
     }
-    return new x(localk.ab(), arrayOfg, 
+    return new StitchingFunction(localk.ab(), arrayOfg, 
       arrayOfFloat1, arrayOfFloat2);
   }
   
@@ -197,8 +197,8 @@ public class u extends r
     String str = (String)this.bw.get(localInteger);
     if (str == null)
     {
-      k localk = this.bl.aK();
-      i locali = new i(
+      PDFDocument localk = this.bl.aK();
+      GraphicsStateDictionary locali = new GraphicsStateDictionary(
         localk.ab());
       locali.b(f);
       locali.a(f);
@@ -212,11 +212,11 @@ public class u extends r
   
   String a(Image paramImage)
   {
-    com.orsonpdf.util.a.aab(paramImage, "img");
-    k localk = this.bl.aK();
-    s locals = new s(
+    com.orsonpdf.util.Args.aab(paramImage, "img");
+    PDFDocument localk = this.bl.aK();
+    PDFSoftMaskImage locals = new PDFSoftMaskImage(
       localk.ab(), paramImage);
-    locals.a(new com.orsonpdf.filter.e());
+    locals.a(new com.orsonpdf.filter.FlateFilter());
     localk.f(locals);
     String str = "/Image" + this.bv.H();
     this.bv.a(str, locals);
@@ -225,15 +225,15 @@ public class u extends r
   
   String a(Image paramImage, boolean paramBoolean)
   {
-    com.orsonpdf.util.a.aab(paramImage, "img");
-    k localk = this.bl.aK();
+    com.orsonpdf.util.Args.aab(paramImage, "img");
+    PDFDocument localk = this.bl.aK();
     String str1 = null;
     if (paramBoolean) {
       str1 = a(paramImage);
     }
-    q localq = new q(localk.ab(), paramImage, 
+    PDFImage localq = new PDFImage(localk.ab(), paramImage, 
       str1);
-    localq.a(new com.orsonpdf.filter.e());
+    localq.a(new com.orsonpdf.filter.FlateFilter());
     localk.f(localq);
     String str2 = "/Image" + this.bv.H();
     this.bv.a(str2, localq);
@@ -245,13 +245,13 @@ public class u extends r
     return ae().I();
   }
   
-  private b ae()
+  private Dictionary ae()
   {
-    b localb1 = new b("/Page");
+    Dictionary localb1 = new Dictionary("/Page");
     localb1.a("/Parent", this.bl);
     localb1.a("/MediaBox", this.bm);
     localb1.a("/Contents", this.bn);
-    b localb2 = new b();
+    Dictionary localb2 = new Dictionary();
     localb2.a("/ProcSet", "[]");
     if (!this.bv.G()) {
       localb2.a("/XObject", this.bv);

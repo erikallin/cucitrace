@@ -1,22 +1,22 @@
 package com.orsonpdf.shading;
 
-import com.orsonpdf.b;
-import com.orsonpdf.r;
-import com.orsonpdf.util.a;
+import com.orsonpdf.Dictionary;
+import com.orsonpdf.PDFObject;
+import com.orsonpdf.util.Args;
 
 
-public abstract class c
-  extends r
+public abstract class Shading
+  extends PDFObject
 {
-  private d bU;
-  protected b K;
+  private ShadingType bU;
+  protected Dictionary K;
   
-  protected c(int paramInt, d paramd)
+  protected Shading(int paramInt, ShadingType paramd)
   {
     super(paramInt);
-    a.aab(paramd, "shadingType");
+    Args.aab(paramd, "shadingType");
     this.bU = paramd;
-    this.K = new b();
+    this.K = new Dictionary();
     this.K.a("/ShadingType", String.valueOf(
       paramd.S()));
   }
@@ -25,7 +25,7 @@ public abstract class c
 
 
 
-  public d aW()
+  public ShadingType aW()
   {
     return this.bU;
   }
