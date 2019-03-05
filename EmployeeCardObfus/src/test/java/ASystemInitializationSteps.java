@@ -1,13 +1,13 @@
 import static org.junit.Assert.assertEquals;
 
-import com.employeecard.l;
+import com.employeecard.SystemLogger;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.When;
 
 public class ASystemInitializationSteps {
 
-	  l init;
+	  SystemLogger init;
 	  String logname;
 	
 
@@ -21,7 +21,7 @@ public class ASystemInitializationSteps {
 
 	@When("^setup$")
 	public void setup() {
-	    init = new l(logname);
+	    init = new SystemLogger(logname);
 	}
 
 	

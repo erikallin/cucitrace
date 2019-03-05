@@ -1,9 +1,9 @@
 import static org.junit.Assert.assertEquals;
 
-import com.travelcard.core.a;
-import com.travelcard.core.b;
-import com.travelcard.core.f;
-import com.travelcard.core.j;
+import com.travelcard.core.CheckInAutomaton;
+import com.travelcard.core.CheckOutAutomaton;
+import com.travelcard.core.ResponseObject;
+import com.travelcard.core.TravelCard;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -11,19 +11,19 @@ import cucumber.api.java.en.When;
 
 public class CheckInOutSteps {
 
-	j card = new j();
+	TravelCard card = new TravelCard();
 	  
 
-	a inAutomaton;
+	CheckInAutomaton inAutomaton;
 	  
 
-	b outAutomaton;
+	CheckOutAutomaton outAutomaton;
 	  
 
-	f responseCheckInAutomaton;
+	ResponseObject responseCheckInAutomaton;
 	  
 	  
-	f responseCheckOutAutomaton;
+	ResponseObject responseCheckOutAutomaton;
 	
 
 	@Given("^a travel card with a balance of (\\d+)$")
@@ -37,7 +37,7 @@ public class CheckInOutSteps {
 	
 	@Given("^a check-in automaton at \"([^\"]*)\"$")
 	public void a_check_in_automaton_at(String stationName) {
-		inAutomaton = new a(stationName);
+		inAutomaton = new CheckInAutomaton(stationName);
 	}
 	
 	
@@ -64,7 +64,7 @@ public class CheckInOutSteps {
 	
 	@Given("^a check-out automaton at \"([^\"]*)\"$")
 	public void a_check_out_automaton_at(String stationName) {
-		outAutomaton = new b(stationName);
+		outAutomaton = new CheckOutAutomaton(stationName);
 	}
 	
 	

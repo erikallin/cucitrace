@@ -1,8 +1,8 @@
 import static org.junit.Assert.assertEquals;
 
-import com.travelcard.core.g;
-import com.travelcard.core.h;
-import com.travelcard.core.k;
+import com.travelcard.core.Station;
+import com.travelcard.core.StationList;
+import com.travelcard.core.TravelCardUserList;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -10,23 +10,23 @@ import cucumber.api.java.en.When;
 
 public class CreateAdminReportsSteps {
 	
-	h lstation;
+	StationList lstation;
 	
 	
-	g testStation;
+	Station testStation;
 	
 	
 	String stName;
 	
 	
-	k ltcuser;
+	TravelCardUserList ltcuser;
 	
 
 	
 
 	@Given("^the manager wants to know the number of travel cards being checked-in and checked-out in all stations$")
 	public void the_manager_wants_to_know_the_number_of_travel_cards_being_checked_in_and_checked_out_in_all_stations() {
-		lstation = new h();
+		lstation = new StationList();
 	}
 	
 	
@@ -54,7 +54,7 @@ public class CreateAdminReportsSteps {
 
 	@Given("^the manager wants to see a list with the names of users registered in the system$")
 	public void the_manager_wants_to_see_a_list_with_the_names_of_users_registered_in_the_system() {
-		ltcuser = new k();
+		ltcuser = new TravelCardUserList();
 	}
 	
 	

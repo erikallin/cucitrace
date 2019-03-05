@@ -1,8 +1,8 @@
 import static org.junit.Assert.assertEquals;
 
-import com.employeecard.c;
-import com.employeecard.d;
-import com.employeecard.h;
+import com.employeecard.Canteen;
+import com.employeecard.CanteenList;
+import com.employeecard.EmployeeCardList;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -10,21 +10,21 @@ import cucumber.api.java.en.When;
 
 public class CreateAdminReportsSteps {
 	
-	d lcanteen;
+	CanteenList lcanteen;
 	
 	
-	c testCanteen;
+	Canteen testCanteen;
 	
 	
 	String caName;
 	
 	
-	h lecuser;
+	EmployeeCardList lecuser;
 	
 
 	@Given("^the manager wants to know the number of employee cards being deposited and withdrawn from in all canteens$")
 	public void the_manager_wants_to_know_the_number_of_employee_cards_being_deposited_and_withdrawn_from_in_all_canteens() {
-		lcanteen = new d();
+		lcanteen = new CanteenList();
 	}
 	
 	
@@ -51,7 +51,7 @@ public class CreateAdminReportsSteps {
 
 	@Given("^the manager wants to see a list with the names of employees registered in the system$")
 	public void the_manager_wants_to_see_a_list_with_the_names_of_employees_registered_in_the_system() {
-		lecuser = new h();
+		lecuser = new EmployeeCardList();
 	}
 	
 	

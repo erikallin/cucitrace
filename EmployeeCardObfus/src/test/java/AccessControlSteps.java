@@ -1,8 +1,8 @@
 import static org.junit.Assert.assertEquals;
 
-import com.employeecard.a;
-import com.employeecard.g;
-import com.employeecard.j;
+import com.employeecard.AccessControl;
+import com.employeecard.EmployeeCard;
+import com.employeecard.ResponseObject;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -10,13 +10,13 @@ import cucumber.api.java.en.When;
 
 public class AccessControlSteps {
 
-	g card = new g();
+	EmployeeCard card = new EmployeeCard();
 	  
 
-	a accessControl;
+	AccessControl accessControl;
 	  
 
-	j responseAccessControl;
+	ResponseObject responseAccessControl;
 
 	@Given("^an employee card with an access level of (\\d+)$")
 	public void an_employee_card_with_an_access_level_of(int accessLevel) {
@@ -29,7 +29,7 @@ public class AccessControlSteps {
 	
 	@Given("^an access control with the ID (\\d+)$ and an access level set to (\\d+)$")
 	public void an_access_control_with_ID_and_an_access_level_set_to(int accessLevelRequired, int accessControlID) {
-		accessControl = new a(accessLevelRequired, accessControlID);
+		accessControl = new AccessControl(accessLevelRequired, accessControlID);
 	}
 	
 	

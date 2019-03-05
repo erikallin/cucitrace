@@ -1,13 +1,13 @@
 import static org.junit.Assert.assertEquals;
 
-import com.travelcard.core.i;
+import com.travelcard.core.SystemLogger;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.When;
 
 public class ASystemInitializationSteps {
 
-	i init;
+	SystemLogger init;
 	
 	
 	String logname;
@@ -23,7 +23,7 @@ public class ASystemInitializationSteps {
 
 	@When("^setup$")
 	public void setup() {
-		init = new i(logname);
+		init = new SystemLogger(logname);
 	}
 
 	

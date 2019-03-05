@@ -4,26 +4,26 @@ import cucumber.api.java.en.When;
 
 import static org.junit.Assert.*;
 
-import com.creditcard.a;
-import com.employeecard.e;
-import com.employeecard.j;
-import com.employeecard.k;
+import com.creditcard.CreditCard;
+import com.employeecard.Constants;
+import com.employeecard.ResponseObject;
+import com.employeecard.SelfServiceMachine;
 
 
 public class ValidateCreditCardSteps {
 
-	a creditCard;
+	CreditCard creditCard;
 	
 	
-	k selfServiceMachine;
+	SelfServiceMachine selfServiceMachine;
 	
 	
-	j response;
+	ResponseObject response;
 	
 
 	@Given("^a self service machine at canteen \"([^\"]*)\"$")
 	public void a_self_service_machine_at_canteen(String canteenName) {
-		selfServiceMachine = new k(canteenName);
+		selfServiceMachine = new SelfServiceMachine(canteenName);
 	}
 
 	
@@ -32,7 +32,7 @@ public class ValidateCreditCardSteps {
 	
 	@Given("^a credit card with number \"([^\"]*)\"$")
 	public void a_credit_card_with_number(String ccnumber) {
-		creditCard = new a(ccnumber);
+		creditCard = new CreditCard(ccnumber);
 	}
 	
 	
@@ -51,7 +51,7 @@ public class ValidateCreditCardSteps {
 
 	@Then("^the self service machine informs the employee that the provided credit card is valid$")
 	public void the_self_service_machine_informs_the_employee_that_the_provided_credit_card_is_valid() {
-		assertEquals(response.Y(), e.ak);
+		assertEquals(response.Y(), Constants.ak);
 
 	}
 	
@@ -61,7 +61,7 @@ public class ValidateCreditCardSteps {
 
 	@Then("^the self service machine informs the employee that the provided credit card is invalid because it contains characters$")
 	public void the_self_service_machine_informs_the_employee_that_the_provided_credit_card_is_invalid_because_it_contains_characters() {
-		assertEquals(response.Y(), e.ac);
+		assertEquals(response.Y(), Constants.ac);
 	}
 	
 	
@@ -70,7 +70,7 @@ public class ValidateCreditCardSteps {
 
 	@Then("^the self service machine informs the employee that the provided credit card is invalid because it has too few digits$")
 	public void the_self_service_machine_informs_the_employee_that_the_provided_credit_card_is_invalid_because_it_has_too_few_digits() {
-		assertEquals(response.Y(), e.ab);
+		assertEquals(response.Y(), Constants.ab);
 	}
 
 	
@@ -79,7 +79,7 @@ public class ValidateCreditCardSteps {
 	
 	@Then("^the self service machine informs the employee that the provided credit card because it does not belong to a company provider$")
 	public void the_self_service_machine_informs_the_employee_that_the_provided_credit_card_because_it_does_not_belong_to_a_company_provider() {
-		assertEquals(response.Y(), e.aa);
+		assertEquals(response.Y(), Constants.aa);
 	}
 	
 

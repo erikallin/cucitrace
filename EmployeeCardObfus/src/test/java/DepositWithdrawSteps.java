@@ -1,9 +1,9 @@
 import static org.junit.Assert.assertEquals;
 
-import com.employeecard.f;
-import com.employeecard.g;
-import com.employeecard.j;
-import com.employeecard.m;
+import com.employeecard.DepositToEmployeeCard;
+import com.employeecard.EmployeeCard;
+import com.employeecard.ResponseObject;
+import com.employeecard.WithdrawFromEmployeeCard;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -11,19 +11,19 @@ import cucumber.api.java.en.When;
 
 public class DepositWithdrawSteps {
 
-	g card = new g();
+	EmployeeCard card = new EmployeeCard();
   
 
-	f depositSelfService;
+	DepositToEmployeeCard depositSelfService;
   
 
-	m withdrawSelfService;
+	WithdrawFromEmployeeCard withdrawSelfService;
   
 
-	j responseDepositMoneySelfService;
+	ResponseObject responseDepositMoneySelfService;
   
 
-	j responseWithdrawMoneySelfService;
+	ResponseObject responseWithdrawMoneySelfService;
 
 
 	@Given("^an employee card with a balance of (\\d+)$")
@@ -37,7 +37,7 @@ public class DepositWithdrawSteps {
 	
 	@Given("^a self-service machine for depositing at \"([^\"]*)\"$")
 	public void a_self_service_machine_for_depositing_at(String canteenName) {
-		depositSelfService = new f(canteenName);
+		depositSelfService = new DepositToEmployeeCard(canteenName);
 	}
 	
 	
@@ -73,7 +73,7 @@ public class DepositWithdrawSteps {
 	
 	@Given("^a self-service machine for withdrawing at \"([^\"]*)\"$")
 	public void a_withdrawing_self_service_machine_at(String canteenName) {
-		withdrawSelfService = new m(canteenName);
+		withdrawSelfService = new WithdrawFromEmployeeCard(canteenName);
 	}
 	
 	
