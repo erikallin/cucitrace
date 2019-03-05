@@ -1,4 +1,4 @@
-package com.employeecard.datagenerator.util;
+package com.employeecard.datagenerator;
 
 import java.util.Random;
 

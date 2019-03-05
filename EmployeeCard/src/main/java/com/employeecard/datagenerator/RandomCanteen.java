@@ -1,9 +1,9 @@
-package com.employeecard.datagenerator.util;
+package com.employeecard.datagenerator;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.employeecard.core.Canteen;
+import com.employeecard.Canteen;
 
 public class RandomCanteen {
 	private static final String[] CANTEEN_NAMES = { "Meyers", "ISS", "Shackenborg", "Eurest", "Europa 1989", "Green kitchen",

@@ -1,9 +1,9 @@
-package com.employeecard.datagenerator.util;
+package com.employeecard.datagenerator;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.employeecard.core.EmployeeCard;
+import com.employeecard.EmployeeCard;
 
 public class RandomEmployeeCard {
 	private static final String[] CPR_NUMBERS = { "1012921234", "1012921234", "1012921234", "1012921234", "1012921234",

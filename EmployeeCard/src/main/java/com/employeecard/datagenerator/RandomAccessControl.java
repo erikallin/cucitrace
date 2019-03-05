@@ -1,10 +1,10 @@
-package com.employeecard.datagenerator.util;
+package com.employeecard.datagenerator;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.employeecard.core.AccessControl;
-import com.employeecard.core.AccessControlList;
+import com.employeecard.AccessControl;
+import com.employeecard.AccessControlList;
 
 public class RandomAccessControl {
 	private AccessControlList accessControls;
