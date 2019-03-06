@@ -1,5 +1,5 @@
-# cucitrace
-Experiment Cucumber and itrace plugin combined.
+# Cucitrace
+Experiment with Cucumber and iTrace plugin combined with code obfuscation
 
 
 # Important links 
