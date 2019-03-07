@@ -1,8 +1,8 @@
-# cucitrace
-Experiment Cucumber and itrace plugin combined.
+# Cucitrace + code obfuscation
+Experiment with Cucumber and iTrace plugin combined with code obfuscation.
 
 
-# Important links 
+# Important links from original project
 
 Information for the project : https://drive.google.com/drive/folders/1wmXo9fldVpAtcTOvNHYCqM2BYWEhh5Yv?usp=sharing
 Questionnaire from Amine : https://drive.google.com/drive/folders/18WqDpX4uxDnMxD3wOGp62vnS_9iDmxz5?usp=sharing
