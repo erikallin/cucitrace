@@ -8,8 +8,11 @@ public class WithdrawFromEmployeeCard {
 
   private final int aC = 1;
   
+  
+  private final double aD = 0.15;
+  
 
-  private final int aD = 50;
+  private final int aE = 50;
   
 
   private ResponseObject j;
@@ -35,7 +38,7 @@ public class WithdrawFromEmployeeCard {
         paramg.e(true);
         d(paramg);
         
-        paramg.r(paramInt);
+        paramg.r(paramInt * (1 - (int) q()));
         j = new ResponseObject(230, "employee card account is successfully withdrawn from");
         
         InitSystem.aq.ae().info("WITHDRAWAL: Self-service machine at " + this.Q + " : " + 
@@ -100,7 +103,7 @@ public class WithdrawFromEmployeeCard {
 
   private boolean e(EmployeeCard paramg)
   {
-    return paramg.u() > aD;
+    return paramg.u() > aE;
   }
   
 
@@ -117,5 +120,13 @@ public class WithdrawFromEmployeeCard {
   public void p(int paramInt)
   {
     this.O = paramInt;
+  }
+
+
+
+
+  public double q() 
+  {
+	return aD;
   }
 }

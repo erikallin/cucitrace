@@ -7,6 +7,9 @@ public class WithdrawFromEmployeeCard {
 
 	
 	private final int FEE = 1;
+	
+	
+	private final double employeeCardDiscount = 0.15;
 
 
 	private final int MINIMUM_ACCOUNT_BALANCE = 50;
@@ -34,7 +37,7 @@ public class WithdrawFromEmployeeCard {
 				account.setInUseStatus(true);
 				chargeFee(account);
 
-				account.withdrawBalance(amount);
+				account.withdrawBalance(amount * (1 - (int) getEmployeeCardDiscount()));
 				response = new ResponseObject(230, Constants.WITHDRAWAL_SUCCESS);
 
 				InitSystem.isl.getLogger().info("WITHDRAWAL: Self-service machine at " + canteenName + " : "
@@ -116,6 +119,13 @@ public class WithdrawFromEmployeeCard {
 
 	public void setCountWithdrawals(int countWithdrawals) {
 		this.countWithdrawals = countWithdrawals;
+	}
+
+
+
+
+	public double getEmployeeCardDiscount() {
+		return employeeCardDiscount;
 	}
 	
 	
