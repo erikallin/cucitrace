@@ -12,4 +12,4 @@ Answer Task 1.2:
 	
 -> When you complete your answer, you are ready for your original task
 -> CLOSE ALL the tabs in the explorer related to warm up question
--> Continue to "Rejsekort project"
+-> Continue to the "Rejsekort project"

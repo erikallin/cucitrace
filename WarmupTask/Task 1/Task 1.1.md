@@ -10,6 +10,6 @@ Answer Task 1.1:
 	4: Difficult
 	5: Very difficult 
 	
--> When you complete your answer, you are ready for your original task
+-> When you complete your answer, you are ready for next warm up task
 -> CLOSE ALL the tabs in the explorer 
 -> Continue to "Task 2.0.md"
