@@ -17,8 +17,8 @@ public class EmployeeCardList {
 	
 	public EmployeeCardList() {
 		employees = new ArrayList<EmployeeCard>();
-		RandomEmployeeCard rru = new RandomEmployeeCard();
-		employees = rru.generate(10);
+		RandomEmployeeCard reu = new RandomEmployeeCard();
+		employees = reu.generate(10);
 
 	}
 
