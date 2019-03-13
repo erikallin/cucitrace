@@ -8,7 +8,7 @@ Scenario: The manager generates a report with statistics of deposits and withdra
 
 	When he generates a canteen statistics report 
 
-	Then the system produces a pdf report named as "repStationStatistics.pdf"
+	Then the system produces a pdf report named as "repCanteenStatistics.pdf"
 
 Scenario: The manager generates a report with the names of employees registered in the system
 
@@ -16,4 +16,4 @@ Scenario: The manager generates a report with the names of employees registered 
 
 	When he generates an employee list 
 
-	Then the system produces a text file named as "repNameList.txt" which contains the employee list
+	Then the system produces a text file named as "repEmployeeList.txt" which contains the employee list
