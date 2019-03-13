@@ -1,5 +1,5 @@
 Feature: Getting access through access controls with an employee card
-  		An employee card user can get access through any access controls where it has a sufficient access control level
+  		An employee card user can get access through any access controls where the employee card has a sufficient access control level
 
   Background: 
    
@@ -9,7 +9,7 @@ Feature: Getting access through access controls with an employee card
    
     Given an employee card with in use status is false
    
-    And an access control with the ID 10 and an access level set to 0
+    And an access control with the ID 10 and a required access level set to 0
    
     When an employee card is set to in use and is used at the access control
    

@@ -27,8 +27,8 @@ public class AccessControlSteps {
 	
 	
 	
-	@Given("^an access control with the ID (\\d+)$ and an access level set to (\\d+)$")
-	public void an_access_control_with_ID_and_an_access_level_set_to(int accessLevelRequired, int accessControlID) {
+	@Given("^an access control with the ID (\\d+)$ and a required access level set to (\\d+)$")
+	public void an_access_control_with_ID_and_a_required_access_level_set_to(int accessLevelRequired, int accessControlID) {
 		accessControl = new AccessControl(accessLevelRequired, accessControlID);
 	}
 	
