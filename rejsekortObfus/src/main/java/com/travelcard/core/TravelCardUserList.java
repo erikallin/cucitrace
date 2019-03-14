@@ -17,7 +17,7 @@ public class TravelCardUserList
   
   public TravelCardUserList()
   {
-    this.dl = new ArrayList();
+    this.dl = new ArrayList<TravelCard>();
     RandomTravelCardUsers localb = new RandomTravelCardUsers();
     this.dl = localb.x(10);
   }

@@ -3,6 +3,7 @@ package com.employeecard.datagenerator;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.employeecard.AccessControl;
 import com.employeecard.AccessControlList;
 
 public class RandomAccessControl
@@ -26,7 +27,7 @@ public class RandomAccessControl
 
   public List<com.employeecard.AccessControl> u(int paramInt)
   {
-    ArrayList localArrayList = new ArrayList();
+    ArrayList<AccessControl> localArrayList = new ArrayList<AccessControl>();
     
     for (int i = 0; i < paramInt; i++) {
       localArrayList.add(aj());

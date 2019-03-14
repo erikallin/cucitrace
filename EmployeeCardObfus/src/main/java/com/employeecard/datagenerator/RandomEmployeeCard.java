@@ -29,7 +29,7 @@ public class RandomEmployeeCard
 
   public List<EmployeeCard> u(int paramInt)
   {
-    ArrayList localArrayList = new ArrayList();
+    ArrayList<EmployeeCard> localArrayList = new ArrayList<EmployeeCard>();
     
     for (int i = 0; i < paramInt; i++) {
       localArrayList.add(ao());

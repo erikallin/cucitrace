@@ -25,7 +25,7 @@ public class RandomStations
 
   public List<Station> x(int paramInt)
   {
-    ArrayList localArrayList = new ArrayList();
+    ArrayList<Station> localArrayList = new ArrayList<Station>();
     
     for (int i = 0; i < paramInt; i++) {
       localArrayList.add(bH());

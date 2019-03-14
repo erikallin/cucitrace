@@ -25,7 +25,7 @@ public class RandomCanteen
 
   public List<Canteen> u(int paramInt)
   {
-    ArrayList localArrayList = new ArrayList();
+    ArrayList<Canteen> localArrayList = new ArrayList<Canteen>();
     
     for (int i = 0; i < paramInt; i++) {
       localArrayList.add(ak());

@@ -1,7 +1,6 @@
 package com.orsonpdf;
 
 import java.awt.AWTException;
-import java.awt.Graphics2D;
 import java.awt.GraphicsConfiguration;
 import java.awt.GraphicsDevice;
 import java.awt.ImageCapabilities;

@@ -27,15 +27,6 @@ public class AccessControlSteps {
 	
 	
 	
-	@Given("^an access control with the ID (\\d+)$ and a required access level set to (\\d+)$")
-	public void an_access_control_with_ID_and_a_required_access_level_set_to(int accessLevelRequired, int accessControlID) {
-		accessControl = new AccessControl(accessLevelRequired, accessControlID);
-	}
-	
-	
-	
-	
-
 	@Given("^an employee card with in use status is (true|false)$")
 	public void an_employee_card_with_in_use_status_is_false(boolean inUseStatus) {
 		card.e(inUseStatus);
@@ -44,7 +35,16 @@ public class AccessControlSteps {
 	
 	
 	
-
+	
+	@Given("^an access control with the ID (\\d+) and a required access level set to (\\d+)$")
+	public void an_access_control_with_ID_and_a_required_access_level_set_to(int accessLevelRequired, int accessControlID) {
+		accessControl = new AccessControl(accessLevelRequired, accessControlID);
+	}
+	
+	
+		
+	
+	
 	@When("^an employee card is set to in use and is used at the access control")
 	public void an_employee_card_is_set_to_in_use_and_is_used_at_the_access_control() {
 		responseAccessControl = accessControl.b(card);

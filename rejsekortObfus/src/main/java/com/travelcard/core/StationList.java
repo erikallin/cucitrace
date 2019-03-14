@@ -2,7 +2,6 @@ package com.travelcard.core;
 
 import com.orsonpdf.PDFDocument;
 import com.orsonpdf.PDFGraphics2D;
-import com.orsonpdf.PDFGraphicsConfiguration;
 import com.orsonpdf.Page;
 import com.travelcard.datagenerator.util.RandomStations;
 
@@ -15,10 +14,8 @@ import java.awt.Point;
 import java.awt.RadialGradientPaint;
 import java.awt.Rectangle;
 import java.awt.geom.Point2D;
-import java.awt.geom.Point2D.Float;
 import java.io.File;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;

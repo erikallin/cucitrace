@@ -3,7 +3,6 @@ package com.orsonpdf.util;
 import java.awt.Polygon;
 import java.awt.Shape;
 import java.awt.geom.Arc2D;
-import java.awt.geom.Arc2D.Double;
 import java.awt.geom.Ellipse2D;
 import java.awt.geom.GeneralPath;
 import java.awt.geom.Line2D;
@@ -80,7 +79,7 @@ public class GraphicsUtils
     int j = paramRenderedImage.getHeight();
     WritableRaster localWritableRaster = localColorModel.createCompatibleWritableRaster(i, j);
     boolean bool = localColorModel.isAlphaPremultiplied();
-    Hashtable localHashtable = new Hashtable();
+    Hashtable<String, Object> localHashtable = new Hashtable<String, Object>();
     String[] arrayOfString = paramRenderedImage.getPropertyNames();
     if (arrayOfString != null) {
       for (int k = 0; k < arrayOfString.length; k++) {

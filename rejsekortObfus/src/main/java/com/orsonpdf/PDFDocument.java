@@ -8,7 +8,6 @@ import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.Iterator;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -23,7 +22,8 @@ public class PDFDocument
     PDFDocument.class.getName());
   
 
-  private static final String ak = "OrsonPDF 1.7";
+  @SuppressWarnings("unused")
+private static final String ak = "OrsonPDF 1.7";
   
 
   private DictionaryObject al;

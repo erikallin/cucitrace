@@ -37,12 +37,6 @@ package com.orsonpdf;
  */
 public final class StitchingFunction extends Function {
     
-    private Function[] functions;
-    
-    private float[] bounds;
-    
-    private float[] encode;
-    
     /**
      * Creates a new stitching function.
      * 
@@ -54,11 +48,8 @@ public final class StitchingFunction extends Function {
     public StitchingFunction(int number, Function[] functions, float[] bounds,
             float[] encode) {
         super(number, FunctionType.STITCHING);
-        this.functions = functions;
         this.dictionary.put("/Functions", functions);
-        this.bounds = bounds;
         this.dictionary.put("/Bounds", bounds);
-        this.encode = encode;
         this.dictionary.put("/Encode", encode);
     }
 

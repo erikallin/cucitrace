@@ -1,8 +1,6 @@
 package com.orsonpdf.util;
 
-import java.awt.Color;
 import java.awt.GradientPaint;
-import java.awt.geom.Point2D;
 
 public final class GradientPaintKey
 {

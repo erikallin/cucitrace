@@ -1,6 +1,5 @@
 package com.orsonpdf.shading;
 
-import com.orsonpdf.Dictionary;
 import com.orsonpdf.Function;
 import com.orsonpdf.PDFUtils;
 

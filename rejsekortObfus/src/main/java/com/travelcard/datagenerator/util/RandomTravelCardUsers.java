@@ -25,7 +25,7 @@ public class RandomTravelCardUsers
 
   public List<TravelCard> x(int paramInt)
   {
-    ArrayList localArrayList = new ArrayList();
+    ArrayList<TravelCard> localArrayList = new ArrayList<TravelCard>();
     
     for (int i = 0; i < paramInt; i++) {
       localArrayList.add(bK());

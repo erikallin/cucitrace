@@ -37,11 +37,14 @@ package com.orsonpdf;
  */
 public final class StitchingFunction extends Function {
     
-    private Function[] functions;
+    @SuppressWarnings("unused")
+	private Function[] functions;
     
-    private float[] bounds;
+    @SuppressWarnings("unused")
+	private float[] bounds;
     
-    private float[] encode;
+    @SuppressWarnings("unused")
+	private float[] encode;
     
     /**
      * Creates a new stitching function.

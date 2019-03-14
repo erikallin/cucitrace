@@ -1,12 +1,11 @@
 package com.travelcard.core;
 
-import java.util.logging.Logger;
-
 public class CheckOutAutomaton {
   private int cz = 0;
   
 
-  private final int cA = 25;
+  @SuppressWarnings("unused")
+private final int cA = 25;
   
 
   private ResponseObject o;

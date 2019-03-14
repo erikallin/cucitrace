@@ -2,8 +2,6 @@ package com.employeecard;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Logger;
-
 import com.creditcard.CreditCard;
 import com.creditcard.CreditCardCompany;
 
@@ -39,7 +37,8 @@ public class SelfServiceMachine
 
 
 
-  private final int au = 100;
+  @SuppressWarnings("unused")
+private final int au = 100;
   
 
   private CreditCard av;

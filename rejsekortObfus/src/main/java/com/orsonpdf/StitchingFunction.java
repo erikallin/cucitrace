@@ -5,11 +5,14 @@ package com.orsonpdf;
 public final class StitchingFunction
   extends Function
 {
-  private Function[] bE;
+  @SuppressWarnings("unused")
+private Function[] bE;
   
-  private float[] bF;
+  @SuppressWarnings("unused")
+private float[] bF;
   
-  private float[] bG;
+  @SuppressWarnings("unused")
+private float[] bG;
   
 
 

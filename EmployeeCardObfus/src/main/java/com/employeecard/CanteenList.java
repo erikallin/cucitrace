@@ -14,10 +14,8 @@ import java.awt.Point;
 import java.awt.RadialGradientPaint;
 import java.awt.Rectangle;
 import java.awt.geom.Point2D;
-import java.awt.geom.Point2D.Float;
 import java.io.File;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
@@ -103,7 +101,7 @@ public class CanteenList
 
   public CanteenList()
   {
-    this.R = new ArrayList();
+    this.R = new ArrayList<Canteen>();
     RandomCanteen localb = new RandomCanteen();
     this.R = localb.u(10);
   }

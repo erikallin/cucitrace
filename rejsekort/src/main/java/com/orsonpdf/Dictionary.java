@@ -54,7 +54,7 @@ public class Dictionary {
     private String type;
     
     /** Data storage. */
-    private Map map;
+    private Map<String, Object> map;
 
     /**
      * Creates a new instance with no type.
@@ -71,7 +71,7 @@ public class Dictionary {
      */
     public Dictionary(String type) {
         this.type = type;
-        this.map = new HashMap();    
+        this.map = new HashMap<String, Object>();    
     }
     
     /**

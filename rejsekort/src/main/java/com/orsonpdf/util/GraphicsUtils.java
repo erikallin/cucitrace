@@ -142,7 +142,7 @@ public class GraphicsUtils {
         int height = img.getHeight();
         WritableRaster raster = cm.createCompatibleWritableRaster(width, height);
         boolean isAlphaPremultiplied = cm.isAlphaPremultiplied();
-        Hashtable properties = new Hashtable();
+        Hashtable<String, Object> properties = new Hashtable<String, Object>();
         String[] keys = img.getPropertyNames();
         if (keys != null) {
             for (int i = 0; i < keys.length; i++) {

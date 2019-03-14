@@ -10,7 +10,7 @@ import java.util.Map;
 public class Dictionary
 {
   private String J;
-  private Map I;
+  private Map<String, Object> I;
   
   public Dictionary()
   {
@@ -22,7 +22,7 @@ public class Dictionary
   public Dictionary(String paramString)
   {
     this.J = paramString;
-    this.I = new HashMap();
+    this.I = new HashMap<String, Object>();
   }
   
 

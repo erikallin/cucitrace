@@ -11,7 +11,7 @@ public class DefaultFontMapper
   
   public DefaultFontMapper()
   {
-    this.I = new HashMap();
+    this.I = new HashMap<FontKey, String>();
     this.I.put(new FontKey("Dialog", false, false), "Helvetica");
     this.I.put(new FontKey("Dialog", true, false), "Helvetica-Bold");
     this.I.put(new FontKey("Dialog", false, true), "Helvetica-Oblique");

@@ -1,13 +1,11 @@
 package com.orsonpdf;
 
-import java.awt.Color;
 import java.awt.Font;
 import java.awt.GradientPaint;
 import java.awt.Image;
 import java.awt.MultipleGradientPaint;
 import java.awt.RadialGradientPaint;
 import java.awt.geom.AffineTransform;
-import java.awt.geom.Point2D;
 import java.awt.geom.Rectangle2D;
 import java.util.ArrayList;
 import java.util.HashMap;

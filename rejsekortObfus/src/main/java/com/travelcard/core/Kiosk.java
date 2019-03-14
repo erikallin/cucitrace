@@ -38,7 +38,8 @@ public class Kiosk
 
 
 
-  private final int cU = 100;
+  @SuppressWarnings("unused")
+private final int cU = 100;
   
 
   private CreditCard cV;
@@ -58,7 +59,7 @@ public class Kiosk
   public Kiosk(String paramString)
   {
     B(paramString);
-    this.cW = new ArrayList();
+    this.cW = new ArrayList<TravelCard>();
     TravelCardUserList localk = new TravelCardUserList();
     this.cW = localk.bz();
   }

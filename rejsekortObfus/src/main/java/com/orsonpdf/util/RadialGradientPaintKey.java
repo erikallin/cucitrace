@@ -1,7 +1,6 @@
 package com.orsonpdf.util;
 
 import java.awt.RadialGradientPaint;
-import java.awt.geom.Point2D;
 import java.util.Arrays;
 
 

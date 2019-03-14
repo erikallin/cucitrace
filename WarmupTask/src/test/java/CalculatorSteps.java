@@ -6,8 +6,6 @@ import cucumber.api.java.en.When;
 
 import static org.fest.assertions.Assertions.assertThat;
 
-import static org.junit.Assert.assertEquals;
-
 public class CalculatorSteps {
 	
 	Calculator calculator;
