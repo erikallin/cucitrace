@@ -45,7 +45,7 @@ public class Constants {
 	public static final String REPORT_CANTEEN_STATISTICS = "repCanteenStatistics.pdf";
 	
 	
-	public static final String REPORT_EMPLOYEE_LIST = "repNameList.txt";
+	public static final String REPORT_EMPLOYEE_LIST = "repEmployeeList.txt";
 	
 	
 	public static final String REPORT_ACCESS_CONTROL_LIST = "repAccessControlList.txt";

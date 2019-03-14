@@ -18,8 +18,6 @@ public class AccessControlSteps {
 	
 	ResponseObject responseAccessControl;
 	
-	
-
 	@Given("^an employee card with an access level of (\\d+)$")
 	public void an_employee_card_with_an_access_level_of(int accessLevel) {
 		card.setAccessLevel(accessLevel);
@@ -29,8 +27,8 @@ public class AccessControlSteps {
 	
 	
 	
-	@Given("^an employee card with in use status is (true|false)$")
-	public void an_employee_card_with_in_use_status_is_false(boolean inUseStatus) {
+	@Given("^an employee card which has the in use status (true|false)$")
+	public void an_employee_card_which_has_the_in_use_status_false(boolean inUseStatus) {
 		card.setInUseStatus(inUseStatus);
 	}	
 	
@@ -57,8 +55,8 @@ public class AccessControlSteps {
 	
 	
 	@Then("^the employee card is allowed access")
-	public void the_employee_card_is_allowed_access(boolean accessGranted) {
-		assertEquals(accessControl.getAccess(card), accessGranted);
+	public void the_employee_card_is_allowed_access() {
+		assertEquals(responseAccessControl.getMessage(), "employee card account have access through this access control");
 	}
 
 

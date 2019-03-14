@@ -27,8 +27,8 @@ public class AccessControlSteps {
 	
 	
 	
-	@Given("^an employee card with in use status is (true|false)$")
-	public void an_employee_card_with_in_use_status_is_false(boolean inUseStatus) {
+	@Given("^an employee card which has the in use status (true|false)$")
+	public void an_employee_card_which_has_the_in_use_status_false(boolean inUseStatus) {
 		card.e(inUseStatus);
 	}
 	
@@ -55,8 +55,8 @@ public class AccessControlSteps {
 	
 	
 	@Then("^the employee card is allowed access")
-	public void the_employee_card_is_allowed_access(boolean accessGranted) {
-		assertEquals(accessControl.b(card), accessGranted);
+	public void the_employee_card_is_allowed_access() {
+		assertEquals(responseAccessControl.Y(), "employee card account have access through this access control");
 	}
 
 
@@ -70,6 +70,7 @@ public class AccessControlSteps {
 
 
 
+	
 
 	
 	@Then("^the access control posts that message in the system log$")

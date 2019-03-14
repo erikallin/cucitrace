@@ -22,7 +22,7 @@ public class CreateAdminReportsSteps {
 	EmployeeCardList lecuser;
 	
 
-	@Given("^the manager wants to know the number of employee cards being deposited and withdrawn from in all canteens$")
+	@Given("^the manager wants to know the number of employee cards that has been used for deposits and withdrawals in all canteens$")
 	public void the_manager_wants_to_know_the_number_of_employee_cards_being_deposited_and_withdrawn_from_in_all_canteens() {
 		lcanteen = new CanteenList();
 	}

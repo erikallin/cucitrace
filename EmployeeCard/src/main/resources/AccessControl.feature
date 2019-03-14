@@ -7,7 +7,7 @@ Feature: Getting access through access controls with an employee card
 
   Scenario: Successful access
    
-    Given an employee card with in use status is false
+    Given an employee card which has the in use status false
    
     And an access control with the ID 10 and a required access level set to 0
    
@@ -21,9 +21,9 @@ Feature: Getting access through access controls with an employee card
   
   Scenario: Unsuccessful access: Already in use
    
-    Given an employee card with in use status is true
+    Given an employee card which has the in use status true
    
-    And an access control with the ID 10 and an access level set to 0
+    And an access control with the ID 10 and a required access level set to 0
    
 	When an employee card is set to in use and is used at the access control
 	
@@ -33,9 +33,9 @@ Feature: Getting access through access controls with an employee card
     
    Scenario: Unsuccessful access: Access level not high enough
    
-    Given an employee card with in use status is false
+    Given an employee card which has the in use status false
    
-    And an access control with the ID 10 and an access level set to 2
+    And an access control with the ID 10 and a required access level set to 2
    
 	When an employee card is set to in use and is used at the access control
 	

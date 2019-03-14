@@ -14,7 +14,7 @@ Feature: Using an employee card to purchase goods in canteen and thereby withdra
     
     When an employee card is set to in use and is withdrawn with a balance of 100
     
-    Then the employee card after a deposit has a new balance 100
+    Then the employee card after a deposit has a new balance 99
     
     Then the withdrawing self-service machine displays a message that "employee card is successfully withdrawn from"
    
