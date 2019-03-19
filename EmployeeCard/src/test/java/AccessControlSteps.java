@@ -59,10 +59,19 @@ public class AccessControlSteps {
 		assertEquals(responseAccessControl.getMessage(), "employee card account have access through this access control");
 	}
 
+	
+	
+
+	
+	@Then("^the employee card is not allowed access")
+	public void the_employee_card_is_not_allowed_access() {
+		assertEquals(responseAccessControl.getMessage(), "employee card account does not have access through this access control");
+	}
 
 
 
 
+	
 	@Then("^the access control displays a message that \"([^\"]*)\"$")
 	public void the_access_control_displays_a_message_that(String msg) {
 		assertEquals(responseAccessControl.getMessage(), msg);

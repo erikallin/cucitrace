@@ -59,7 +59,16 @@ public class AccessControlSteps {
 		assertEquals(responseAccessControl.Y(), "employee card account have access through this access control");
 	}
 
+	
+	
+	
+	
+	@Then("^the employee card is not allowed access")
+	public void the_employee_card_is_not_allowed_access() {
+		assertEquals(responseAccessControl.Y(), "employee card account does not have access through this access control");
+	}
 
+	
 
 
 
