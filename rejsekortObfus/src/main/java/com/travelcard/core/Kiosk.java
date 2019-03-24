@@ -76,14 +76,14 @@ private final int cU = 100;
       
       if (this.cV.B())
       {
-        this.o = new ResponseObject(300, "Travel card was reloaded successfully");
+        this.o = new ResponseObject(300, Constants.cM);
         paramj.w(paramInt);
-        InitSystem.cT.bC().info("CREDIT CARD :credit card is validTravel card was reloaded successfully");
+        InitSystem.cT.bC().info("CREDIT CARD :" + Constants.cR + Constants.cM);
         InitSystem.cT.bD();
       }
       else
       {
-        this.o = new ResponseObject(320, "credit card declined to charge the amount");
+        this.o = new ResponseObject(320, Constants.cJ);
       }
     }
     
@@ -97,7 +97,7 @@ private final int cU = 100;
 
   public void bm()
   {
-    InitSystem.cT.H("credit card is validTravel card was issued");
+    InitSystem.cT.H(Constants.cR + Constants.cQ);
   }
   
 
@@ -106,7 +106,7 @@ private final int cU = 100;
 
   public void bn()
   {
-    InitSystem.cT.H("credit card is validTravel card was reloaded successfully");
+    InitSystem.cT.H(Constants.cR + Constants.cM);
   }
   
 
@@ -155,20 +155,20 @@ private final int cU = 100;
       if (this.cV.B())
       {
         this.cW.add(paramj);
-        this.o = new ResponseObject(400, "Travel card was issued");
+        this.o = new ResponseObject(400, Constants.cQ);
         InitSystem.cT.bC()
-          .info("CREDIT CARD :credit card is validTravel card was issued");
+          .info("CREDIT CARD :" + Constants.cR + Constants.cQ);
         InitSystem.cT.bD();
       }
       else
       {
-        this.o = new ResponseObject(420, "credit card declined to charge the amount");
+        this.o = new ResponseObject(420, Constants.cJ);
       }
       
     }
     else
     {
-      this.o = new ResponseObject(410, "Travel card was not created because user already registered in the system");
+      this.o = new ResponseObject(410, Constants.cP);
     }
     
 
@@ -218,17 +218,17 @@ private final int cU = 100;
     
     if ((str == null) || (str.length() < 13) || (str.length() > 19))
     {
-      this.cX = "credit card is invalid because it has too few digits";
+      this.cX = Constants.cH;
       
-      return new ResponseObject(500, "credit card is invalid because it has too few digits");
+      return new ResponseObject(500, Constants.cH);
     }
     
 
     if (!C(str))
     {
-      this.cX = "credit card is invalid because it contains characters";
+      this.cX = Constants.cI;
       
-      return new ResponseObject(510, "credit card is invalid because it contains characters");
+      return new ResponseObject(510, Constants.cI);
     }
     
 
@@ -236,15 +236,15 @@ private final int cU = 100;
     
     if (localb == null)
     {
-      this.cX = "credit card is invalid it does not belong to a company provider";
+      this.cX = Constants.cG;
       
-      return new ResponseObject(520, "credit card is invalid it does not belong to a company provider");
+      return new ResponseObject(520, Constants.cG);
     }
     
 
-    this.cX = "credit card is valid";
+    this.cX = Constants.cR;
     a(parama);
     
-    return new ResponseObject(530, "credit card is valid");
+    return new ResponseObject(530, Constants.cR);
   }
 }

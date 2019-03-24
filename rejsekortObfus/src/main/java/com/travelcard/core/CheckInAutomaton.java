@@ -29,22 +29,22 @@ private final int cx = 25;
     {
       if (b(paramj)) {
         paramj.e(true);
-        this.o = new ResponseObject(200, "the travel card is checked-in");
+        this.o = new ResponseObject(200, Constants.cD);
         
         InitSystem.cT.bC()
-          .info("CHECKIN: Automaton at " + this.cy + " : " + "the travel card is checked-in");
+          .info("CHECKIN: Automaton at " + this.cy + " : " + Constants.cD);
         InitSystem.cT.bD();
         s(bj() + 1);
       }
       else
       {
-        this.o = new ResponseObject(220, "the travel card balance is too low");
+        this.o = new ResponseObject(220, Constants.cC);
       }
       
 
     }
     else {
-      this.o = new ResponseObject(210, "the travel card is already checked-in");
+      this.o = new ResponseObject(210, Constants.cB);
     }
     
 
@@ -56,7 +56,7 @@ private final int cx = 25;
 
   public void bh()
   {
-    InitSystem.cT.H("the travel card is checked-in");
+    InitSystem.cT.H(Constants.cD);
   }
   
 

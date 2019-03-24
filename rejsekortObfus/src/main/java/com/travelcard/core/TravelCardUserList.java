@@ -39,7 +39,7 @@ public class TravelCardUserList
   {
     PrintWriter localPrintWriter = null;
     try {
-      localPrintWriter = new PrintWriter("repNameList.txt", "UTF-8");
+      localPrintWriter = new PrintWriter(Constants.cO, "UTF-8");
     } catch (FileNotFoundException localFileNotFoundException) {
       localFileNotFoundException.printStackTrace();
     } catch (UnsupportedEncodingException localUnsupportedEncodingException) {

@@ -25,16 +25,16 @@ public class DepositToEmployeeCard {
     {
       paramg.e(true);
       paramg.q(paramInt);
-      j = new ResponseObject(200, "employee card account is successfully deposited");
+      j = new ResponseObject(200, Constants.U);
       
-      InitSystem.aq.ae().info("DEPOSIT: Self-service machine at " + this.Q + " : " + 
-        "employee card account is successfully deposited" + paramInt + " DKK");
+      InitSystem.aq.ae().info("DEPOSIT: Self-service machine at " + this.Q + " : "
+    		  + Constants.U + paramInt + " DKK");
       InitSystem.aq.af();
       o(K() + 1);
     }
     else
     {
-      j = new ResponseObject(210, "employee card already in use");
+      j = new ResponseObject(210, Constants.S);
     }
     
 
@@ -47,7 +47,7 @@ public class DepositToEmployeeCard {
 
   public void R()
   {
-    InitSystem.aq.A("employee card account is successfully deposited");
+    InitSystem.aq.A(Constants.U);
   }
   
 

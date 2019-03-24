@@ -34,22 +34,22 @@ public class AccessControl
       if (paramg.S() >= this.H)
       {
         paramg.e(true);
-        k = new ResponseObject(200, "employee card account have access through this access control");
+        k = new ResponseObject(200, Constants.V);
         
-        InitSystem.aq.ae().info("GETACCESS: Access Control at " + this.I + " : " + "employee card account have access through this access control");
+        InitSystem.aq.ae().info("GETACCESS: Access Control at " + this.I + " : " + Constants.V);
         InitSystem.aq.ae();
         m(F() + 1);
       }
       else
       {
-        k = new ResponseObject(210, "employee card account does not have access through this access control");
+        k = new ResponseObject(210, Constants.W);
         l(E() + 1);
       }
       
     }
     else
     {
-      k = new ResponseObject(210, "employee card already in use");
+      k = new ResponseObject(210, Constants.X);
       l(E() + 1);
     }
     
@@ -63,7 +63,7 @@ public class AccessControl
 
   public void C()
   {
-    InitSystem.aq.A("employee card account have access through this access control");
+    InitSystem.aq.A(Constants.V);
   }
   
 

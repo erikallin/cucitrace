@@ -75,14 +75,14 @@ private final int au = 100;
       
       if (this.av.y())
       {
-        j = new ResponseObject(300, "employee card account is successfully deposited");
+        j = new ResponseObject(300, Constants.U);
         paramg.q(paramInt);
-        InitSystem.aq.ae().info("CREDIT CARD :credit card is validemployee card account is successfully deposited");
+        InitSystem.aq.ae().info("CREDIT CARD :" + Constants.ak + Constants.U);
         InitSystem.aq.af();
       }
       else
       {
-        j = new ResponseObject(320, "credit card declined to charge the amount");
+        j = new ResponseObject(320, Constants.ad);
       }
     }
     
@@ -96,7 +96,7 @@ private final int au = 100;
 
   public void Z()
   {
-    InitSystem.aq.A("credit card is validEmployee card was registered for purchases");
+    InitSystem.aq.A(Constants.ak + Constants.aj);
   }
   
 
@@ -144,20 +144,20 @@ private final int au = 100;
       if (this.av.y())
       {
         this.aw.add(paramg);
-        j = new ResponseObject(400, "Employee card was registered for purchases");
+        j = new ResponseObject(400, Constants.aj);
         InitSystem.aq.ae()
-          .info("CREDIT CARD :credit card is validEmployee card was registered for purchases");
+          .info("CREDIT CARD :" + Constants.ak + Constants.aj);
         InitSystem.aq.af();
       }
       else
       {
-        j = new ResponseObject(420, "credit card declined to charge the amount");
+        j = new ResponseObject(420, Constants.ad);
       }
       
     }
     else
     {
-      j = new ResponseObject(410, "Employee card was not registered for purchases because user already registered in the system");
+      j = new ResponseObject(410, Constants.ai);
     }
     
 
@@ -207,17 +207,17 @@ private final int au = 100;
     
     if ((str == null) || (str.length() < 13) || (str.length() > 19))
     {
-      this.ax = "credit card is invalid because it has too few digits";
+      this.ax = Constants.ab;
       
-      return new ResponseObject(500, "credit card is invalid because it has too few digits");
+      return new ResponseObject(500, Constants.ab);
     }
     
 
     if (!x(str))
     {
-      this.ax = "credit card is invalid because it contains characters";
+      this.ax = Constants.ac;
       
-      return new ResponseObject(510, "credit card is invalid because it contains characters");
+      return new ResponseObject(510, Constants.ac);
     }
     
 
@@ -225,15 +225,15 @@ private final int au = 100;
     
     if (localb == null)
     {
-      this.ax = "credit card is invalid it does not belong to a company provider";
+      this.ax = Constants.aa;
       
-      return new ResponseObject(520, "credit card is invalid it does not belong to a company provider");
+      return new ResponseObject(520, Constants.aa);
     }
     
 
-    this.ax = "credit card is valid";
+    this.ax = Constants.ak;
     a(parama);
     
-    return new ResponseObject(530, "credit card is valid");
+    return new ResponseObject(530, Constants.ak);
   }
 }

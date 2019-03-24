@@ -35,7 +35,7 @@ public class StationList
   
   private static JFreeChart a(PieDataset paramPieDataset)
   {
-    JFreeChart localJFreeChart = ChartFactory.createPieChart("repStationStatistics.pdf", 
+    JFreeChart localJFreeChart = ChartFactory.createPieChart(Constants.cN, 
     
       paramPieDataset, 
       false, 
@@ -119,7 +119,7 @@ public class StationList
     localChartPanel.setMouseWheelEnabled(true);
     localChartPanel.setPreferredSize(new Dimension(600, 300));
     localJFreeChart.draw(localm, new Rectangle(0, 0, 612, 468));
-    localk.a(new File("repStationStatistics.pdf"));
+    localk.a(new File(Constants.cN));
   }
   
 

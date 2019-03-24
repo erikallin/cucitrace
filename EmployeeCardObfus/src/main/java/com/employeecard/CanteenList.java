@@ -36,7 +36,7 @@ public class CanteenList
   
   private static JFreeChart a(PieDataset paramPieDataset)
   {
-    JFreeChart localJFreeChart = ChartFactory.createPieChart("repCanteenStatistics.pdf", 
+    JFreeChart localJFreeChart = ChartFactory.createPieChart(Constants.af, 
     
       paramPieDataset, 
       false, 
@@ -122,7 +122,7 @@ public class CanteenList
     localChartPanel.setMouseWheelEnabled(true);
     localChartPanel.setPreferredSize(new Dimension(600, 300));
     localJFreeChart.draw(localm, new Rectangle(0, 0, 612, 468));
-    localk.a(new File("repCanteenStatistics.pdf"));
+    localk.a(new File(Constants.af));
   }
   
 

@@ -39,22 +39,22 @@ public class WithdrawFromEmployeeCard {
         d(paramg);
         
         paramg.r(paramInt * (1 - (int) q()));
-        j = new ResponseObject(230, "employee card account is successfully withdrawn from");
+        j = new ResponseObject(230, Constants.Z);
         
         InitSystem.aq.ae().info("WITHDRAWAL: Self-service machine at " + this.Q + " : " + 
-          "employee card account is successfully withdrawn from" + paramInt + " DKK");
+        		Constants.Z + paramInt + " DKK");
         InitSystem.aq.af();
         p(L() + 1);
       }
       else
       {
-        j = new ResponseObject(220, "employee card account balance is too low to be withdrawn from");
+        j = new ResponseObject(220, Constants.T);
       }
       
 
     }
     else {
-      j = new ResponseObject(240, "employee card account is not withdrawn from");
+      j = new ResponseObject(240, Constants.Y);
     }
     
 
@@ -68,7 +68,7 @@ public class WithdrawFromEmployeeCard {
 
   public void ag()
   {
-    InitSystem.aq.A("employee card account is successfully withdrawn from");
+    InitSystem.aq.A(Constants.Z);
   }
   
 

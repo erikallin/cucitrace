@@ -27,16 +27,16 @@ private final int cA = 25;
     if (paramj.bF()) {
       d(paramj);
       paramj.e(false);
-      this.o = new ResponseObject(230, "the travel card is successfully checked-out");
+      this.o = new ResponseObject(230, Constants.cF);
       
       InitSystem.cT.bC()
-        .info("CHECKOUT: Automaton at " + this.cy + " : " + "the travel card is successfully checked-out");
+        .info("CHECKOUT: Automaton at " + this.cy + " : " + Constants.cF);
       InitSystem.cT.bD();
       t(bl() + 1);
     }
     else
     {
-      this.o = new ResponseObject(240, "the travel card is not checked-in");
+      this.o = new ResponseObject(240, Constants.cE);
     }
     
 
@@ -49,7 +49,7 @@ private final int cA = 25;
 
   public void bk()
   {
-    InitSystem.cT.H("the travel card is successfully checked-out");
+    InitSystem.cT.H(Constants.cF);
   }
   
 
