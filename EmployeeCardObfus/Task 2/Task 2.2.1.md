@@ -11,6 +11,8 @@ Answer Task 2.2.1:
 	4: Difficult
 	5: Very difficult 
 
-When you complete your answer CLOSE ALL the tabs in the explorer 
+-> When you complete your answer, you are ready for the next project task
+-> CLOSE ALL the tabs in the explorer related to warm up question
+-> Continue to the "Rejsekort project"
 
--> Continue to "Task 3.1.0.md"
+-> Then continue to "Task 3.1.0.md"

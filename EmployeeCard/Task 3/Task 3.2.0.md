@@ -7,6 +7,8 @@ He goes to a self-service machine at KU Student Canteen and provides his employe
 The employee card is successfully deposited with its initial balance and is activated for purchases.
 Additionally, a message is posted to the system log.
 
--> Can you search the source code and identify what is the message posted to the system log?
+-> Can you search the source code and identify what is the criteria(s) for the employee card to be activated for purchases?
+
+-> What internal response code(s) is logged if the criterias are not met?
 
 -> Once you have the answer please open "Task 3.2.1.md"

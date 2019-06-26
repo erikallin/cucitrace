@@ -11,6 +11,9 @@ Answer Task 2.2.1:
 	4: Difficult
 	5: Very difficult 
 
+
+You are now ready for the next project
 When you complete your answer CLOSE ALL the tabs in the explorer 
 
+-> Continue to the "EmployeeCard project"
 -> Continue to "Task 3.1.0.md"
